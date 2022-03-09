@@ -22,15 +22,12 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
-      required: true
     },
     bio: {
       type: String,
-      required: true
     },
     favoriteCuisine: {
       type: String,
-      required: true
     },
     myCurrentEvent: [ eventSchema ],
     myJoinedEvent: [ eventSchema ],
