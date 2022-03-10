@@ -65,7 +65,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addEvent(userID: ID! input: EventInput!): Event
+        addEvent(input: EventInput!): Event
         joinEvent(input: EventInput!): Event
         updateEvent(eventId: ID!, input: EventInput!): Event
         removeEvent(_id: ID!): Event
