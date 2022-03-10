@@ -62,17 +62,19 @@ const resolvers = {
         },
 
         addEvent: async (parent, args, context) => {
-            console.log(context.user)
-            console.log(args.input)
+            console.log(context.user);
+            console.log(args.input);
 
-              const event = await Event.create({ ...args, username: args.input.username });
-          
+              const Event_In = args.input;
+
+              const event = await Event.create(Event_In);
+
               await User.findByIdAndUpdate(
                 { _id: context.user._id },
-                { $push: { myCurrentEvent: args.input } },
+                { $push: { myCurrentEvent: args.input._id } },
                 { new: true }
               );
-          
+
               return event;
 
 
