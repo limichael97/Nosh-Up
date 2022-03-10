@@ -8,13 +8,13 @@ const typeDefs = gql`
         email: String
         password: String
         avatar: String
-        bio: String
+
+        bioText: String
         favoriteCuisine: String
         totalCount: Int
         myCurrentEvent: [Event]
         myJoinedEvent: [Event]
         comment: [ Comment ]
-
     }
 
     type Event {
@@ -31,14 +31,13 @@ const typeDefs = gql`
         comments: [ Comment ]
         vacancy: Boolean
     }
-
     type Comment {
         _id: ID
         commentText: String
         username: String
         createdAt: String
     }
-
+    
     type Query {
         me: User
         users: [User]
