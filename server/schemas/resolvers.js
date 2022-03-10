@@ -61,17 +61,29 @@ const resolvers = {
             return { token, user };    
         },
 
-        addEvent: async (parent, args) => {
-              const event = await Event.create({ ...args, username: user.username });
+        addEvent: async (parent, args, context) => {
+            // console.log(context.user)
+            console.log(args.input)
+
+              const event = await Event.create({ ...args, username: args.input.username });
           
               await User.findByIdAndUpdate(
-                { _id: context.user._id },
-                { $push: { thoughts: thought._id } },
+                { _id: args.input._id },
+                { $push: { myCurrentEvent: args.input } },
                 { new: true }
               );
           
-              return thought;
-          
+              return event;
+
+
+            // For user
+            //   const updatedUser = await User.findByIdAndUpdate(
+            //     { _id: args.input._id },
+            //     { $push: { myCurrentEvent: args.input } },
+            //     { new: true }
+            //   );
+      
+            //   return updatedUser;
           },
 
 

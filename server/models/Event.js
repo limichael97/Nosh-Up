@@ -1,22 +1,18 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment')
 
 const eventSchema = new Schema({
   title: {
     type: String,
-    required: true
   },
   username: {
     type: String,
-    required: true
   },
   cusineType: {
     type: String,
-    required: true
   },
   description: {
     type: String,
-    required: true
   },
   createdAt: {
     type: Date,
@@ -40,7 +36,6 @@ const eventSchema = new Schema({
     type: Number,
     min: 2,
     max:12,
-    required: true
   },
   comments: [ commentSchema ],
   vacancy: {
@@ -48,4 +43,6 @@ const eventSchema = new Schema({
   },
 });
 
-module.exports = eventSchema;
+const Event = model('Event', eventSchema);
+
+module.exports = Event;

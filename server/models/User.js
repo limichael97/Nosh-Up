@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const eventSchema = require('./Event');
+const Event = require('./Event');
 const commentSchema = require('./Comment');
 
 const userSchema = new Schema(
@@ -29,8 +29,8 @@ const userSchema = new Schema(
     favoriteCuisine: {
       type: String,
     },
-    myCurrentEvent: [ eventSchema ],
-    myJoinedEvent: [ eventSchema ],
+    myCurrentEvent: [ String ],
+    myJoinedEvent: [ String ],
     comment: [ commentSchema ]
   },
   // set this to use virtual below
