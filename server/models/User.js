@@ -24,7 +24,7 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
-    bio: {
+    bioText: {
       type: String,
       required: true
     },
@@ -32,9 +32,9 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
-    myCurrentEvent: [ eventSchema ],
-    myJoinedEvent: [ eventSchema ],
-    comment: [ commentSchema ]
+    myCurrentEvent: [eventSchema],
+    myJoinedEvent: [eventSchema],
+    comment: [commentSchema]
   },
   // set this to use virtual below
   {
@@ -58,7 +58,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 userSchema.virtual('totalCount').get(function () {
   var totalEvent = this.myCurrentEvent.length + this.myJoinedEvent.length
-  return totalEvent ;
+  return totalEvent;
 });
 
 const User = model('User', userSchema);
