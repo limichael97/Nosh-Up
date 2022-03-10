@@ -23,15 +23,17 @@ const userSchema = new Schema(
     avatar: {
       type: String,
     },
-    bio: {
+    bioText: {
       type: String,
     },
     favoriteCuisine: {
       type: String,
     },
+    
     myCurrentEvent: [ String ],
     myJoinedEvent: [ String ],
     comment: [ commentSchema ]
+
   },
   // set this to use virtual below
   {
@@ -55,7 +57,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 userSchema.virtual('totalCount').get(function () {
   var totalEvent = this.myCurrentEvent.length + this.myJoinedEvent.length
-  return totalEvent ;
+  return totalEvent;
 });
 
 const User = model('User', userSchema);
