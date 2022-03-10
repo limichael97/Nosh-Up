@@ -8,7 +8,6 @@ const typeDefs = gql`
         email: String
         password: String
         avatar: String
-
         bioText: String
         favoriteCuisine: String
         totalCount: Int

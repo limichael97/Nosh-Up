@@ -8,7 +8,7 @@ const eventSchema = new Schema({
   username: {
     type: String,
   },
-  cusineType: {
+  cuisineType: {
     type: String,
   },
   description: {
