@@ -30,8 +30,20 @@ const userSchema = new Schema(
       type: String,
     },
     
-    myCurrentEvent: [ String ],
-    myJoinedEvent: [ String ],
+    myCurrentEvent: [ 
+      {
+      type: Schema.Types.ObjectId,
+      ref:'Event'
+
+      }
+     ],
+    myJoinedEvent: [       
+      {
+      type: Schema.Types.ObjectId,
+      ref:'Event'
+
+      } 
+    ],
     comment: [ commentSchema ]
 
   },

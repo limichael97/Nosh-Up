@@ -8,7 +8,6 @@ const typeDefs = gql`
         email: String
         password: String
         avatar: String
-
         bioText: String
         favoriteCuisine: String
         totalCount: Int
@@ -67,7 +66,7 @@ const typeDefs = gql`
         addEvent(input: EventInput!): Event
         joinEvent(input: EventInput!): Event
         updateEvent(eventId: ID!, input: EventInput!): Event
-        removeEvent(_id: ID!): Event
+        removeEvent(_id: ID!): User
     }
 
     type Auth {
