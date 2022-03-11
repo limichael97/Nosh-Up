@@ -67,7 +67,7 @@ const typeDefs = gql`
         addEvent(input: EventInput!): Event
         joinEvent(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event
-        removeEvent(_id: ID!): User
+        removeEvent(eventId: ID!): Event
     }
 
     type Auth {

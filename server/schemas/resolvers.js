@@ -83,7 +83,7 @@ const resolvers = {
     },
 
     joinEvent: async (parent, args, context) => {
-      console.log('line87' + args)
+      console.log('line87' + args)  //eventId
       console.log('line88' + context)
 
       // const joinEvent = await Even.create({ ...args.input });
@@ -107,41 +107,31 @@ const resolvers = {
     },
 
 
-
     updateEvent: async (parent, args, context) => {
 
       var newEvent = args.input
+      // console.log('line 113' + sargs)
       console.log(args)
       console.log(newEvent)
       // console.log(args.eventId)
       // console.log(context.user)
 
-      const updatedEvent = await Event.findByIdAndUpdate(
+      return await Event.findOneAndUpdate(
         { _id: args.eventId },
-        { $push: { myCurrentEvent: { newEvent } } },
-        { new: true, runValidators: true }
+        newEvent,
+        // { new: true, runValidators: true }
+        { new: true }
 
       );
-      console.log(updatedEvent)
-
-      return updatedEvent
     },
+
+
 
     removeEvent: async (parent, args, context) => {
 
-      var idEvent = args._id
-      // console.log(args)
-      // console.log(idEvent)
-      const updatedUser = await User.findByIdAndUpdate(
-        { _id: context.user._id },
-        { $pull: { myCurrentEvent: { idEvent } } },
-        { new: true }
-      );
-      console.log(updatedUser)
-
-      // console.log(context.user)
-
-      return updatedUser
+      return Event.findOneAndDelete(
+        { _id: args.eventId }
+      )
     }
   }
 };
