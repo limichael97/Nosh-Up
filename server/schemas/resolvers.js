@@ -75,19 +75,58 @@ const resolvers = {
               );
           
               return event;
-
-
-            // For user
-            //   const updatedUser = await User.findByIdAndUpdate(
-            //     { _id: args.input._id },
-            //     { $push: { myCurrentEvent: args.input } },
-            //     { new: true }
-            //   );
-      
-            //   return updatedUser;
           },
 
+          joinEvent: async (parent, args, context) => {
+            console.log(args)
 
+            const joinEvent = await Event.create({ ...args.input });
+            console.log(joinEvent)
+        
+            await User.findByIdAndUpdate(
+              { _id: context.user._id },
+              { $push: { myJoinedEvent: joinEvent } },
+              { new: true }
+            );
+        
+            return joinEvent;
+          },
+
+          updateEvent: async (parent, args, context) => {
+
+            var newEvent = args.input
+            console.log(args)
+            console.log(newEvent)
+            // console.log(args.eventId)
+            // console.log(context.user)
+            
+            const updatedEvent = await Event.findByIdAndUpdate(
+              { _id: args.eventId},
+              { $push: {myCurrentEvent: {newEvent}}},
+              { new: true, runValidators: true }
+
+            );
+            console.log(updatedEvent)
+
+            return updatedEvent
+          },
+
+          removeEvent: async (parent, args, context) => {
+
+            var idEvent = args._id
+            // console.log(args)
+            // console.log(idEvent)
+            const updatedUser = await User.findByIdAndUpdate(
+              {_id: context.user._id},
+              { $pull: {myCurrentEvent: {idEvent}}},
+              {new: true}
+            );
+            console.log(updatedUser)
+
+            // console.log(context.user)
+
+            return updatedUser
+          }
     }
 };
 
