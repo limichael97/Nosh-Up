@@ -5,7 +5,7 @@ const eventSchema = new Schema({
   title: {
     type: String,
   },
-  username: {
+  host: {
     type: String,
   },
   cuisineType: {
@@ -27,17 +27,21 @@ const eventSchema = new Schema({
     type: Date,
     default: Date.now
   },
+
+  guests: [String],
+
+
   countNoshers: {
     type: Number,
-    min:1,
-    max:12
+    min: 1,
+    max: 12
   },
   maxNoshers: {
     type: Number,
     min: 2,
-    max:12,
+    max: 12,
   },
-  comments: [ commentSchema ],
+  comments: [commentSchema],
   vacancy: {
     type: Boolean
   },

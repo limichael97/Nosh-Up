@@ -67,7 +67,6 @@ const resolvers = {
     },
 
     addEvent: async (parent, args, context) => {
-
       // console.log(context)
       console.log(args)
 
@@ -85,32 +84,26 @@ const resolvers = {
 
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)
+      console.log('line88' + context)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)
 
-      //Add event to the user: then 
 
+      // add the user to the event
+      await Event.findByIdAndUpdate(
+        { _id: args.eventId },
+        { $push: { guests: context.user.username } },
+        { new: true }
+      );
+
+      // find user by id in context - add event to the user
       const updatedUser = await User.findByIdAndUpdate(
         { _id: context.user._id },
         { $push: { myJoinedEvent: args.eventId } },
         { new: true }
       );
       return updatedUser
-
-
-      // Pseudocode
-      // when User 2 joins event -- event adds to User 2's dashboard
-      //  then
-      // User 2's name is Added to that Events list of guests
-
-      // const joinEvent = await Event.findByIdAndUpdate({XXX})
-
-      //   {_id: },
-      //   {$push: { events: add this guest}}
-      //{new: true}
-      // );
-
     },
 
 

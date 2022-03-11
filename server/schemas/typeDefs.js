@@ -19,12 +19,13 @@ const typeDefs = gql`
     type Event {
         _id: ID
         title: String
-        username: String
+        host: String
         cuisineType: String
         description: String
         createdAt: String
         eventDate: String
         time: String
+        guests: [String]
         countNoshers: Int
         maxNoshers: Int
         comments: [ Comment ]
@@ -48,7 +49,7 @@ const typeDefs = gql`
     input EventInput {
         _id: ID
         title: String
-        username: String
+        host: String
         cuisineType: String
         description: String
         createdAt: String
