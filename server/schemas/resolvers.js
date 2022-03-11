@@ -62,6 +62,7 @@ const resolvers = {
         },
 
         addEvent: async (parent, args, context) => {
+
             // console.log(context)
             console.log(args)
 
@@ -73,7 +74,7 @@ const resolvers = {
                 { $push: { myCurrentEvent: event } },
                 { new: true }
               );
-          
+
               return event;
           },
 
