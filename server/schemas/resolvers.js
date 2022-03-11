@@ -138,16 +138,26 @@ const resolvers = {
       // const temp1 = args.commentText
       // const temp2 = context.username
 
-      const comment = await Comment.create({ ...args });
+      // const comment = await Comment.create({ ...args });
+
+
+
+      // return await Event.findByIdAndUpdate(
+      //   { _id: args.eventId },
+      //   { $push: { comment: comment } },
+      //   { new: true }
+      // );
       console.log(args);
-      console.log(comment);
-
-
-      return await Event.findByIdAndUpdate(
+      console.log(context.user)
+      const comment = await Event.findOneAndUpdate(
         { _id: args.eventId },
-        { $push: { comment: comment } },
-        { new: true }
+        { $push: { comment: { commentText, username: context.user.username } } },
+        { new: true, runValidators: true }
       );
+      // console.log(comment);
+
+  
+      return comment;
 
     }
 
