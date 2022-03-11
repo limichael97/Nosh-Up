@@ -28,7 +28,7 @@ const typeDefs = gql`
         guests: [String]
         countNoshers: Int
         maxNoshers: Int
-        comments: [ Comment ]
+        comment: [ Comment ]
         vacancy: Boolean
     }
     type Comment {
@@ -57,7 +57,7 @@ const typeDefs = gql`
         time: String
         countNoshers: Int
         maxNoshers: Int
-        comments: [ String ]
+        comment: [ String ]
         vacancy: Boolean
     }
 
@@ -68,6 +68,7 @@ const typeDefs = gql`
         joinEvent(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event
         removeEvent(eventId: ID!): Event
+        addComment(eventId: ID!, commentText: String!) : Event
     }
 
     type Auth {

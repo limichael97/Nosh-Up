@@ -1,4 +1,4 @@
-const { User, Event } = require('../models');
+const { User, Event, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
 
@@ -48,6 +48,8 @@ const resolvers = {
 
       return { token, user };
     },
+
+
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -125,14 +127,31 @@ const resolvers = {
       );
     },
 
-
-
     removeEvent: async (parent, args, context) => {
 
       return Event.findOneAndDelete(
         { _id: args.eventId }
       )
+    },
+
+    addComment: async (parent, args, context) => {
+      // const temp1 = args.commentText
+      // const temp2 = context.username
+
+      const comment = await Comment.create({ ...args });
+      console.log(args);
+      console.log(comment);
+
+
+      return await Event.findByIdAndUpdate(
+        { _id: args.eventId },
+        { $push: { comment: comment } },
+        { new: true }
+      );
+
     }
+
+
   }
 };
 

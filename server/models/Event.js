@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment')
+const Comment = require('./Comment')
 
 const eventSchema = new Schema({
   title: {
@@ -30,7 +30,6 @@ const eventSchema = new Schema({
 
   guests: [String],
 
-
   countNoshers: {
     type: Number,
     min: 1,
@@ -41,10 +40,25 @@ const eventSchema = new Schema({
     min: 2,
     max: 12,
   },
-  comments: [commentSchema],
+  comment: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ],
   vacancy: {
     type: Boolean
   },
+},
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
+
+eventSchema.virtual('commentCount').get(function () {
+  return this.comments.length;
 });
 
 const Event = model('Event', eventSchema);
