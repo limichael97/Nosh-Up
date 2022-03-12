@@ -151,11 +151,17 @@ const resolvers = {
 
       console.log(eventId)
       console.log(context.user)
-      const comment = await Event.findOneAndUpdate(
+      await Event.findOneAndUpdate(
         { _id: eventId },
         { $push: { comment:  {commentText }} },
         { new: true, runValidators: true }
       );
+
+      await User.findOneAndUpdate(
+        {_id: context.user._id},
+        { $push: {comment: {commentText}}},
+        { new: true, runValidators: true }
+      )
       // console.log(comment);
 
   
