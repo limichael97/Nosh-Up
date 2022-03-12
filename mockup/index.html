@@ -16,127 +16,141 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 
   </head>
+  
   <body>
     
+    
+  <!-- nav -->
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color-two">
-        <div class="container-fluid">
-          <a class="navbar-brand ms-1 mb-1" href="#"><span class="material-icons-outlined me-2 adjust-icons">storefront</span>Nosh Up</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-color-two">
+        <div className="container-fluid">
+          <a className="navbar-brand ms-1 mb-1" href="/"><span className="material-icons-outlined me-2 adjust-icons">storefront</span>Nosh Up</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="single-event.html">Single Event</a>
+              <li className="nav-item">
+                <a className="nav-link active" href="single-event.html">Single Event</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-              <button class="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
-              <button class="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+            <form className="d-flex">
+              <!-- <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <button className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+              <button className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
             </form>
           </div>
         </div>
       </nav>
     </header>
-<main>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Nosh Up</h1>
-        <p class="lead text-muted">Find new friends, discover new restaurants, eat delicious meals.</p>
+
+
+<!-- hero -->
+  <section className="py-5 text-center container">
+    <div className="row py-lg-5">
+      <div className="col-lg-6 col-md-8 mx-auto">
+        <h1 className="fw-light">Nosh Up</h1>
+        <p className="lead text-muted">Find new friends, discover new restaurants, eat delicious meals.</p>
         <p>
-          <a href="#" class="btn btn-color-one my-2" data-toggle="modal" data-target="#loginModal">Get Started</a>
+          <a href="/" className="btn btn-color-one my-2" data-toggle="modal" data-target="#loginModal">Get Started</a>
         </p>
       </div>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
 
-      <div class="row mb-2">
-        <div class="col-md-12">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 color-four">World</strong>
-              <h3 class="mb-0">Featured post</h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+<!-- body -->
+<main>
+
+  <div className="album py-5 bg-light">
+    <div className="container">
+
+      <div className="row mb-2">
+        <div className="col-md-12">
+          <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col p-4 d-flex flex-column position-static">
+              <strong className="d-inline-block mb-2 color-four">World</strong>
+              <h3 className="mb-0">Featured post</h3>
+              <div className="mb-1 text-muted">Nov 12</div>
+              <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div className="col-auto d-none d-lg-block">
+              <svg className="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
     
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row mb-2">
-        <div class="col-md-12">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <div className="row mb-2">
+        <div className="col-md-12">
+          <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col-auto d-none d-lg-block">
+              <svg className="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             </div>
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 color-four">Design</strong>
-              <h3 class="mb-0">Post title</h3>
-              <div class="mb-1 text-muted">Nov 11</div>
-              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <div className="col p-4 d-flex flex-column position-static">
+              <strong className="d-inline-block mb-2 color-four">Design</strong>
+              <h3 className="mb-0">Post title</h3>
+              <div className="mb-1 text-muted">Nov 11</div>
+              <p className="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row mb-2">
-        <div class="col-md-12">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 color-four">World</strong>
-              <h3 class="mb-0">Featured post</h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      <div className="row mb-2">
+        <div className="col-md-12">
+          <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col p-4 d-flex flex-column position-static">
+              <strong className="d-inline-block mb-2 color-four">World</strong>
+              <h3 className="mb-0">Featured post</h3>
+              <div className="mb-1 text-muted">Nov 12</div>
+              <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div className="col-auto d-none d-lg-block">
+              <svg className="bd-placeholder-img" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
     
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Welcome Back Nosher!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+</main>
+
+
+
+
+
+    <!-- Login Modal -->
+    <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+      <div className="modal-dialog" role="document">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="loginModalLabel">Welcome Back Nosher!</h5>
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <form class="">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+          <div className="modal-body">
+            <form className="">
+              <div className="form-floating mb-3">
+                <input type="email" className="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+                <label htmlFor="floatingInput">Email address</label>
               </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+              <div className="form-floating mb-3">
+                <input type="password" className="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                <label htmlFor="floatingPassword">Password</label>
               </div>
-              <button class="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Log In</button>
-              <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+              <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Log In</button>
+              <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-color-four" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-color-one">Save changes</button> -->
+          <div className="modal-footer">
+            <button type="button" className="btn btn-color-four" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -144,118 +158,65 @@
 
 
           <!-- Sign Up Modal -->
-          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="signUpModalLabel">Hello Nosher!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div className="modal fade" id="signUpModal" tabIndex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="signUpModalLabel">Hello Nosher!</h5>
+                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <form class="">
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="">
-                      <label for="floatingInput">Name</label>
+                <div className="modal-body">
+                  <form className="">
+                    <div className="form-floating mb-3">
+                      <input type="text" className="form-control rounded-4" id="floatingInput" placeholder="">
+                      <label htmlFor="floatingInput">Name</label>
                     </div>
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
-                      <label for="floatingInput">Email address</label>
+                    <div className="form-floating mb-3">
+                      <input type="email" className="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+                      <label htmlFor="floatingInput">Email address</label>
                     </div>
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
-                      <label for="floatingPassword">Password</label>
+                    <div className="form-floating mb-3">
+                      <input type="password" className="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                      <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Sign up</button>
-                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                    <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Sign up</button>
+                    <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                   </form>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-color-four" data-dismiss="modal">Close</button>
-                  <!-- <button type="button" class="btn btn-color-one">Save changes</button> -->
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-color-four" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" className="btn btn-color-one">Save changes</button> -->
                 </div>
               </div>
             </div>
           </div>
-
-
-      <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div> -->
-
-
 
     </div>
   </div>
 
-</main>
 
-<div class="container">
-  <footer class="py-3 my-4">
-    <ul class="nav col-md-12 justify-content-center list-unstyled d-flex mb-3">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+
+<!-- footer -->
+<div className="container">
+  <footer className="py-3 my-4">
+    <ul className="nav col-md-12 justify-content-center list-unstyled d-flex mb-3">
+      <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+      <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+      <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
     </ul>
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+      <li className="nav-item"><a href="/" className="nav-link px-2 text-muted">Home</a></li>
+      <li className="nav-item"><a href="/" className="nav-link px-2 text-muted">Features</a></li>
+      <li className="nav-item"><a href="/" className="nav-link px-2 text-muted">Pricing</a></li>
+      <li className="nav-item"><a href="/" className="nav-link px-2 text-muted">FAQs</a></li>
+      <li className="nav-item"><a href="/" className="nav-link px-2 text-muted">About</a></li>
     </ul>
-    <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+    <p className="text-center text-muted">&copy; 2021 Company, Inc</p>
   </footer>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
