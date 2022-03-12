@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const commentSchema = require('./Comment');
 const Comment = require('./Comment')
 
 const eventSchema = new Schema({
@@ -40,12 +41,13 @@ const eventSchema = new Schema({
     min: 2,
     max: 12,
   },
-  comment: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Comment'
-    }
-  ],
+  comment: [commentSchema],
+  // comment: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Comment'
+  //   }
+  // ],
   vacancy: {
     type: Boolean
   },

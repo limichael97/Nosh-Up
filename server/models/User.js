@@ -44,12 +44,13 @@ const userSchema = new Schema(
 
       }
     ],
-    comment: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-      }
-    ],
+    comment: [Comment]
+    // comment: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Comment'
+    //   }
+    // ],
 
   },
   // set this to use virtual below

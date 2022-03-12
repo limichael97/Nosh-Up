@@ -1,6 +1,7 @@
 const { User, Event, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth')
+const { signToken } = require('../utils/auth');
+const mongoose = require('mongoose');
 
 const resolvers = {
   Query: {
@@ -134,7 +135,7 @@ const resolvers = {
       )
     },
 
-    addComment: async (parent, args, context) => {
+    addComment: async (parent, {eventId, commentText}, context) => {
       // const temp1 = args.commentText
       // const temp2 = context.username
 
@@ -147,11 +148,12 @@ const resolvers = {
       //   { $push: { comment: comment } },
       //   { new: true }
       // );
-      console.log(args);
+
+      console.log(eventId)
       console.log(context.user)
       const comment = await Event.findOneAndUpdate(
-        { _id: args.eventId },
-        { $push: { comment: { commentText, username: context.user.username } } },
+        { _id: eventId },
+        { $push: { comment:  {commentText }} },
         { new: true, runValidators: true }
       );
       // console.log(comment);
