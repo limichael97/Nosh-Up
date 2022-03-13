@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import Auth from '../utils/auth';
 
 const Navbar = () => {
 
@@ -9,12 +10,12 @@ const Navbar = () => {
 
     const toggleLogin = () => {
         setIsLoginOpen(!isLoginOpen);
+       // console.log(isLoginOpen);
     }
     const toggleSignUp= () => {
         setIsSignUpOpen(!isSignUpOpen);
+        console.log(isSignUpOpen);
     }
-
-    console.log(isLoginOpen)
 
     return (
         <header>
@@ -30,7 +31,14 @@ const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="single-event.html">Single Event</a>
+              {Auth.loggedIn() ? (
+                <>
+                 <a className="nav-link active" href="single-event.html">Single Event</a>
+                  <a className="nav-link active" href="single-event.html" onClick={Auth.logout}>Logout</a>
+                </>
+                ) : (
+                  <a className="nav-link active" href="single-event.html">Please Login</a>
+                )}
               </li>
             </ul>
             <div>
@@ -44,6 +52,7 @@ const Navbar = () => {
                 {isSignUpOpen && (
                     <SignUp onClose={toggleSignUp} />
                 )} 
+                
             </div>
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}

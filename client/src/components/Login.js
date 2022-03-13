@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
 const Login = () => {
- 
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  const handleInputChange = (event) => {
+    console.log("Login: This is Change");
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try {
+      const { data } = await login({
+        variables: { ...userFormData}});
+       
+      console.log(data);
+      Auth.login(data.loginUser.token);
+    } catch (err) {
+      console.error(err);
+    }
+
+    setUserFormData({
+      email: '',
+      password: '',
+    });
+  };
+
 return (
 <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
 <div className="modal-dialog" role="document">
@@ -13,16 +50,32 @@ return (
       </button>
     </div>
     <div className="modal-body">
-      <form className="">
+      <form className="" >
         <div className="form-floating mb-3">
-          <input type="email" className="form-control rounded-4" id="floatingInput" name="floatingInput" placeholder="name@example.com" />
+          <input 
+            type="email" 
+            className="form-control rounded-4" 
+            id="floatingInput" 
+            name="floatingInput" 
+            placeholder="name@example.com" 
+            onChange={handleInputChange}
+            value={userFormData.email}
+          />
           <label htmlFor="floatingInput">Email address</label>
         </div>
         <div className="form-floating mb-3">
-          <input type="password" className="form-control rounded-4" name="floatingPassword" id="floatingPassword" placeholder="Password" />
+          <input 
+            type="password" 
+            className="form-control rounded-4" 
+            name="floatingPassword" 
+            id="floatingPassword" 
+            placeholder="Password" 
+            onChange={handleInputChange}
+            value={userFormData.password}
+          />
           <label htmlFor="floatingPassword">Password</label>
         </div>
-        <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Log In</button>
+        <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit" onClick={handleFormSubmit}>Log In</button>
         <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
       </form>
     </div>
