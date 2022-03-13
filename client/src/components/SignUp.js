@@ -123,7 +123,7 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const SignupForm = () => {
+const Signup = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
     username: '',
@@ -160,7 +160,7 @@ const SignupForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(userFormData);
+
     try {
       const { data } = await addUser({
         variables: { ...userFormData },
@@ -254,5 +254,5 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default Signup;
 

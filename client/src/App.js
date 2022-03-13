@@ -7,6 +7,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 
+//when deploy check if work, if not, go back using 
+// uri: 'graphql'
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
