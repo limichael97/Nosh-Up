@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchEvent = () => {
+const NoMatch = () => {
     return (
         <>
             <h2>Page not found!</h2>
@@ -8,4 +8,4 @@ const SearchEvent = () => {
     )
 };
 
-export default SearchEvent;
+export default NoMatch;

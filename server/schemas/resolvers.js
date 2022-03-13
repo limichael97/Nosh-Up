@@ -44,6 +44,7 @@ const resolvers = {
   Mutation: {
 
     addUser: async (parent, args) => {
+      console.log("Get Signup Info");
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -135,34 +136,22 @@ const resolvers = {
       )
     },
 
-    addComment: async (parent, {eventId, commentText}, context) => {
-      // const temp1 = args.commentText
-      // const temp2 = context.username
-
-      // const comment = await Comment.create({ ...args });
-
-
-
-      // return await Event.findByIdAndUpdate(
-      //   { _id: args.eventId },
-      //   { $push: { comment: comment } },
-      //   { new: true }
-      // );
+    addComment: async (parent, {eventId, username, commentText}, context) => {
 
       console.log(eventId)
       console.log(context.user)
       const comment = await Event.findOneAndUpdate(
         { _id: eventId },
-        { $push: { comment:  {commentText }} },
+        { $push: { comment:  { commentText, username: username } }  },
+        // { $push: { reactions: { reactionBody, username: context.user.username } } },
         { new: true, runValidators: true }
       );
 
       await User.findOneAndUpdate(
         {_id: context.user._id},
-        { $push: {comment: {commentText}}},
+        { $push: { comment:  { commentText, username: username } }  },
         { new: true, runValidators: true }
       )
-      // console.log(comment);
 
   
       return comment;
