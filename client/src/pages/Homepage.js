@@ -1,4 +1,5 @@
 import React from 'react';
+import AddEvent from '../components/AddEvent';
 import SingleEvent from './SingleEvent';
 
 const HomePage = () => {
@@ -65,6 +66,7 @@ const HomePage = () => {
                             </div>
                         </div>
                     </section>
+                    <AddEvent/>
 
                     <div className="container">
                         <div className="row mb-2">

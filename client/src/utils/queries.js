@@ -1,59 +1,70 @@
 import { gql } from '@apollo/client';
 
-export const QUERY__ME = gql`
-{
-    me {
-        _id
-        username
-        email
-        password
-        avatar
-        bioText
-        favoriteCuisine
-        totalCount
-        myCurrentEvent {
+
+export const QUERY_ME = gql`
+    {
+        me {
             _id
-            title
-            host
-            cuisineType
-            description
-            createdAt
-            eventDate
-            time
-            guests
-            countNoshers
-            maxNoshers
-            comment
-            vacancy
-        } 
-        myJoinedEvent {
-            _id
-            title
-            host
-            cuisineType
-            description
-            createdAt
-            eventDate
-            time
-            guests
-            countNoshers
-            maxNoshers
-            comment
-            vacancy
-        } 
-        comment {
-            _id
-            commentText
             username
-            createdAt
+            email
         }
     }
-}
-`;  
+
+`;
+// export const QUERY__ME = gql`
+// {
+//     me {
+//         _id
+//         username
+//         email
+//         password
+//         avatar
+//         bioText
+//         favoriteCuisine
+//         totalCount
+//         myCurrentEvent {
+//             _id
+//             title
+//             host
+//             cuisineType
+//             description
+//             createdAt
+//             eventDate
+//             time
+//             guests
+//             countNoshers
+//             maxNoshers
+//             comment
+//             vacancy
+//         } 
+//         myJoinedEvent {
+//             _id
+//             title
+//             host
+//             cuisineType
+//             description
+//             createdAt
+//             eventDate
+//             time
+//             guests
+//             countNoshers
+//             maxNoshers
+//             comment
+//             vacancy
+//         } 
+//         comment {
+//             _id
+//             commentText
+//             username
+//             createdAt
+//         }
+//     }
+// }
+// `;  
 
 export const QUERY_USERS = gql`
   query getUsers {
-    user {
+    users {
         _id
         username
         email
@@ -122,7 +133,7 @@ export const QUERY_SINGLE_USER = gql`
 
 export const QUERY_EVENTS = gql`
   query getEvents($username: String) {
-    user(username: $username) {
+    events(username: $username) {
         _id
         title
         host
@@ -140,8 +151,8 @@ export const QUERY_EVENTS = gql`
 `;
 
 export const  QUERY_SINGLE_EVENT = gql`
-    query getSingleEvent($_id: ID!) {
-        event(_id: $_id){
+    query getSingleEvent($id: ID!) {
+        event(_id: $id){
             _id
             title
             host
