@@ -3,16 +3,7 @@ import React from 'react';
 const SingleEvent = () => {
     return (
     <>
-    <div className="d-flex align-items-center p-3 my-5 text-white bg-primary rounded shadow-sm">
-        <span className="material-icons fs-1 me-2">
-            restaurant
-        </span>
-      <div className="lh-1">
-        <h1 className="h6 mb-0 text-white lh-1">Bootstrap</h1>
-        <small>Since 2011</small>
-      </div>
-    </div>
-
+    <div className="container">
     <div className="row align-items-md-stretch">
         <div className="col-md-6 restuarant-profile-pic">
           <div className="h-100 p-5 rounded-3">
@@ -65,12 +56,24 @@ const SingleEvent = () => {
           </div>
         </div>
       </div>
-    
+    </div>
+
     <main className="container py-5">
+
+    <div className="d-flex align-items-center p-3 my-3 text-white bg-primary rounded shadow-sm">
+        <span className="material-icons fs-1 me-2">
+            dinner_dining
+        </span>
+      <div className="lh-1">
+        <h1 className="h6 mb-0 text-white lh-1">Meet Your</h1>
+        <small>Fellow Noshers</small>
+      </div>
+    </div>
+
     <div className="my-3 p-3 bg-body rounded shadow-sm">
-      <h6 className="border-bottom pb-2 mb-0">Event Conversation</h6>
+      <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <span class="avatar avatar-1 me-2"></span>
   
         <p className="pb-3 mb-0 small lh-sm border-bottom">
           <strong className="d-block text-gray-dark">@username</strong>
@@ -78,7 +81,7 @@ const SingleEvent = () => {
         </p>
       </div>
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+      <span class="avatar avatar-2 me-2"></span>
   
         <p className="pb-3 mb-0 small lh-sm border-bottom">
           <strong className="d-block text-gray-dark">@username</strong>
@@ -86,7 +89,7 @@ const SingleEvent = () => {
         </p>
       </div>
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+        <span class="avatar avatar-3 me-2"></span>
   
         <p className="pb-3 mb-0 small lh-sm border-bottom">
           <strong className="d-block text-gray-dark">@username</strong>
@@ -99,9 +102,10 @@ const SingleEvent = () => {
     </div>
   
     <div className="my-3 p-3 bg-body rounded shadow-sm">
-      <h6 className="border-bottom pb-2 mb-0">Events I'm Hosting</h6>
+      <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
+      
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <span class="avatar avatar-4 me-2"></span>
   
         <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
           <div className="d-flex justify-content-between">
@@ -112,7 +116,7 @@ const SingleEvent = () => {
         </div>
       </div>
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <span class="avatar avatar-5 me-2"></span>
   
         <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
           <div className="d-flex justify-content-between">
@@ -123,7 +127,7 @@ const SingleEvent = () => {
         </div>
       </div>
       <div className="d-flex text-muted pt-3">
-        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <span class="avatar avatar-6 me-2"></span>
   
         <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
           <div className="d-flex justify-content-between">
@@ -133,6 +137,42 @@ const SingleEvent = () => {
           <span className="d-block">@username</span>
         </div>
       </div>
+
+      <div className="d-flex text-muted pt-3">
+      <span class="avatar avatar-1 me-2"></span>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+      <div className="d-flex text-muted pt-3">
+      <span class="avatar avatar-2 me-2"></span>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+      <div className="d-flex text-muted pt-3">
+        <span class="avatar avatar-3 me-2"></span>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+
+
       <small className="d-block text-end mt-3">
         <a href="/">All suggestions</a>
       </small>

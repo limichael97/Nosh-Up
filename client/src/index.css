@@ -1,4 +1,6 @@
 body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -127,6 +129,93 @@ body {
     border:none;
     background-color:#fff;
 }
+
+.logo {
+  width:85px;
+}
+
+.hero-1 {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url(./img/main-hero.jpg);
+  background-position:50% 65%;
+  background-size: cover;
+}
+
+.hero-2 {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.45)), url(./img/rice-veg-hero.jpg);
+  background-position:50% 95%;
+  background-size: cover;
+}
+
+.featured-img-1 {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/chips.jpg);
+  background-position:50% 50%;
+  background-size: cover;
+  width:25rem;
+}
+
+.featured-img-2 {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/salad.jpg);
+  background-position:50% 50%;
+  background-size: cover;
+  width:25rem;
+}
+
+.featured-img-3 {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/steak.jpg);
+  background-position:50% 50%;
+  background-size:cover;
+  width:25rem;
+}
+
+.avatar {  
+  background-position:50% 18%;
+  background-size:cover;
+  width:2.5rem;
+  height:2.5rem;
+  border-radius: .2rem;
+}
+
+.avatar-1 {
+  background-image: url(./img/avatar-1.jpg);
+}
+
+.avatar-2 {
+  background-image: url(./img/avatar-2.jpg);
+}
+
+.avatar-3 {
+  background-image: url(./img/avatar-3.jpg);
+}
+
+.avatar-4 {
+  background-image: url(./img/avatar-4.jpg);
+}
+
+.avatar-5 {
+  background-image: url(./img/avatar-5.jpg);
+}
+
+.avatar-6 {
+  background-image: url(./img/avatar-6.jpg);
+}
+
+.avatar-7 {
+  background-image: url(./img/avatar-7.jpg);
+}
+
+.avatar-8 {
+  background-image: url(./img/avatar-8.jpg);
+}
+
+.avatar-9 {
+  background-image: url(./img/avatar-9.jpg);
+}
+
+.avatar-10 {
+  background-image: url(./img/avatar-10.jpg);
+}
+
+
 
 /* Tomato */
 /* #ec5551 */

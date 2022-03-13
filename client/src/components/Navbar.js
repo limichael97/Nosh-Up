@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import Logo from "../img/w-logo-310.png";
 import Auth from '../utils/auth';
 import AddEvent from './AddEvent';
 import { Modal, Button } from 'react-bootstrap';
+
 
 const Navbar = () => {
 
@@ -29,10 +31,11 @@ const Navbar = () => {
     }
 
     return (
+      // <span className="material-icons-outlined me-2 adjust-icons">storefront</span>Nosh Up
         <header>
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-color-two">
         <div className="container-fluid">
-          <a className="navbar-brand ms-1 mb-1" href="/"><span className="material-icons-outlined me-2 adjust-icons">storefront</span>Nosh Up</a>
+          <a className="navbar-brand ms-1 mb-1" href="/"><img src = {Logo} alt="Nosh Up Logo" className="logo"/></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
