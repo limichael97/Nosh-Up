@@ -45,6 +45,9 @@ const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="events.html">Events</a>
+              </li>
+              <li className="nav-item">
                 {Auth.loggedIn() ? (
                   <>
                     <a className="nav-link active" href="single-event.html">Single Event</a>
@@ -56,7 +59,7 @@ const Navbar = () => {
             </ul>
 
             <div>
-              <AddEvent />
+              {/* <AddEvent /> */}
             </div>
             <div>
               {/* logged out, click on login button, modal has close
