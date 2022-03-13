@@ -30,7 +30,8 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Navbar />
-          <div className="container">            
+          {/* <div className="container">             */}
+          <div>            
             <Switch>
               <Route exact path="/" component={Homepage} />
               <Route component={NoMatch} />
