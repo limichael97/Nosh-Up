@@ -32,7 +32,7 @@ mutation login($email: String!, $password: String!) {
 
 //addEvent(input: EventInput!): Event
 export const ADD_EVENT = gql`
-mutation addEvent($input: EventInput) {
+mutation addEvent($input: EventInput!) {
   addEvent(input: $input){
     _id
     title

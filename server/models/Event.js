@@ -37,9 +37,7 @@ const eventSchema = new Schema({
     max: 12
   },
   maxNoshers: {
-    type: Number,
-    min: 2,
-    max: 12,
+    type: String
   },
   comment: [commentSchema],
   // comment: [
