@@ -29,7 +29,7 @@ body {
 
 .adjust-icons {
   position:relative;
-  top:4px;
+  top:5px;
 }
 
 :root {
@@ -148,33 +148,33 @@ body {
 }
 
 .hero-1 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url(./img/main-hero.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url(./img/food-main-hero.jpg);
   background-position:50% 65%;
   background-size: cover;
 }
 
 .hero-2 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.45)), url(./img/rice-veg-hero.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.45)), url(./img/food-riceVeg-hero.jpg);
   background-position:50% 95%;
   background-size: cover;
 }
 
 .featured-img-1 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/chips.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/food-chips.jpg);
   background-position:50% 50%;
   background-size: cover;
   width:25rem;
 }
 
 .featured-img-2 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/salad.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/food-salad.jpg);
   background-position:50% 50%;
   background-size: cover;
   width:25rem;
 }
 
 .featured-img-3 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/steak.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/food-steak.jpg);
   background-position:50% 50%;
   background-size:cover;
   width:25rem;

@@ -62,10 +62,12 @@ const AddEvent = () => {
 
     return(
         <main>
-            <div>
-                <form onSubmit= {handleEventSubmit}>
+            <form className="container py-3" onSubmit= {handleEventSubmit}>
+            <h2>Find An Event</h2>
+            <div className="row my-3 d-flex justify-content-start">
+                <div className="col pe-0">
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Cuisine'
                         name='cuisineType'
                         type='text'
@@ -73,8 +75,10 @@ const AddEvent = () => {
                         value={eventState.cuisineType}
                         onChange={handleEventChange}
                     />
+                </div>
+                <div className="col pe-0">
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Event Details'
                         name='description'
                         type='text'
@@ -82,8 +86,10 @@ const AddEvent = () => {
                         value={eventState.description}
                         onChange={handleEventChange}
                     />
+                </div>
+                <div className="col pe-0">
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Max Diners Desired'
                         name='maxNoshers'
                         type='number'
@@ -91,11 +97,14 @@ const AddEvent = () => {
                         value={eventState.maxNoshers}
                         onChange={handleEventChange}
                     />
-                    <button className='btn d-block w-100' type='submit'>
+                </div>
+                <div className="col">
+                    <button className='btn btn-color-one' type='submit'>
                     Submit
                     </button>
-                </form>
+                </div>
             </div>
+            </form>
 
         </main>
     )
