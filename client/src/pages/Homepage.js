@@ -119,8 +119,6 @@ const HomePage = () => {
                 </div>
               </div>
             </section>
-            <AddEvent />
-            <EventsPage />
 
             <div className="container">
               <div className="row mb-2">
@@ -139,6 +137,12 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+
+
+            <AddEvent />
+            <EventsPage />
+
+
           </div>
         </div>
       </main>
