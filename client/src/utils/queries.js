@@ -132,11 +132,10 @@ export const QUERY_SINGLE_USER = gql`
 `;
 
 export const QUERY_EVENTS = gql`
-  query getEvents($username: String) {
+  query events($username: String) {
     events(username: $username) {
         _id
         title
-        host
         cuisineType
         description
         createdAt
@@ -145,9 +144,10 @@ export const QUERY_EVENTS = gql`
         guests
         countNoshers
         maxNoshers
-        comment
+        # comment
         vacancy
-    }}
+    }
+    }
 `;
 
 export const  QUERY_SINGLE_EVENT = gql`

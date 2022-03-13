@@ -12,7 +12,7 @@ const AddEvent = () => {
     console.log(userData)
     console.log(userData.username)
     console.log(data)
-    const [eventState, setEventState] = useState({ host: '', cuisineType:'', description: '', maxNoshers:''});
+    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', description: '', maxNoshers:''});
 
     const [addEvent,{ error }] = useMutation(ADD_EVENT);
     console.log(eventState)
@@ -30,7 +30,6 @@ const AddEvent = () => {
     };
 
     const handleEventSubmit = async event => {
-        event.preventDefault();
 
         const token = Auth.loggedIn() ? Auth.getToken() : null;
         console.log(token)
@@ -52,6 +51,13 @@ const AddEvent = () => {
         } catch (e) {
           console.error(e);
         }
+
+        setEventState({
+            title:'',
+            cuisineType:'',
+            description:'',
+            maxNoshers:''
+        })
     };
 
     // if data isn't here yet, say so
@@ -63,8 +69,20 @@ const AddEvent = () => {
     return(
         <main>
             <div>
+
+                <h1>Add Event</h1>
+
                 <form onSubmit= {handleEventSubmit}>
                     <input
+                        className='form-input'
+                        placeholder='Title'
+                        name='title'
+                        type='text'
+                        id='title'
+                        value={eventState.title}
+                        onChange={handleEventChange}
+                    />
+                    {/* <input
                         className='form-input'
                         placeholder='Cuisine'
                         name='cuisineType'
@@ -72,7 +90,15 @@ const AddEvent = () => {
                         id='cuisineType'
                         value={eventState.cuisineType}
                         onChange={handleEventChange}
-                    />
+                    /> */}
+                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
+                        <option value='American' id="1">American</option>
+                        <option value= 'Mexican' id="2">Mexican</option>
+                        <option value= 'Italian' id="3">Italian</option>
+                        <option value= 'Chinese' id="4">Chinese</option>
+                        <option value= 'Indian' id="5">Indian</option>
+                        <option value= 'Japanese' id="6">Japanese</option>
+                    </select>
                     <input
                         className='form-input'
                         placeholder='Event Details'
@@ -91,7 +117,7 @@ const AddEvent = () => {
                         value={eventState.maxNoshers}
                         onChange={handleEventChange}
                     />
-                    <button className='btn d-block w-100' type='submit'>
+                    <button className='btn d-block w-100' type='submit' variant='success'>
                     Submit
                     </button>
                 </form>

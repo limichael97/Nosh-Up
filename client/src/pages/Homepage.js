@@ -4,6 +4,7 @@ import SignUp from '../components/SignUp';
 import AddEvent from '../components/AddEvent';
 import SingleEvent from './SingleEvent';
 import { Modal, Button } from 'react-bootstrap';
+import SearchEvent from './SearchEvent';
 
 
 const HomePage = () => {
@@ -121,8 +122,6 @@ const HomePage = () => {
                 </div>
               </div>
             </section>
-            <AddEvent />
-
             <div className="container">
               <div className="row mb-2">
                 <div className="col-md-12">
