@@ -43,6 +43,8 @@ body {
   --color-two-light: #a0463e;
   --color-three-light: #fae953;
   --color-four-light: #f8b64d;
+
+  --color-one-disabled:#f0a19e;
 }
 
 .bg-color-one {
@@ -69,6 +71,17 @@ body {
 
 .btn-color-one:hover {
   background-color:var(--color-one-light);
+  color:#fff;
+}
+
+.btn-color-one:disabled {
+  background-color:var(--color-one-disabled);
+  border:var(--color-one-disabled);
+  color:#fff;
+}
+
+.btn-color-one:disabled {
+  background-color:var(--color-one-disabled);
   color:#fff;
 }
 
