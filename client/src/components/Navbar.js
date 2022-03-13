@@ -34,7 +34,6 @@ const Navbar = () => {
               {Auth.loggedIn() ? (
                 <>
                  <a className="nav-link active" href="single-event.html">Single Event</a>
-                  <a className="nav-link active" href="single-event.html" onClick={Auth.logout}>Logout</a>
                 </>
                 ) : (
                   <a className="nav-link active" href="single-event.html">Please Login</a>
@@ -56,8 +55,14 @@ const Navbar = () => {
             </div>
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
-              <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
-              <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+              {Auth.loggedIn() ? (
+                  <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                ) : (
+                  <>
+                    <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+                    <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                  </>
+                )}
             </form>
           </div>
         </div>
