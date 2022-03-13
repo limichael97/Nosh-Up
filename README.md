@@ -1,3 +1,15 @@
+## Photo attributions
+
+Photo by <a href="https://unsplash.com/@alexhaney?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Haney</a> on <a href="https://unsplash.com/s/photos/people-eating?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by <a href="https://unsplash.com/@buhiiic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kenan Buhic</a> on <a href="https://unsplash.com/s/photos/couples-eating?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by <a href="https://unsplash.com/@rotkif?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wiktor Karkocha</a> on <a href="https://unsplash.com/collections/10596698/backlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+&nbsp;
+
+## **\***\*\*\*\***\*** React Notes **\***\*\*\*\***\*\***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
