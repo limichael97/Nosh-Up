@@ -3,10 +3,12 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import NoMatch from './pages/NoMatch';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 
+//when deploy check if work, if not, go back using 
+// uri: 'graphql'
 const httpLink = createHttpLink({
   uri: '/graphql',
 });

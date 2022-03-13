@@ -53,7 +53,7 @@ export const QUERY__ME = gql`
 
 export const QUERY_USERS = gql`
   query getUsers {
-    user {
+    users {
         _id
         username
         email
@@ -122,7 +122,7 @@ export const QUERY_SINGLE_USER = gql`
 
 export const QUERY_EVENTS = gql`
   query getEvents($username: String) {
-    user(username: $username) {
+    events(username: $username) {
         _id
         title
         host
@@ -140,8 +140,8 @@ export const QUERY_EVENTS = gql`
 `;
 
 export const  QUERY_SINGLE_EVENT = gql`
-    query getSingleEvent($_id: ID!) {
-        event(_id: $_id){
+    query getSingleEvent($id: ID!) {
+        event(_id: $id){
             _id
             title
             host

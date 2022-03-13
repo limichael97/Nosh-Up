@@ -1,20 +1,31 @@
 import React, {useState} from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import Auth from '../utils/auth';
+import { Modal, Button } from 'react-bootstrap';
 
 const Navbar = () => {
 
-    const [isLoginOpen, setIsLoginOpen] = useState(true); 
-    const [isSignUpOpen, setIsSignUpOpen] = useState(true); 
+    const [isLoginOpen, setIsLoginOpen] = useState(false); 
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false); 
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => {
+      setIsLoginOpen(false);
+      setIsSignUpOpen(false);
+      setShow(false);
+    }
+    const handleShow = () => setShow(true);
 
     const toggleLogin = () => {
-        setIsLoginOpen(!isLoginOpen);
+        setIsLoginOpen(true);
+        handleShow();
     }
     const toggleSignUp= () => {
-        setIsSignUpOpen(!isSignUpOpen);
+        setIsSignUpOpen(true);
+        handleShow();
     }
-
-    console.log(isLoginOpen)
 
     return (
         <header>
@@ -30,25 +41,48 @@ const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="single-event.html">Single Event</a>
+              {Auth.loggedIn() ? (
+                <>
+                 <a className="nav-link active" href="single-event.html">Single Event</a>
+                </>
+                ) : (
+                  <a className="nav-link active" href="single-event.html">Please Login</a>
+                )}
               </li>
             </ul>
             <div>
                 {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  {isLoginOpen && (
+                      <Login onClose={toggleLogin} />
+                  )} 
+                  {isSignUpOpen && (
+                      <SignUp onClose={toggleSignUp} />
+                  )} 
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
 
-                {isLoginOpen && (
-                    <Login onClose={toggleLogin} />
-                )} 
-
-                {isSignUpOpen && (
-                    <SignUp onClose={toggleSignUp} />
-                )} 
             </div>
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
-              <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
-              <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+              {Auth.loggedIn() ? (
+                  <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                ) : (
+                  <>
+                    <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+                    <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                  </>
+                )}
             </form>
           </div>
         </div>
