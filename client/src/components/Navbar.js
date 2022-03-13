@@ -3,19 +3,29 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Auth from '../utils/auth';
 import AddEvent from './AddEvent';
+import { Modal, Button } from 'react-bootstrap';
 
 const Navbar = () => {
 
-    const [isLoginOpen, setIsLoginOpen] = useState(true); 
-    const [isSignUpOpen, setIsSignUpOpen] = useState(true); 
+    const [isLoginOpen, setIsLoginOpen] = useState(false); 
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false); 
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => {
+      setIsLoginOpen(false);
+      setIsSignUpOpen(false);
+      setShow(false);
+    }
+    const handleShow = () => setShow(true);
 
     const toggleLogin = () => {
-        setIsLoginOpen(!isLoginOpen);
-       // console.log(isLoginOpen);
+        setIsLoginOpen(true);
+        handleShow();
     }
     const toggleSignUp= () => {
-        setIsSignUpOpen(!isSignUpOpen);
-        console.log(isSignUpOpen);
+        setIsSignUpOpen(true);
+        handleShow();
     }
 
     return (
@@ -48,15 +58,25 @@ const Navbar = () => {
             <div>
                 {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  {isLoginOpen && (
+                      <Login onClose={toggleLogin} />
+                  )} 
+                  {isSignUpOpen && (
+                      <SignUp onClose={toggleSignUp} />
+                  )} 
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
 
-                {isLoginOpen && (
-                    <Login onClose={toggleLogin} />
-                )} 
-
-                {isSignUpOpen && (
-                    <SignUp onClose={toggleSignUp} />
-                )} 
-                
             </div>
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
