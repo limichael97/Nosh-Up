@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
 import Auth from '../utils/auth';
+import AddEvent from './AddEvent';
 
 const Navbar = () => {
 
@@ -40,6 +41,10 @@ const Navbar = () => {
                 )}
               </li>
             </ul>
+
+            <div>
+              <AddEvent/>
+            </div>
             <div>
                 {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}

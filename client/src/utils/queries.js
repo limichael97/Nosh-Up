@@ -1,55 +1,66 @@
 import { gql } from '@apollo/client';
 
-export const QUERY__ME = gql`
-{
-    me {
-        _id
-        username
-        email
-        password
-        avatar
-        bioText
-        favoriteCuisine
-        totalCount
-        myCurrentEvent {
+
+export const QUERY_ME = gql`
+    {
+        me {
             _id
-            title
-            host
-            cuisineType
-            description
-            createdAt
-            eventDate
-            time
-            guests
-            countNoshers
-            maxNoshers
-            comment
-            vacancy
-        } 
-        myJoinedEvent {
-            _id
-            title
-            host
-            cuisineType
-            description
-            createdAt
-            eventDate
-            time
-            guests
-            countNoshers
-            maxNoshers
-            comment
-            vacancy
-        } 
-        comment {
-            _id
-            commentText
             username
-            createdAt
+            email
         }
     }
-}
-`;  
+
+`;
+// export const QUERY__ME = gql`
+// {
+//     me {
+//         _id
+//         username
+//         email
+//         password
+//         avatar
+//         bioText
+//         favoriteCuisine
+//         totalCount
+//         myCurrentEvent {
+//             _id
+//             title
+//             host
+//             cuisineType
+//             description
+//             createdAt
+//             eventDate
+//             time
+//             guests
+//             countNoshers
+//             maxNoshers
+//             comment
+//             vacancy
+//         } 
+//         myJoinedEvent {
+//             _id
+//             title
+//             host
+//             cuisineType
+//             description
+//             createdAt
+//             eventDate
+//             time
+//             guests
+//             countNoshers
+//             maxNoshers
+//             comment
+//             vacancy
+//         } 
+//         comment {
+//             _id
+//             commentText
+//             username
+//             createdAt
+//         }
+//     }
+// }
+// `;  
 
 export const QUERY_USERS = gql`
   query getUsers {

@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_EVENT } from '../utils/mutations';
 import Auth from '../utils/auth'
-import { QUERY__ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 
 const AddEvent = () => {
 
+    const { loading, data } =useQuery(QUERY_ME)
+    const userData = data?.me || {}
+    console.log(userData)
+    console.log(userData.username)
+    console.log(data)
     const [eventState, setEventState] = useState({ host: '', cuisineType:'', description: '', maxNoshers:''});
 
-    const { loading, data } =useQuery(QUERY__ME)
     const [addEvent,{ error }] = useMutation(ADD_EVENT);
     console.log(eventState)
 
-    const user = data?.me 
-    console.log(user)
+
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
@@ -22,6 +25,7 @@ const AddEvent = () => {
         setEventState({
           ...eventState,
           [name]: value,
+          host: userData.username
         });
     };
 
@@ -50,19 +54,16 @@ const AddEvent = () => {
         }
     };
 
+    // if data isn't here yet, say so
+    if (loading) {
+        return <h2>LOADING...</h2>;
+    }
+
+
     return(
         <main>
             <div>
                 <form onSubmit= {handleEventSubmit}>
-                    <input
-                        className='form-input'
-                        placeholder='Your Name'
-                        name='host'
-                        type='text'
-                        id='host'
-                        value={user.username}
-                        onChange={handleEventChange}
-                    />
                     <input
                         className='form-input'
                         placeholder='Cuisine'
@@ -74,7 +75,7 @@ const AddEvent = () => {
                     />
                     <input
                         className='form-input'
-                        placeholder='Description'
+                        placeholder='Event Details'
                         name='description'
                         type='text'
                         id='description'
