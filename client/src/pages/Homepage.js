@@ -34,7 +34,6 @@ const HomePage = () => {
 
   return (
     <>
-      <SingleEvent />
       <section className="py-5 text-center hero-1">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
@@ -138,12 +137,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-
-
-            <AddEvent />
-            <EventsPage />
-
-
+            <SingleEvent/>
           </div>
         </div>
       </main>
