@@ -32,17 +32,102 @@ We love to eat, like to meet new people and have good conversation and fun compa
 
 ## Goals
 
+- Use React for the front end.
+- Use GraphQL with a Node.js and Express.js server.
+- Use MongoDB and the Mongoose ODM for the database.
+- Use queries and mutations for retrieving, adding, updating, and deleting data.
+- Be deployed using Heroku (with data).
+- Have a polished UI.
+- Be responsive.
+- Be interactive (i.e., accept and respond to user input).
+- Include authentication (using JWT).
+- Protect sensitive API key information on the server.
+- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+
 ## Technologies
+
+- MongoDb
+- Express
+- React
+- Node
+- Express
+- Bootstrap
+- Heroku
+- MVC Structuring
 
 ## Usage
 
+Visit the links below!
+
+GitHub: [Nosh Up GitHub Repo](https://github.com/limichael97/Nosh-Up.git)
+
+Heroku: [Nosh Up on Heroku](http://nosh-up.herokuapp.com)
+
+&nbsp;
+
 ## Future
+
+- Add account verification
+- Ability to add a calendar invite
+- Cancellation fee
+- Messages between users
+- Host can approve or deny those that join their event
+- Restaurant API so users can look for restaurants and add the restaurant to their event (possibly a map?)
+- More options, dietary restrictions, filters etc.
+- Search by meal: breakfast, lunch, dinner
+- Favorite hosts or restaurants
+- Friend feature
+- Deleting/canceling an event, invite, friend, user etc.
+- Gold Membership: add on features etc.
+- Stripe for charitible donations or no show fee etc.
 
 ## Team
 
+- Sam Place
+- Michael Li
+- Melanie Dubberley
+- Maggie Lai
+- Kirsten Canady
+
+&nbsp;
+
 ## References
 
-## Photo attributions
+#### Sites we used or were inspired by
+
+- https://apps.apple.com/us/app/dine-dating-app/id964735828
+- https://foodanddating.com/are-you-a-foodie-check-out-these-fun-food-based-dating-apps/
+- https://toomanyadapters.com/best-food-apps-sites-travel/
+- https://firstwefeast.com/eat/2014/04/doughbot-named-one-of-the-best-new-food-and-drink-apps-by-apple#:~:text=Apps%20By%20Apple-,Doughnut%20Finder%20Named%20One%20of%20the%20Best%20New%20Food%20and,the%20doughnuts%20nearest%20to%20you.&text=With%20a%20new%20%240.99%20app,never%20be%20without%20doughnuts%20again.
+- https://www.npmjs.com/package/react-images-uploading
+- https://github.com/nancyyeh/chicken-tinder
+- https://www.scarymommy.com/food-puns
+- https://parade.com/1239414/marynliles/food-puns/
+- https://www.merriam-webster.com/thesaurus/nosh
+- https://mongoosejs.com/docs/tutorials/dates.html
+- https://mongoosejs.com/docs/timestamps.html
+- https://stackoverflow.com/questions/27350644/storing-a-user-provided-date-in-mongoose
+- https://stackoverflow.com/questions/10006218/which-schematype-in-mongoose-is-best-for-timestamp
+- https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+- https://helperbyte.com/questions/82556/how-to-add-avatar-to-user
+- https://stackoverflow.com/questions/33846939/mongoose-schema-error-cast-to-string-failed-for-value-when-pushing-object-to
+- https://www.codegrepper.com/code-examples/javascript/graphql+%22Cast+to+ObjectId+failed+for+value
+- https://stackoverflow.com/questions/55030434/what-does-locations-refer-to-in-graphql-errors
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- https://stackoverflow.com/questions/28241912/bootstrap-modal-in-react-js
+- https://dine.app/en
+- https://www.opentable.com/
+- https://www.farrellscott.com/design/new-restaurant-branding
+- https://www.farrellscott.com/design/new-restaurant-branding
+- https://www.vecteezy.com/vector-art/139571-personas-avatar-flat-vectors
+- https://pixlr.com
+- https://www.pexels.com/
+- https://fonts.google.com/icons?selected=Material+Icons&icon.query=food
+- https://stackoverflow.com/questions/43692479/how-to-upload-an-image-in-react-js
+- https://www.meetup.com/Plant-Based-Portland/events/284179543/
+- https://www.opentable.com/
+
+#### Photo attributions
 
 Photo by <a href="https://unsplash.com/@alexhaney?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Haney</a> on <a href="https://unsplash.com/s/photos/people-eating?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
@@ -51,6 +136,34 @@ Photo by <a href="https://unsplash.com/@buhiiic?utm_source=unsplash&utm_medium=r
 Photo by <a href="https://unsplash.com/@rotkif?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wiktor Karkocha</a> on <a href="https://unsplash.com/collections/10596698/backlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 &nbsp;
+
+### **License**
+
+---
+
+Copyright (c)
+
+- Sam Place
+- Michael Li
+- Melanie Dubberley
+- Maggie Lai
+- Kirsten Canady
+
+Licensed under the [MIT](https://choosealicense.com/licenses) license.
+<img src="https://img.shields.io/badge/license-MIT-blue.svg">
+&nbsp;
+
+##### Go Back
+
+- [Concept](#concept)
+- [Motivation](#motivation)
+- [Goals](#goals)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Future](#future)
+- [Team](#team)
+- [References](#references)
+- [License](#license)
 
 ## **\***\*\*\*\***\*** React Notes **\***\*\*\*\***\*\***
 
