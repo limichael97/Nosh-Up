@@ -21,6 +21,7 @@ const typeDefs = gql`
         title: String
         host: String
         cuisineType: String
+        city: String
         description: String
         createdAt: String
         eventDate: String
@@ -61,9 +62,18 @@ const typeDefs = gql`
         vacancy: Boolean
     }
 
+
+
+    input UserInput {
+        avatar: String
+        bioText: String
+        favoriteCuisine: String
+    }
+
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        updateUser(input: UserInput!): User
         addEvent(input: EventInput!): Event
         joinEvent(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event

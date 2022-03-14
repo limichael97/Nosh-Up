@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 const Comment = require('./Comment')
+const eventFormat = require('../utils/dateFormat');
+const dateFormat = require('../utils/dateFormat');
 
 const eventSchema = new Schema({
   title: {
@@ -17,16 +19,15 @@ const eventSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
+    get: timestamp => dateFormat(timestamp)
   },
   eventDate: {
     type: Date,
-    min: Date.now,
-    max: '2400-01-01'
+    max: '2400-01-01',
   },
   time: {
-    type: Date,
-    default: Date.now
+    type: String
   },
 
   guests: [String],
@@ -52,7 +53,8 @@ const eventSchema = new Schema({
 },
   {
     toJSON: {
-      virtuals: true
+      virtuals: true,
+      getters: true
     }
   }
 );

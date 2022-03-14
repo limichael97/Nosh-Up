@@ -114,7 +114,8 @@ date_time_entered.addEventListener("click", function() {
 
     eventD = entered_date
     today = DateTime.now().toISODate()
-
+//     console.log(today)
+// console.log('/////////')
 
     // --------------- Checking if today is before Event Date ------
     console.log(today < eventD)
@@ -122,28 +123,26 @@ date_time_entered.addEventListener("click", function() {
 
     // ----------- Testing Subtraction to see how many days left before event --------------
 
-    // var end = eventD
-    // var start = today
+//     var end = eventD
+//     var start = today
 
-  // var end = DateTime.fromISO('2017-03-13');
-  // var start = DateTime.fromISO('2017-02-11');
+//   var end = DateTime.fromISO('2017-03-13');
+//   var start = DateTime.fromISO('2017-02-11');
 
-// const daysLeft = end.diff(start, ['months', 'days']).toObject() //=> { months: 1, days: 2 }
-    
-//     console.log(daysLeft)
+
 
 // console.log(luxon.DateTime.now().plus({ days: -1 }))
 
 
-// // const newValue = end
-// const newValueParsed = DateTime.fromJSDate(new Date(newValue));
-// const laterDate = newValueParsed.plus({ days: 1, hours: 3, minutes: 13, seconds: 10 });
+
+
+///////////////////////////////////////////////////
 
 const isToday = DateTime.fromJSDate(new Date(today));
 const isEvent = DateTime.fromJSDate(new Date(eventD))
 // const eventDate = DateTime.fromJSDate(eventD);
 
-console.log('line 146 ' + isToday)
+console.log('line 145 ' + isToday)
 console.log('line 147 ' + isEvent)
 
 var timeLeft = isEvent.diff(isToday, ['days', 'hours', 'minutes']).toObject()
@@ -151,6 +150,17 @@ const daysLeft =
 
 console.log(timeLeft) 
 console.log(`${timeLeft.days} days until your event!`)
+
+//////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 
 // const diffInMonths = eventDate.diff(isToday, ['months', 'days', 'hours', 'minutes', 'seconds']);
 // diffInMonths.toObject(); // => {months: 0, days: 1, hours: 3, minutes: 13, seconds: 10}
