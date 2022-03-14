@@ -38,6 +38,7 @@ mutation addEvent($input: EventInput!) {
     title
     host
     cuisineType
+    city
     description
     createdAt
     eventDate
@@ -73,6 +74,7 @@ mutation joinEvent($eventId: ID!) {
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -88,6 +90,7 @@ mutation joinEvent($eventId: ID!) {
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -116,6 +119,7 @@ mutation updateEvent($eventId: ID!, $input: EventInput!) {
     title
     host
     cuisineType
+    city
     description
     createdAt
     eventDate
@@ -143,6 +147,7 @@ mutation removeEvent($eventId: ID!) {
     title
     host
     cuisineType
+    city
     description
     createdAt
     eventDate
@@ -169,6 +174,7 @@ mutation addComment($eventId: ID!, $commentText: String!) {
     title
     host
     cuisineType
+    city
     description
     createdAt
     eventDate

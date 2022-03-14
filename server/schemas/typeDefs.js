@@ -21,6 +21,7 @@ const typeDefs = gql`
         title: String
         host: String
         cuisineType: String
+        city: String
         description: String
         createdAt: String
         eventDate: String
@@ -51,6 +52,7 @@ const typeDefs = gql`
         title: String
         host: String
         cuisineType: String
+        city: String
         description: String
         createdAt: String
         eventDate: String

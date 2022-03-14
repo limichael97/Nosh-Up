@@ -53,21 +53,20 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="events.html">Events</a>
-              </li>
-              <li className="nav-item">
-                {Auth.loggedIn() ? (
+              {Auth.loggedIn() ? (
                   <>
-                    <a className="nav-link active" href="single-event.html">Single Event</a>
-                  </>
-                ) : (
-                  <a className="nav-link active" href="single-event.html">Please Login</a>
-                )}
+
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="events">Events</a>
               </li>
+              <li className="nav-item">
+                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
+              </li>
+              </>
+                ) : (
+                  <p></p>
+                )}
+              
             </ul>
 
             <div>
@@ -101,7 +100,6 @@ const Navbar = () => {
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
               {Auth.loggedIn() ? (
                 <>
-                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
                   <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
                 </>
 

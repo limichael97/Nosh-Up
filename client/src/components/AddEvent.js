@@ -12,7 +12,7 @@ const AddEvent = () => {
     console.log(userData)
     console.log(userData.username)
     console.log(data)
-    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', description: '', maxNoshers:''});
+    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', city: '', description: '', maxNoshers:''});
 
     const [addEvent,{ error }] = useMutation(ADD_EVENT);
     console.log(eventState)
@@ -118,7 +118,7 @@ const AddEvent = () => {
         // </main>
         <main>
             <form className="container py-3" onSubmit= {handleEventSubmit}>
-            <h2>Find An Event</h2>
+            <h2>Create An Event</h2>
             <div className="row my-3 d-flex justify-content-start">
                 <div className="col pe-0">
                     <input
@@ -143,6 +143,18 @@ const AddEvent = () => {
                         <option value= 'Japanese' id="6">Japanese</option>
                     </select>
                 </div>
+
+                <div className="col pe-0">
+                    <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control'
+> 
+                        <option value='Sacramento' id="1">Sacramento</option>
+                        <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
+                        <option value= 'Carmichael' id="3">Carmichael</option>
+                        <option value= 'Roseville' id="4">Rosevilile</option>
+                        <option value= 'Folsom' id="5">Folsom</option>
+                        <option value= 'To be determined' id="6">To be determined</option>
+                    </select>
+                </div>
                 <div className="col pe-0">
                     <input
                         className='form-input form-control'
@@ -155,9 +167,10 @@ const AddEvent = () => {
                     />
                 </div>
                 <div className="col pe-0">
+                    <label htmlFor='Max Noshers'> Max Noshers</label>
                     <input
                         className='form-input form-control'
-                        placeholder='Max Diners Desired'
+                        placeholder='Including Host'
                         name='maxNoshers'
                         type='number'
                         id='maxNoshers'
