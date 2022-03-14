@@ -79,6 +79,7 @@ const Signup = () => {
                   <Form.Label htmlFor="username">Username</Form.Label>
                   <Form.Control
                     type="text"
+                    className="mb-3"
                     placeholder="Your username"
                     name="username"
                     onChange={handleInputChange}
@@ -95,6 +96,7 @@ const Signup = () => {
                   <Form.Control
                     type="email"
                     placeholder="Your email address"
+                    className="mb-3"
                     name="email"
                     onChange={handleInputChange}
                     value={userFormData.email}
@@ -109,6 +111,7 @@ const Signup = () => {
                   <Form.Label htmlFor="password">Password</Form.Label>
                   <Form.Control
                     type="password"
+                    className="mb-3"
                     placeholder="Your password"
                     name="password"
                     onChange={handleInputChange}
@@ -130,6 +133,7 @@ const Signup = () => {
                   }
                   type="submit"
                   variant="success"
+                  className="my-3 btn-color-one"
                 >
                   Submit
                 </Button>

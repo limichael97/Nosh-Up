@@ -68,6 +68,7 @@ const AddEvent = () => {
 
     return(
         <main>
+
             <div>
 
                 <h1>Add Event</h1>
@@ -82,15 +83,7 @@ const AddEvent = () => {
                         value={eventState.title}
                         onChange={handleEventChange}
                     />
-                    {/* <input
-                        className='form-input'
-                        placeholder='Cuisine'
-                        name='cuisineType'
-                        type='text'
-                        id='cuisineType'
-                        value={eventState.cuisineType}
-                        onChange={handleEventChange}
-                    /> */}
+ 
                     <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
                         <option value='American' id="1">American</option>
                         <option value= 'Mexican' id="2">Mexican</option>
@@ -99,8 +92,14 @@ const AddEvent = () => {
                         <option value= 'Indian' id="5">Indian</option>
                         <option value= 'Japanese' id="6">Japanese</option>
                     </select>
+
+                    />
+                </div>
+
+                <div className="col pe-0">
+
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Event Details'
                         name='description'
                         type='text'
@@ -108,8 +107,12 @@ const AddEvent = () => {
                         value={eventState.description}
                         onChange={handleEventChange}
                     />
+                          
+                </div>
+
+                <div className="col pe-0">
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Max Diners Desired'
                         name='maxNoshers'
                         type='number'
@@ -118,10 +121,17 @@ const AddEvent = () => {
                         onChange={handleEventChange}
                     />
                     <button className='btn d-block w-100' type='submit' variant='success'>
+
+//                 </div>
+                      
+//                 <div className="col">
+//                     <button className='btn btn-color-one' type='submit'>
+
                     Submit
                     </button>
-                </form>
-            </div>
+                </div>
+       
+            </form>
 
         </main>
     )
