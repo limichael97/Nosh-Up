@@ -10,6 +10,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
+          console.log(userData.avatar)
         return userData;
       }
       throw new AuthenticationError('Not logged in');

@@ -15,5 +15,8 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "luxon": "^2.3.1"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3"
   }
 }
