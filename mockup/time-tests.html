@@ -56,7 +56,7 @@
         <div class="row d-flex align-items-center">
               <div class="col">
                 <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
-                <input id="time-input" type="date" class="form-control mb-2" placeholder="">
+                <input id="date-input" type="date" class="form-control mb-2" placeholder="">
               </div>
               <div class="col">
                 <!-- <label class="sr-only" for="inlineFormInputGroup">Username</label> -->
@@ -64,7 +64,7 @@
                   <div class="input-group-prepend">
                     <!-- <div class="input-group-text">@</div> -->
                   </div>
-                  <input id="date-input" type="time" class="form-control" placeholder="">
+                  <input id="time-input" type="time" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col">
@@ -87,9 +87,11 @@
 
   <script type="text/javascript" src=https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
+
 <script>
 
-
+var DateTime = luxon.DateTime;
 
 var user_date = document.getElementById("date-input");
 var user_time = document.getElementById("time-input");
@@ -104,14 +106,58 @@ date_time_entered.addEventListener("click", function() {
     entered_date = user_date.value;
 
     // console.log("clicked")
-    console.log(entered_time, entered_date)
 
-    // entered_time.textContent =  
-    // entered_date.textContent = 
+// --------------- getting today's date to compare --------
+    console.log('line 110 ' + entered_date)
+    console.log('line 112 ' + DateTime.now().toISODate())
+    console.log('line 113 ' + entered_time)
+
+    eventD = entered_date
+    today = DateTime.now().toISODate()
+
+
+    // --------------- Checking if today is before Event Date ------
+    console.log(today < eventD)
+    console.log(today > eventD)
+
+    // ----------- Testing Subtraction to see how many days left before event --------------
+
+    // var end = eventD
+    // var start = today
+
+  // var end = DateTime.fromISO('2017-03-13');
+  // var start = DateTime.fromISO('2017-02-11');
+
+// const daysLeft = end.diff(start, ['months', 'days']).toObject() //=> { months: 1, days: 2 }
+    
+//     console.log(daysLeft)
+
+// console.log(luxon.DateTime.now().plus({ days: -1 }))
+
+
+// // const newValue = end
+// const newValueParsed = DateTime.fromJSDate(new Date(newValue));
+// const laterDate = newValueParsed.plus({ days: 1, hours: 3, minutes: 13, seconds: 10 });
+
+const isToday = DateTime.fromJSDate(new Date(today));
+const isEvent = DateTime.fromJSDate(new Date(eventD))
+// const eventDate = DateTime.fromJSDate(eventD);
+
+console.log('line 146 ' + isToday)
+console.log('line 147 ' + isEvent)
+
+var timeLeft = isEvent.diff(isToday, ['days', 'hours', 'minutes']).toObject()
+const daysLeft = 
+
+console.log(timeLeft) 
+console.log(`${timeLeft.days} days until your event!`)
+
+// const diffInMonths = eventDate.diff(isToday, ['months', 'days', 'hours', 'minutes', 'seconds']);
+// diffInMonths.toObject(); // => {months: 0, days: 1, hours: 3, minutes: 13, seconds: 10}
+
+// console.log(diffInMonths)
 }); 
 
-
-// luxon.DateTime.now().plus({ days: -1 })
 // luxon.DateTime.now().plus({ days: 5 })
 // document.querySelector('#schedule-date').value = luxon.DateTime.now().toISODate();
 // document.querySelector('#schedule-time').value = luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
