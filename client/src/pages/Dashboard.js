@@ -6,11 +6,9 @@ import { QUERY_ME } from '../utils/queries';
 
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
-    const userData = data?.me || {}
+    const userData = data?.me || { avatar: '1',}
     const CurrentEvents = userData.myCurrentEvent;
-    if(!userData.avatar){
-        userData.avatar="1";
-    }
+
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
 

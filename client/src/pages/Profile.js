@@ -13,14 +13,17 @@ const Profile = () => {
         variables: {username: urlUser},
     });
 
-    const user = data?.user || {};
+    const user = data?.user || { avatar: '1', bioText:'', favoriteCuisine: ''};
+
 
 
   return (
     <main>
         <div>
+            <div className="col-md-4">
+                    <img src={require(`../img/avatar-${user.avatar}.jpg`)} />
+            </div>
             <p>Name: {user.username}</p>
-            <p>Avatar (in text): {user.avatar}</p>
             <p>Here's my bio: {user.bioText}</p>
             <p>My favoriate cuisine: {user.favoriteCuisine}</p>
         </div>
