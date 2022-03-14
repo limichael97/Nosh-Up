@@ -105,7 +105,6 @@ const HomePage = () => {
                   </Button>
                 </Modal.Footer>
               </Modal>
-
             </div>
 
             <section className="py-5 text-center hero-2 mb-4">
@@ -120,7 +119,6 @@ const HomePage = () => {
                 </div>
               </div>
             </section>
-
             <div className="container">
               <div className="row mb-2">
                 <div className="col-md-12">
@@ -138,12 +136,6 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-
-
-            <AddEvent />
-            <EventsPage />
-
-
           </div>
         </div>
       </main>

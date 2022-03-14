@@ -40,7 +40,7 @@ const Login = () => {
        
       console.log(data);
       Auth.login(data.login.token);
-        window.location= '/events'
+      window.location= '/events'
     } catch (err) {
       console.error(err);
     }

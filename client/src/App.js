@@ -8,6 +8,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import SearchEvent from './pages/SearchEvent';
+import SingleEvent from './pages/SingleEvent';
+import Profile from './pages/Profile';
 
 //when deploy check if work, if not, go back using 
 // uri: 'graphql'
@@ -40,6 +42,10 @@ function App() {
               <Route exact path="/" component={Homepage} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/events" component={SearchEvent} />
+              <Route exact path="/events/:id" component={SingleEvent} />
+              <Route exact path="/profiles/:username" component={Profile} />
+
+
               <Route component={NoMatch} />
             </Switch>
           </div>

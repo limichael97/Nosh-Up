@@ -99,6 +99,7 @@ export const QUERY_SINGLE_USER = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -114,6 +115,7 @@ export const QUERY_SINGLE_USER = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -138,8 +140,10 @@ export const QUERY_EVENTS = gql`
   query events($username: String) {
     events(username: $username) {
         _id
+        host
         title
         cuisineType
+        city
         description
         createdAt
         eventDate
@@ -160,6 +164,7 @@ export const  QUERY_SINGLE_EVENT = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
