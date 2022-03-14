@@ -155,6 +155,7 @@ const AddEvent = () => {
                         <option value= 'To be determined' id="6">To be determined</option>
                     </select>
                 </div>
+
                 <div className="col pe-0">
                     <input
                         className='form-input form-control'
@@ -165,7 +166,9 @@ const AddEvent = () => {
                         value={eventState.description}
                         onChange={handleEventChange}
                     />
+                          
                 </div>
+
                 <div className="col pe-0">
                     <label htmlFor='Max Noshers'> Max Noshers</label>
                     <input
