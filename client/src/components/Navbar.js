@@ -103,7 +103,6 @@ const Navbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <button onClick={(evt) =>  {window.location= '/dashboard';}} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Dashboard</button>
-                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
                   <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
                 </>
               ) : (

@@ -33,6 +33,7 @@ const SingleEvent = () => {
     };
 
   return (
+    // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
     <>
       <div className="container">
         <div className="row align-items-md-stretch">

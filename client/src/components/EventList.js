@@ -33,7 +33,6 @@ const EventList = () => {
                 {
                     events && 
                         events.map(event => (
-                            <Link to ={`/events/${event._id}`}>
                                 <div className="row mb-2">
                                     <div className="col-md-12">
                                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -46,17 +45,23 @@ const EventList = () => {
                                         <div className="mb-1"><span class="material-icons adjust-icons">place</span> {event.city}</div>
                                         <hr></hr>
                                         <p className="my-3"><span class="material-icons adjust-icons color-two">today</span> March 20th, 2022</p>
-                                        <p className="mb-auto"><span className="color-one fw-bold"></span> Get More Details</p>
+                                        <Link to ={`/events/${event._id}`}>
+
+                                            <p className="mb-auto"><span className="color-one fw-bold"></span> Get More Details</p>
+                                        </Link>
+
                                         {/* <p className="mb-auto"><span className="color-one fw-bold">{event.maxNoshers}</span> Max Noshers </p> */}
 
                                         {/* <p className="mb-auto"><span className="color-one fw-bold">1</span> Noshers Attending</p> */}
-                                      
-                                        <strong className="d-inline-block mb-3 my-3 ">Created by: {event.host}</strong>
+                                        <Link to ={`/profiles/${event.host}`}>
+                                            <strong className="d-inline-block mb-3 my-3 ">Created by: {event.host}</strong>
+                                        </Link>
+
+
                                         </div>
                                     </div>
                                     </div>
                                 </div>
-                            </Link>
                         ))
                 }
 
