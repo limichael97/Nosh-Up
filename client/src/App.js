@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
+import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -38,6 +39,7 @@ function App() {
           <div>            
             <Switch>
               <Route exact path="/" component={Homepage} />
+              <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/events" component={SearchEvent} />
               <Route exact path="/events/:id" component={SingleEvent} />
 

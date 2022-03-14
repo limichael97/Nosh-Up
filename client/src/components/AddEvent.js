@@ -7,25 +7,25 @@ import { QUERY_ME } from '../utils/queries';
 
 const AddEvent = () => {
 
-    const { loading, data } =useQuery(QUERY_ME)
+    const { loading, data } = useQuery(QUERY_ME)
     const userData = data?.me || {}
     console.log(userData)
     console.log(userData.username)
     console.log(data)
     const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', city: '', description: '', maxNoshers:''});
 
-    const [addEvent,{ error }] = useMutation(ADD_EVENT);
+    const [addEvent, { error }] = useMutation(ADD_EVENT);
     console.log(eventState)
 
 
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
-    
+
         setEventState({
-          ...eventState,
-          [name]: value,
-          host: userData.username
+            ...eventState,
+            [name]: value,
+            host: userData.username
         });
     };
 
@@ -38,25 +38,25 @@ const AddEvent = () => {
             console.log('Nope')
             return false;
         }
-    
+
         //  try/catch instead of promises to handle errors
-        try { 
+        try {
             console.log('Yep')
             console.log(eventState)
-          // execute addUser mutation and pass in variable data from form
-          const {data} = await addEvent({
-            variables: { input:{...eventState} }
-          });
-    
+            // execute addUser mutation and pass in variable data from form
+            const { data } = await addEvent({
+                variables: { input: { ...eventState } }
+            });
+
         } catch (e) {
-          console.error(e);
+            console.error(e);
         }
 
         setEventState({
-            title:'',
-            cuisineType:'',
-            description:'',
-            maxNoshers:''
+            title: '',
+            cuisineType: '',
+            description: '',
+            maxNoshers: ''
         })
     };
 
@@ -136,11 +136,11 @@ const AddEvent = () => {
                     <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control'
 > 
                         <option value='American' id="1">American</option>
-                        <option value= 'Mexican' id="2">Mexican</option>
-                        <option value= 'Italian' id="3">Italian</option>
-                        <option value= 'Chinese' id="4">Chinese</option>
-                        <option value= 'Indian' id="5">Indian</option>
-                        <option value= 'Japanese' id="6">Japanese</option>
+                        <option value='Mexican' id="2">Mexican</option>
+                        <option value='Italian' id="3">Italian</option>
+                        <option value='Chinese' id="4">Chinese</option>
+                        <option value='Indian' id="5">Indian</option>
+                        <option value='Japanese' id="6">Japanese</option>
                     </select>
                 </div>
 
@@ -166,7 +166,6 @@ const AddEvent = () => {
                         value={eventState.description}
                         onChange={handleEventChange}
                     />
-                          
                 </div>
 
                 <div className="col pe-0">
