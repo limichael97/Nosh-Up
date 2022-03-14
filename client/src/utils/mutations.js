@@ -28,6 +28,20 @@ mutation login($email: String!, $password: String!) {
 }
 `;
 
+//updateUser(input: UserInput!): User
+export const UPDATE_USER = gql`
+mutation updateUser($input: UserInput!) {
+  updateUser(input: $input){
+        _id
+        username
+        email
+        password
+        avatar
+        bioText
+        favoriteCuisine
+  }
+}
+`;
 
 
 //addEvent(input: EventInput!): Event
