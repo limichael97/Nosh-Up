@@ -5,6 +5,7 @@ import SingleEvent from './SingleEvent';
 const HomePage = () => {
     return (
         <>
+
         <SingleEvent />
             <section className="py-5 text-center hero-1">
                 <div className="row py-lg-5">
@@ -67,7 +68,7 @@ const HomePage = () => {
                         </div>
                     </section>
                     <AddEvent/>
-
+                
                     <div className="container">
                         <div className="row mb-2">
                             <div className="col-md-12">

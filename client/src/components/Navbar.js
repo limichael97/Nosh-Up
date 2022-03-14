@@ -4,7 +4,9 @@ import SignUp from './SignUp';
 import Logo from "../img/w-logo-310.png";
 import Auth from '../utils/auth';
 import AddEvent from './AddEvent';
+import Dashboard from '../pages/Dashboard';
 import { Modal, Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -84,7 +86,10 @@ const Navbar = () => {
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
               {Auth.loggedIn() ? (
+                <>
+                  <button onClick={(evt) =>  {window.location= '/dashboard';}} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Dashboard</button>
                   <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                </>
                 ) : (
                   <>
                     <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>

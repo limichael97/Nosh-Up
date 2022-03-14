@@ -103,7 +103,7 @@ export const QUERY_SINGLE_USER = gql`
             guests
             countNoshers
             maxNoshers
-            comment
+
             vacancy
         } 
         myJoinedEvent {
@@ -118,7 +118,7 @@ export const QUERY_SINGLE_USER = gql`
             guests
             countNoshers
             maxNoshers
-            comment
+          
             vacancy
         } 
         comment {

@@ -34,6 +34,7 @@ const resolvers = {
     },
     // get a user by username
     user: async (parent, { username }) => {
+      console.log(username);
       return User.findOne({ username })
         .select('-__v -password')
         .populate('myCurrentEvent')
@@ -51,7 +52,20 @@ const resolvers = {
       return { token, user };
     },
 
+    updateUser: async (parent, args, context) => {
 
+      var newUser = args.input
+
+      console.log(args)
+      console.log(newUser)
+
+      return await User.findOneAndUpdate(
+        { _id: context.user._id },
+        newUser,
+        { new: true }
+
+      );
+    },
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
