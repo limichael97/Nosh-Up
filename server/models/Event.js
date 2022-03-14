@@ -24,10 +24,15 @@ const eventSchema = new Schema({
   },
   eventDate: {
     type: Date,
-    max: '2400-01-01',
+    max: '2400-01-01'
   },
+
   time: {
     type: String
+  },
+
+  adjEventDt: {
+    type: String,
   },
 
   guests: [String],

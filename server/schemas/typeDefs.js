@@ -26,6 +26,7 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         guests: [String]
         countNoshers: Int
         maxNoshers: String
@@ -56,6 +57,7 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         countNoshers: Int
         maxNoshers: String
         comment: [ String ]

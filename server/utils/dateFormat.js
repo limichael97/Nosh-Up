@@ -5,8 +5,9 @@ dayjs.extend(localizedFormat)
 const dateFormat = date => {
   // let createdDate = dayjs(date).format('MMM D, YYYY at h:mm A ')
 
-  console.log('----CreatedAt date from -dateFormat 8 ------')
-  console.log(date)
+  console.log(`
+  dateFormat 8
+  CreatedAt date: ${date}`)
 
   let createdDate = dayjs(date).format('LLLL')
   return createdDate;

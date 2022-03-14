@@ -2,9 +2,6 @@ const { User, Event, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 const mongoose = require('mongoose');
-const dayjs = require('dayjs');
-const localizedFormat = require('dayjs/plugin/localizedFormat')
-dayjs.extend(localizedFormat)
 
 
 const resolvers = {
@@ -56,8 +53,6 @@ const resolvers = {
       return { token, user };
     },
 
-
-
     updateUser: async (parent, args, context) => {
 
       var newUser = args.input
@@ -72,8 +67,6 @@ const resolvers = {
 
       );
     },
-
-
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -93,76 +86,12 @@ const resolvers = {
     },
 
 
-
-
-
-
     addEvent: async (parent, args, context) => {
       // console.log(context)
       console.log(args)
 
       const event = await Event.create({ ...args.input });
-      console.log(`
-      ----- Resolvers 97 ---- Raw event -----
-      `)
       console.log(event)
-
-      let time = (event.time)
-
-
-      // /^ (\d{ 4}-\d{ 2 } -\d{ 2 }) (T)(\d{ 2}\: \d{ 2})(\: \d{ 2}.\d{ 3}Z)$ / g
-
-
-      let hour = (parseInt(time.slice(0, 2)) + 7)
-      console.log(`
-      -----hour---------`)
-      console.log(hour)
-
-
-      let eventDate = (event.eventDate)
-      console.log('- eventFormat 148 -------Eventdate-------')
-      console.log(eventDate)
-
-
-
-      let eventDateSlice = (JSON.stringify(eventDate)).slice(1, 11)
-      console.log('- eventFormat 127 -------Eventdate Sliced-------')
-      console.log(eventDateSlice)
-
-      const comma = eventDateSlice.replace(/-/g, ', ')
-      console.log(comma)
-
-      const yearPrep = comma.replace(/(0)([1-9],)/, '$2')
-      // const yearPrep = comma.replace(/(\s[^0]\d{1})+/g, '$1')
-      console.log(yearPrep)
-
-
-      // EXPECTED FORMAT: 
-      //Date.UTC(year, month, day, hour, minute)
-      // const utcDate1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5))
-      // expected output: Fri, 02 Feb 1996 03:04:05 GMT
-      const utcDate = new Date(Date.UTC(2022, 2, 19, 26, 30))
-
-      console.log(`
-UTC DATE:      
-`)
-      console.log(utcDate)
-
-
-      console.log('-120 ---NEW FINAL EVENT  DATE: ------')
-
-
-      let finalEventDate = dayjs(utcDate).format('LLLL')
-      console.log(finalEventDate)
-      // return createdDate;
-
-
-
-
-
-
-
-
 
       await User.findByIdAndUpdate(
         { _id: context.user._id },
@@ -170,9 +99,11 @@ UTC DATE:
         { new: true }
       );
 
-
       return event;
     },
+
+
+
 
 
 
@@ -201,6 +132,7 @@ UTC DATE:
       );
       return updatedUser
     },
+
 
 
     updateEvent: async (parent, args, context) => {
@@ -255,42 +187,3 @@ UTC DATE:
 };
 
 module.exports = resolvers;
-
-
-
-
-
-
-  //  ///////////////////////  TEST 1  /////////////////////
-  //  let eventDate = (event.eventDate)
-  //  console.log('- eventFormat 109 -------Eventdate-------')
-  //  console.log(eventDate)
-
-  //  let eventDateSlice = (JSON.stringify(eventDate)).slice(1, 12)
-  //  console.log('- eventFormat 113 -------Eventdate Sliced-------')
-  //  console.log(eventDateSlice)
-
-  //  let str = eventDateSlice;
-  //  str += time;
-  //  str += ':00.000Z'
-  //  console.log(`
-  //  ---------120 New event Date??--------
-  //  `)
-  //  console.log(str)
-
-  //  var myDate = new Date(1647716400000 * 1000)
-  //  console.log(`
-  //  epoch convert??
-  //  `)
-  //  console.log(myDate)
-
-
-  //  event.eventDate = str;
-
-  //  console.log('134 ----EVENT--------')
-  //  console.log(event)
-
-
-
-
-
