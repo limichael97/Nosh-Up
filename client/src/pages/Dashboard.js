@@ -9,7 +9,9 @@ import { QUERY_SINGLE_USER } from '../utils/queries';
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
     const userData = data?.me || {}
-
+    const CurrentEvents = userData.myCurrentEvent;
+    console.log(userData);
+    console.log(CurrentEvents);
 
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
@@ -54,17 +56,73 @@ const Dashboard = () => {
             </Modal>
 
 
-            <div>
-            <p>Name: {userData.username}</p>
-            <p>Avatar (in text): {userData.avatar}</p>
-            <p>Here's my bio: {userData.bioText}</p>
-            <p>My favoriate cuisine: {userData.favoriteCuisine}</p>
+            <div className="card mb-3" >
+            <div className="row g-0">
+                <div className="col-md-4">
+                <div className="img-fluid rounded-start avatar avatar-1" ></div>
+                </div>
+                <div className="col-md-8">
+                <div className="card-body">
+                    <h5 className="card-title">Name: {userData.username}</h5>
+                    <p className="card-text">Here's my bio: {userData.bioText}</p>
+                    <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <h2>My Current Events</h2>
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+            {
+                CurrentEvents && CurrentEvents.map(event => (
+                    
+            <div className="col">
+                <div className="card">
+                <div className="col-auto d-none d-lg-block featured-img-2"></div>
+                <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                </div>
+            </div>
+            
+            ))}
+
+            </div>
 
             
+            <h2>My Joined Events</h2>
+            <div className="row row-cols-1 row-cols-md-2 g-4">
 
-        </div>
+            <div className="col">
+                <div className="card">
+                    
+                <div className="col-auto d-none d-lg-block featured-img-1"></div>
+                <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                </div>
+            </div>
 
-            
+            <div className="col">
+                <div className="card">
+                <div className="col-auto d-none d-lg-block featured-img-1"></div>
+                <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                </div>
+            </div>
+
+            </div>
+
+
+
+
+
+
+
         </>
     )
 }

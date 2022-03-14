@@ -3,9 +3,10 @@ import { useMutation, useQuery } from '@apollo/client';
 import { UPDATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
 import { QUERY_ME } from '../utils/queries';
+import { Redirect } from 'react-router-dom';
 
 const UpdateProfile = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+   // const [selectedImage, setSelectedImage] = useState(null);
     const [UpdateState, setUpdateState] = useState({ avatar: '', bioText:'', favoriteCuisine: ''});
 
 
@@ -15,11 +16,11 @@ const UpdateProfile = () => {
     
     const handleUserChange = (event) => {
         const { name, value } = event.target;
-        console.log(selectedImage)
+        //console.log(selectedImage)
         setUpdateState({
           ...UpdateState,
           [name]: value,
-          avatar: selectedImage.name
+          //avatar: selectedImage.name
         });
     };
  
@@ -40,7 +41,7 @@ const UpdateProfile = () => {
             const {data} = await updateUser({
             variables: { input:{...UpdateState} }
           });
-    
+          window.location= '/dashboard'
         } catch (e) {
           console.error(e);
         }
@@ -51,9 +52,9 @@ const UpdateProfile = () => {
   return (
     <>
         <form onSubmit={handleUserSubmit}>
-        <div class="form-group">
+        <div className="form-group">
             <label for="exampleFormControlSelect1">Avatar</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -61,31 +62,11 @@ const UpdateProfile = () => {
             <option>5</option>
             </select>
         </div>
-    <div>
-      <h1>Upload and Display Image usign React Hook's</h1>
-      {selectedImage && (
-        <div>
-        <img alt="not fount" width={"250px"} src={URL.createObjectURL(selectedImage)} />
-        <br />
-        <button onClick={()=>setSelectedImage(null)}>Remove</button>
-        </div>
-      )}
-      <br />
-     
-      <br /> 
-      <input
-        type="file"
-        name="myImage"
-        onChange={(event) => {
-          console.log(event.target.files[0]);
-          setSelectedImage(event.target.files[0]);
-        }}
-      />
-    </div>
+   
 
-    <div class="form-group">
+    <div className="form-group">
             <label for="exampleFormControlSelect1">Favorite Cuisine</label>
-            <select name ='favoriteCuisine' onChange = {handleUserChange} value={UpdateState.favoriteCuisine}> 
+            <select name='favoriteCuisine' onChange={handleUserChange} value={UpdateState.favoriteCuisine}> 
                 <option id="0">---</option>
                 <option value= 'American' id="1">American</option>
                 <option value= 'Mexican' id="2">Mexican</option>
@@ -95,7 +76,7 @@ const UpdateProfile = () => {
                 <option value= 'Japanese' id="6">Japanese</option>
             </select>
         </div>
-        <div class="form-group">
+        <div className="form-group">
             <label for="exampleFormControlTextarea1">Bio</label>
             <input
                 className='form-input'
@@ -118,3 +99,25 @@ const UpdateProfile = () => {
 };
 
 export default UpdateProfile;
+/*
+<div>
+<h1>Upload and Display Image usign React Hook's</h1>
+{selectedImage && (
+  <div>
+  <img alt="not fount" width={"250px"} src={URL.createObjectURL(selectedImage)} />
+  <br />
+  <button onClick={()=>setSelectedImage(null)}>Remove</button>
+  </div>
+)}
+<br />
+
+<br /> 
+<input
+  type="file"
+  name="myImage"
+  onChange={(event) => {
+    console.log(event.target.files[0]);
+    setSelectedImage(event.target.files[0]);
+  }}
+/>
+</div>*/
