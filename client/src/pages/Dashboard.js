@@ -25,15 +25,20 @@ const Dashboard = () => {
 
     return(
         <>
+            <Profile username={userData.username} />
 
-      
-
+            <div className="container">
+          <div className="row align-items-md-stretch">
+            <div className="col">
             <button onClick={toggleUpdateProfile} 
-                    className="btn btn-color-four me-2" 
+                    className="btn btn-color-four my-1" 
                     type="button" 
                     data-toggle="modal" 
                     data-target="#UpdateUserModal"
             >Update Profile</button>
+            </div>
+            </div>
+        </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -50,11 +55,6 @@ const Dashboard = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-
-            <Profile username={userData.username} />
-
-            
         </>
     )
 }
