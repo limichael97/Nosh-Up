@@ -4,10 +4,12 @@ import UpdateProfile from '../components/UpdateProfile';
 import Profile from './Profile';
 import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_USER } from '../utils/queries';
 
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
     const userData = data?.me || {}
+
 
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
@@ -52,7 +54,15 @@ const Dashboard = () => {
             </Modal>
 
 
-            <Profile username={userData.username} />
+            <div>
+            <p>Name: {userData.username}</p>
+            <p>Avatar (in text): {userData.avatar}</p>
+            <p>Here's my bio: {userData.bioText}</p>
+            <p>My favoriate cuisine: {userData.favoriteCuisine}</p>
+
+            
+
+        </div>
 
             
         </>

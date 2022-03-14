@@ -8,6 +8,8 @@ const UpdateProfile = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [UpdateState, setUpdateState] = useState({ avatar: '', bioText:'', favoriteCuisine: ''});
 
+
+
     const [updateUser,{ error }] = useMutation(UPDATE_USER);
     console.log(UpdateState)
     
@@ -20,7 +22,7 @@ const UpdateProfile = () => {
           avatar: selectedImage.name
         });
     };
-
+ 
     const handleUserSubmit = async event => {
         event.preventDefault();
 
