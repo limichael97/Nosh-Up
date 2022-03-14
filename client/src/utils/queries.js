@@ -96,6 +96,7 @@ export const QUERY_SINGLE_USER = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -103,7 +104,7 @@ export const QUERY_SINGLE_USER = gql`
             guests
             countNoshers
             maxNoshers
-            comment
+
             vacancy
         } 
         myJoinedEvent {
@@ -111,6 +112,7 @@ export const QUERY_SINGLE_USER = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate
@@ -118,7 +120,7 @@ export const QUERY_SINGLE_USER = gql`
             guests
             countNoshers
             maxNoshers
-            comment
+          
             vacancy
         } 
         comment {
@@ -132,12 +134,13 @@ export const QUERY_SINGLE_USER = gql`
 `;
 
 export const QUERY_EVENTS = gql`
-  query getEvents($username: String) {
+  query events($username: String) {
     events(username: $username) {
         _id
-        title
         host
+        title
         cuisineType
+        city
         description
         createdAt
         eventDate
@@ -145,9 +148,10 @@ export const QUERY_EVENTS = gql`
         guests
         countNoshers
         maxNoshers
-        comment
+        # comment
         vacancy
-    }}
+    }
+    }
 `;
 
 export const  QUERY_SINGLE_EVENT = gql`
@@ -157,6 +161,7 @@ export const  QUERY_SINGLE_EVENT = gql`
             title
             host
             cuisineType
+            city
             description
             createdAt
             eventDate

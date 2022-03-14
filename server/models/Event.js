@@ -12,6 +12,9 @@ const eventSchema = new Schema({
   cuisineType: {
     type: String,
   },
+  city: {
+    type: String,
+  },
   description: {
     type: String,
   },
