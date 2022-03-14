@@ -82,15 +82,6 @@ const AddEvent = () => {
                         value={eventState.title}
                         onChange={handleEventChange}
                     />
-                    {/* <input
-                        className='form-input'
-                        placeholder='Cuisine'
-                        name='cuisineType'
-                        type='text'
-                        id='cuisineType'
-                        value={eventState.cuisineType}
-                        onChange={handleEventChange}
-                    /> */}
                     <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
                         <option value='American' id="1">American</option>
                         <option value= 'Mexican' id="2">Mexican</option>
@@ -100,7 +91,7 @@ const AddEvent = () => {
                         <option value= 'Japanese' id="6">Japanese</option>
                     </select>
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Event Details'
                         name='description'
                         type='text'
@@ -109,7 +100,7 @@ const AddEvent = () => {
                         onChange={handleEventChange}
                     />
                     <input
-                        className='form-input'
+                        className='form-input form-control'
                         placeholder='Max Diners Desired'
                         name='maxNoshers'
                         type='number'
@@ -120,9 +111,10 @@ const AddEvent = () => {
                     <button className='btn d-block w-100' type='submit' variant='success'>
                     Submit
                     </button>
-                </form>
-            </div>
 
+                </form>
+
+            </div>
         </main>
     )
 }
