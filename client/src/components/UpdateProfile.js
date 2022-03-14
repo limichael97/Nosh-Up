@@ -84,6 +84,7 @@ const UpdateProfile = () => {
     <div class="form-group">
             <label for="exampleFormControlSelect1">Favorite Cuisine</label>
             <select name ='favoriteCuisine' onChange = {handleUserChange} value={UpdateState.favoriteCuisine}> 
+                <option id="0">---</option>
                 <option value= 'American' id="1">American</option>
                 <option value= 'Mexican' id="2">Mexican</option>
                 <option value= 'Italian' id="3">Italian</option>
