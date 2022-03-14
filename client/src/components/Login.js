@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
-
+import { Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -40,6 +40,7 @@ const Login = () => {
        
       console.log(data);
       Auth.login(data.login.token);
+        window.location= '/events'
     } catch (err) {
       console.error(err);
     }
@@ -48,6 +49,7 @@ const Login = () => {
       email: '',
       password: '',
     });
+
   };
 
   return (
@@ -60,6 +62,7 @@ const Login = () => {
         <Form.Group>
           <Form.Label htmlFor='email'>Email</Form.Label>
           <Form.Control
+            className="mb-3"
             type='text'
             placeholder='Your email'
             name='email'
@@ -73,6 +76,7 @@ const Login = () => {
         <Form.Group>
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
+            className="mb-3"
             type='password'
             placeholder='Your password'
             name='password'
@@ -83,9 +87,9 @@ const Login = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
+          className="my-3 btn-color-one"
           disabled={!(userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'>
+          type='submit'>
           Submit
         </Button>
           </Form>

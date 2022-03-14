@@ -1,7 +1,7 @@
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .bd-placeholder-img {
@@ -20,16 +20,16 @@ body {
 
 .restuarant-profile-pic {
   background-image: url("http://placekitten.com/700/300");
-  background-size:cover;
+  background-size: cover;
 }
 
 .list-group-item {
-    border:none;
+  border: none;
 }
 
 .adjust-icons {
-  position:relative;
-  top:4px;
+  position: relative;
+  top: 5px;
 }
 
 :root {
@@ -43,66 +43,82 @@ body {
   --color-two-light: #a0463e;
   --color-three-light: #fae953;
   --color-four-light: #f8b64d;
+
+  --color-one-disabled: #f0a19e;
 }
 
+span {
+  font-weight: bolder;
+}
 .bg-color-one {
-  background-color:var(--color-one);
+  background-color: var(--color-one);
 }
 
 .bg-color-two {
-  background-color:var(--color-two);
+  background-color: var(--color-two);
 }
 
 .bg-color-three {
-  background-color:var(--color-three);
+  background-color: var(--color-three);
 }
 
 .bg-color-four {
-  background-color:var(--color-four);
+  background-color: var(--color-four);
 }
 
 .btn-color-one {
-  background-color:var(--color-one);
-  border:var(--color-one);
-  color:#fff;
+  background-color: var(--color-one);
+  border: var(--color-one);
+  color: #fff;
 }
 
 .btn-color-one:hover {
-  background-color:var(--color-one-light);
-  color:#fff;
+  background-color: var(--color-one-light);
+  color: #fff;
+}
+
+.btn-color-one:disabled {
+  background-color: var(--color-one-disabled);
+  border: var(--color-one-disabled);
+  color: #fff;
+}
+
+.btn-color-one:disabled {
+  background-color: var(--color-one-disabled);
+  color: #fff;
 }
 
 .btn-color-two {
-  background-color:var(--color-two);
-  border:var(--color-two);
-  color:#fff;
+  background-color: var(--color-two);
+  border: var(--color-two);
+  color: #fff;
 }
 
 .btn-color-two:hover {
-  background-color:var(--color-two-light);
-  color:#fff;
+  background-color: var(--color-two-light);
+  color: #fff;
 }
 
 .btn-color-three {
-  background-color:var(--color-three);
-  border:var(--color-three);
-  color:#fff;
+  background-color: var(--color-three);
+  border: var(--color-three);
+  color: #fff;
 }
 
 .btn-color-three:hover {
-  background-color:var(--color-three-light);
-  color:#fff;
+  background-color: var(--color-three-light);
+  color: #fff;
 }
 
 .btn-color-four {
-  background-color:var(--color-four);
-  border:var(--color-four);
-  color:#fff;
+  background-color: var(--color-four);
+  border: var(--color-four);
+  color: #fff;
 }
 
 .btn-color-four:hover {
-  background-color:var(--color-four-light);
-  color:#fff;
+  background-color: var(--color-four-light);
+  color: #fff;
 }
 
 .color-one {
@@ -126,53 +142,78 @@ body {
 }
 
 .close {
-    border:none;
-    background-color:#fff;
+  border: none;
+  background-color: #fff;
 }
 
 .logo {
-  width:85px;
+  width: 85px;
 }
 
 .hero-1 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url(./img/main-hero.jpg);
-  background-position:50% 65%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url(./img/food-main-hero.jpg);
+  background-position: 50% 65%;
   background-size: cover;
 }
 
 .hero-2 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.45)), url(./img/rice-veg-hero.jpg);
-  background-position:50% 95%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url(./img/food-riceVeg-hero.jpg);
+  background-position: 50% 95%;
   background-size: cover;
 }
 
 .featured-img-1 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/chips.jpg);
-  background-position:50% 50%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/food-chips.jpg);
+  background-position: 50% 50%;
   background-size: cover;
-  width:25rem;
+  width: 25rem;
 }
 
 .featured-img-2 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/salad.jpg);
-  background-position:50% 50%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/food-salad.jpg);
+  background-position: 50% 50%;
   background-size: cover;
-  width:25rem;
+  width: 25rem;
 }
 
 .featured-img-3 {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.05)), url(./img/steak.jpg);
-  background-position:50% 50%;
-  background-size:cover;
-  width:25rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/food-steak.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 25rem;
 }
 
-.avatar {  
-  background-position:50% 18%;
-  background-size:cover;
-  width:2.5rem;
-  height:2.5rem;
-  border-radius: .2rem;
+.avatar {
+  background-position: 50% 18%;
+  background-size: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
 }
 
 .avatar-1 {
@@ -214,8 +255,6 @@ body {
 .avatar-10 {
   background-image: url(./img/avatar-10.jpg);
 }
-
-
 
 /* Tomato */
 /* #ec5551 */
