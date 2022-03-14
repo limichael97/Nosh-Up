@@ -56,7 +56,7 @@
         <div class="row d-flex align-items-center">
               <div class="col">
                 <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
-                <input type="date" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                <input id="time-input" type="date" class="form-control mb-2" placeholder="">
               </div>
               <div class="col">
                 <!-- <label class="sr-only" for="inlineFormInputGroup">Username</label> -->
@@ -64,11 +64,11 @@
                   <div class="input-group-prepend">
                     <!-- <div class="input-group-text">@</div> -->
                   </div>
-                  <input type="time" class="form-control" id="inlineFormInputGroup" placeholder="">
+                  <input id="date-input" type="time" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button id="submit-date-time" type="button" class="btn btn-primary mb-2">Submit</button>
               </div>
          </div>
          <div class="row d-flex align-items-center py-5">
@@ -86,11 +86,29 @@
   </section>
 
   <script type="text/javascript" src=https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js></script>
+
 <script>
 
-var user_date = document.getElementById("date-selected");
-var user_time = document.getElementById("time-selected");
 
+
+var user_date = document.getElementById("date-input");
+var user_time = document.getElementById("time-input");
+
+var entered_time;
+var entered_date;
+
+var date_time_entered = document.getElementById("submit-date-time");
+
+date_time_entered.addEventListener("click", function() {
+    entered_time = user_time.value;
+    entered_date = user_date.value;
+
+    // console.log("clicked")
+    console.log(entered_time, entered_date)
+
+    // entered_time.textContent =  
+    // entered_date.textContent = 
+}); 
 
 
 // luxon.DateTime.now().plus({ days: -1 })
@@ -109,7 +127,7 @@ var user_time = document.getElementById("time-selected");
 // var DateTime = luxon.DateTime.fromISO("2022-02-05").toMillis();
 // console.log("LUXON", DateTime);
 
-//  var your_var = luxon.DateTime.fromISO(schedule.convert_date).toFormat('MM-dd-yyyy');
+//  var your_var = luxon.DateTime.fromISO(your_other_var).toFormat('MM-dd-yyyy');
 
 </script>
 
