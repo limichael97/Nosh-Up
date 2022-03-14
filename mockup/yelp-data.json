@@ -1,0 +1,956 @@
+{
+	"businesses": [
+		{
+			"id": "OAPITYYQcpV_W-TiAoUfvA",
+			"alias": "public-house-downtown-sacramento",
+			"name": "Public House Downtown",
+			"image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/gdsV4r9buh8hZ1Is8pUtzA/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/public-house-downtown-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 1831,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "sportsbars",
+					"title": "Sports Bars"
+				},
+				{
+					"alias": "breakfast_brunch",
+					"title": "Breakfast & Brunch"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.576166714481,
+				"longitude": -121.486355956124
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1132 16th St",
+				"address2": "",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1132 16th St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19164460888",
+			"display_phone": "(916) 446-0888",
+			"distance": 922.1283995221058
+		},
+		{
+			"id": "bXuqZA5qYfzQ-X-FAgdBHA",
+			"alias": "the-bank-sacramento",
+			"name": "The Bank",
+			"image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/qNRtQpZGmQZKJZieW75w7A/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/the-bank-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 403,
+			"categories": [
+				{
+					"alias": "food_court",
+					"title": "Food Court"
+				},
+				{
+					"alias": "beerbar",
+					"title": "Beer Bar"
+				},
+				{
+					"alias": "cocktailbars",
+					"title": "Cocktail Bars"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.58176,
+				"longitude": -121.49758
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "629 J St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"629 J St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19165579910",
+			"display_phone": "(916) 557-9910",
+			"distance": 279.1192126899736
+		},
+		{
+			"id": "mEJuCb0AAeukbrTeth0tRg",
+			"alias": "cafeteria-15l-sacramento",
+			"name": "Cafeteria 15L",
+			"image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ZNkcoYik7fWvWG6FfNuVGg/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/cafeteria-15l-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 3022,
+			"categories": [
+				{
+					"alias": "breakfast_brunch",
+					"title": "Breakfast & Brunch"
+				},
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "comfortfood",
+					"title": "Comfort Food"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.5767253374007,
+				"longitude": -121.487535322754
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1116 15th St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1116 15th St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19164921960",
+			"display_phone": "(916) 492-1960",
+			"distance": 804.1356772357316
+		},
+		{
+			"id": "7aakWocB8fUwck9MAbGENQ",
+			"alias": "polanco-cantina-sacramento-2",
+			"name": "Polanco Cantina",
+			"image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/g_lyeSP4CJP2PenqtMBKvA/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/polanco-cantina-sacramento-2?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 445,
+			"categories": [
+				{
+					"alias": "mexican",
+					"title": "Mexican"
+				},
+				{
+					"alias": "cocktailbars",
+					"title": "Cocktail Bars"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.58085496919884,
+				"longitude": -121.5007044839798
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "414 K St",
+				"address2": "St 240",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"414 K St",
+					"St 240",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19165367250",
+			"display_phone": "(916) 536-7250",
+			"distance": 553.7950571378807
+		},
+		{
+			"id": "-lMNqPOhFfhfjLw9b_XL5w",
+			"alias": "the-7th-street-standard-sacramento",
+			"name": "The 7th Street Standard",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/hWwAi1J603F6Zomcfs6T_A/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/the-7th-street-standard-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 41,
+			"categories": [
+				{
+					"alias": "cocktailbars",
+					"title": "Cocktail Bars"
+				},
+				{
+					"alias": "breakfast_brunch",
+					"title": "Breakfast & Brunch"
+				},
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				}
+			],
+			"rating": 4.5,
+			"coordinates": {
+				"latitude": 38.579747165588316,
+				"longitude": -121.49842556660279
+			},
+			"transactions": [],
+			"location": {
+				"address1": "1122 7th St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1122 7th St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19168981100",
+			"display_phone": "(916) 898-1100",
+			"distance": 404.55223869098126
+		},
+		{
+			"id": "n7I3JCkRcJr5n31-J_JtNQ",
+			"alias": "the-firehouse-restaurant-sacramento",
+			"name": "The Firehouse Restaurant",
+			"image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/NxfZff6DnlrE2gWWlOdCCA/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/the-firehouse-restaurant-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 1586,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "venues",
+					"title": "Venues & Event Spaces"
+				},
+				{
+					"alias": "steak",
+					"title": "Steakhouses"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.581539,
+				"longitude": -121.504931
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$$",
+			"location": {
+				"address1": "1112 2nd St",
+				"address2": "",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1112 2nd St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19164424772",
+			"display_phone": "(916) 442-4772",
+			"distance": 915.397523394737
+		},
+		{
+			"id": "WRdqUCXBwh4dbsBBsVQV3g",
+			"alias": "the-rind-sacramento",
+			"name": "The Rind",
+			"image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/wWc81RwxgEkBU5ggWdMGgw/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/the-rind-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 1028,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "beerbar",
+					"title": "Beer Bar"
+				},
+				{
+					"alias": "wine_bars",
+					"title": "Wine Bars"
+				}
+			],
+			"rating": 4.5,
+			"coordinates": {
+				"latitude": 38.5752587,
+				"longitude": -121.4827261
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1801 L St",
+				"address2": "Ste 40",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95811",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1801 L St",
+					"Ste 40",
+					"Sacramento, CA 95811"
+				]
+			},
+			"phone": "+19164417463",
+			"display_phone": "(916) 441-7463",
+			"distance": 1233.9954274279714
+		},
+		{
+			"id": "CpOZ8hBWOsAt8toIpxOWIg",
+			"alias": "koja-kitchen-sac-town-sacramento",
+			"name": "Koja Kitchen Sac Town",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/0jFIGnw3EPg0dgEuscQJVw/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/koja-kitchen-sac-town-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 204,
+			"categories": [
+				{
+					"alias": "cocktailbars",
+					"title": "Cocktail Bars"
+				},
+				{
+					"alias": "japanese",
+					"title": "Japanese"
+				},
+				{
+					"alias": "korean",
+					"title": "Korean"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.57981,
+				"longitude": -121.49687
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "732 K St",
+				"address2": null,
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"732 K St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19166286829",
+			"display_phone": "(916) 628-6829",
+			"distance": 296.04241394781263
+		},
+		{
+			"id": "jGFxF5k6qnPdVnbRHBDteg",
+			"alias": "foundation-restaurant-and-bar-sacramento",
+			"name": "Foundation Restaurant & Bar",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/nw_ukE8_abqFF-Zbo_TKxw/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/foundation-restaurant-and-bar-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 513,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "bars",
+					"title": "Bars"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.5800819102951,
+				"longitude": -121.502286356483
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "400 L St",
+				"address2": "",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"400 L St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19163219522",
+			"display_phone": "(916) 321-9522",
+			"distance": 705.281149397868
+		},
+		{
+			"id": "w2cSdewgPaZ3QfTwRPz6RA",
+			"alias": "frog-and-slim-sacramento",
+			"name": "Frog & Slim",
+			"image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/ZEX7WskCdFiUeLG5GBvjRg/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/frog-and-slim-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 116,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "seafood",
+					"title": "Seafood"
+				},
+				{
+					"alias": "steak",
+					"title": "Steakhouses"
+				}
+			],
+			"rating": 4.5,
+			"coordinates": {
+				"latitude": 38.572772449038304,
+				"longitude": -121.48779236147054
+			},
+			"transactions": [],
+			"price": "$$$",
+			"location": {
+				"address1": "1420 16th St",
+				"address2": "Ste 300",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1420 16th St",
+					"Ste 300",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19165883764",
+			"display_phone": "(916) 588-3764",
+			"distance": 1134.6970869828194
+		},
+		{
+			"id": "BYhQJGaoeKzI9Y-BwFvGHw",
+			"alias": "takumi-izakaya-bar-sacramento",
+			"name": "Takumi Izakaya Bar",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/kJPfNe3OqsaY-wkmfQEyLg/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/takumi-izakaya-bar-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 513,
+			"categories": [
+				{
+					"alias": "izakaya",
+					"title": "Izakaya"
+				},
+				{
+					"alias": "sushi",
+					"title": "Sushi Bars"
+				},
+				{
+					"alias": "ramen",
+					"title": "Ramen"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.5808743536472,
+				"longitude": -121.49571865797
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "826 J St",
+				"address2": "",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"826 J St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19162284095",
+			"display_phone": "(916) 228-4095",
+			"distance": 138.46823105012825
+		},
+		{
+			"id": "UQtJu5Tx4C3mz4OBcsA_dQ",
+			"alias": "honey-and-the-trapcat-sacramento",
+			"name": "Honey And The Trapcat",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/5u-Ezt7vzFT8FLzeA9K02g/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/honey-and-the-trapcat-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 118,
+			"categories": [
+				{
+					"alias": "cocktailbars",
+					"title": "Cocktail Bars"
+				},
+				{
+					"alias": "tradamerican",
+					"title": "American (Traditional)"
+				},
+				{
+					"alias": "venues",
+					"title": "Venues & Event Spaces"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.582822,
+				"longitude": -121.505507
+			},
+			"transactions": [],
+			"price": "$$",
+			"location": {
+				"address1": "1023 Front St",
+				"address2": "Ste A",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1023 Front St",
+					"Ste A",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19166615852",
+			"display_phone": "(916) 661-5852",
+			"distance": 975.3870756229586
+		},
+		{
+			"id": "Gq-zuD9u8NLb5ig6qKwVFg",
+			"alias": "beast-and-bounty-sacramento",
+			"name": "Beast and Bounty",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/PXd3hu6HdR2CQCjdOHUwGg/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/beast-and-bounty-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 792,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				}
+			],
+			"rating": 3.5,
+			"coordinates": {
+				"latitude": 38.5690098,
+				"longitude": -121.4869249
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1701 R St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95811",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1701 R St",
+					"Sacramento, CA 95811"
+				]
+			},
+			"phone": "+19162444016",
+			"display_phone": "(916) 244-4016",
+			"distance": 1540.703395950436
+		},
+		{
+			"id": "dYoQ6qY7GA4xCQ8vudlOhQ",
+			"alias": "punch-bowl-social-sacramento-sacramento",
+			"name": "Punch Bowl Social Sacramento",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/EjYZchfjJifQBli3N5FuHQ/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/punch-bowl-social-sacramento-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 1206,
+			"categories": [
+				{
+					"alias": "gastropubs",
+					"title": "Gastropubs"
+				},
+				{
+					"alias": "eatertainment",
+					"title": "Eatertainment"
+				},
+				{
+					"alias": "tacos",
+					"title": "Tacos"
+				}
+			],
+			"rating": 3.5,
+			"coordinates": {
+				"latitude": 38.58162,
+				"longitude": -121.499571
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "500 J St",
+				"address2": "Ste 100",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"500 J St",
+					"Ste 100",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19169255610",
+			"display_phone": "(916) 925-5610",
+			"distance": 449.5107305503931
+		},
+		{
+			"id": "8wIgjrLOlUtfHUNsSSwsxw",
+			"alias": "flatstick-pub-sacramento",
+			"name": "Flatstick Pub",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/CVFOiAlP3qIMXk38dJxOBQ/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/flatstick-pub-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 215,
+			"categories": [
+				{
+					"alias": "pubs",
+					"title": "Pubs"
+				},
+				{
+					"alias": "mexican",
+					"title": "Mexican"
+				},
+				{
+					"alias": "mini_golf",
+					"title": "Mini Golf"
+				}
+			],
+			"rating": 4.5,
+			"coordinates": {
+				"latitude": 38.580029,
+				"longitude": -121.498372
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "630 K St",
+				"address2": "Ste 120",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"630 K St",
+					"Ste 120",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19168720772",
+			"display_phone": "(916) 872-0772",
+			"distance": 387.6748240090821
+		},
+		{
+			"id": "ckOXxP9yhPPEnJ7DNdyKrA",
+			"alias": "iron-horse-tavern-sacramento",
+			"name": "Iron Horse Tavern",
+			"image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/YHxCi8-KC-WdKeEDgrH7tQ/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/iron-horse-tavern-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 2805,
+			"categories": [
+				{
+					"alias": "bars",
+					"title": "Bars"
+				},
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "breakfast_brunch",
+					"title": "Breakfast & Brunch"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.5695762064691,
+				"longitude": -121.490668354958
+			},
+			"transactions": [
+				"delivery",
+				"pickup"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1800 15th St",
+				"address2": "Ste B",
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95811",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1800 15th St",
+					"Ste B",
+					"Sacramento, CA 95811"
+				]
+			},
+			"phone": "+19164484488",
+			"display_phone": "(916) 448-4488",
+			"distance": 1372.85726855994
+		},
+		{
+			"id": "S_-CrVmxEJcN0ATAmFtWUA",
+			"alias": "ten-ten-room-sacramento-2",
+			"name": "Ten Ten Room",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wmquHXIDN_s3osaHkI81Cg/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/ten-ten-room-sacramento-2?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 149,
+			"categories": [
+				{
+					"alias": "bars",
+					"title": "Bars"
+				},
+				{
+					"alias": "desserts",
+					"title": "Desserts"
+				},
+				{
+					"alias": "tradamerican",
+					"title": "American (Traditional)"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.57995612419661,
+				"longitude": -121.49392839999999
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$",
+			"location": {
+				"address1": "1010 10th St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1010 10th St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19162722888",
+			"display_phone": "(916) 272-2888",
+			"distance": 184.40243816300244
+		},
+		{
+			"id": "4-BZFVYlmc_h_gSMOlc_4A",
+			"alias": "echo-and-rig-sacramento",
+			"name": "Echo & Rig",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/iITppY52u_xt2PP6PUg3lw/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/echo-and-rig-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 811,
+			"categories": [
+				{
+					"alias": "steak",
+					"title": "Steakhouses"
+				},
+				{
+					"alias": "breakfast_brunch",
+					"title": "Breakfast & Brunch"
+				},
+				{
+					"alias": "bars",
+					"title": "Bars"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.581239,
+				"longitude": -121.499425
+			},
+			"transactions": [
+				"delivery"
+			],
+			"price": "$$$",
+			"location": {
+				"address1": "500 J St",
+				"address2": "Ste 150",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"500 J St",
+					"Ste 150",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19166198939",
+			"display_phone": "(916) 619-8939",
+			"distance": 438.36677753214684
+		},
+		{
+			"id": "n_1cjf_kOviejHIl6d1ESg",
+			"alias": "prelude-kitchen-and-bar-sacramento-2",
+			"name": "Prelude Kitchen & Bar",
+			"image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/DUvUshxo536X3gkwSoGMWw/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/prelude-kitchen-and-bar-sacramento-2?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 58,
+			"categories": [
+				{
+					"alias": "newamerican",
+					"title": "American (New)"
+				},
+				{
+					"alias": "bars",
+					"title": "Bars"
+				}
+			],
+			"rating": 4.0,
+			"coordinates": {
+				"latitude": 38.57829,
+				"longitude": -121.49251
+			},
+			"transactions": [],
+			"price": "$$",
+			"location": {
+				"address1": "1117 11th St",
+				"address2": "",
+				"address3": null,
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"1117 11th St",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19168981071",
+			"display_phone": "(916) 898-1071",
+			"distance": 398.6515018751299
+		},
+		{
+			"id": "X0euVMJcpyqSAVnpyA2j2A",
+			"alias": "hiso-sacramento",
+			"name": "Hiso",
+			"image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/DY2CY4HgAp4cBnV41b6d3Q/o.jpg",
+			"is_closed": false,
+			"url": "https://www.yelp.com/biz/hiso-sacramento?adjust_creative=xWu9tkq_7VtqMdMxhMIpiA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xWu9tkq_7VtqMdMxhMIpiA",
+			"review_count": 62,
+			"categories": [
+				{
+					"alias": "laotian",
+					"title": "Laotian"
+				},
+				{
+					"alias": "thai",
+					"title": "Thai"
+				},
+				{
+					"alias": "asianfusion",
+					"title": "Asian Fusion"
+				}
+			],
+			"rating": 4.5,
+			"coordinates": {
+				"latitude": 38.58426,
+				"longitude": -121.48895
+			},
+			"transactions": [],
+			"price": "$$",
+			"location": {
+				"address1": "524 12th Street Sacramento",
+				"address2": null,
+				"address3": "",
+				"city": "Sacramento",
+				"zip_code": "95814",
+				"country": "US",
+				"state": "CA",
+				"display_address": [
+					"524 12th Street Sacramento",
+					"Sacramento, CA 95814"
+				]
+			},
+			"phone": "+19166038309",
+			"display_phone": "(916) 603-8309",
+			"distance": 557.2094614000329
+		}
+	],
+	"total": 1500,
+	"region": {
+		"center": {
+			"longitude": -121.4944,
+			"latitude": 38.581573
+		}
+	}
+}

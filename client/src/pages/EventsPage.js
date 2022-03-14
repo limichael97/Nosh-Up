@@ -5,6 +5,7 @@ import AddEvent from '../components/AddEvent';
 import SingleEvent from './SingleEvent';
 import { Modal, Button } from 'react-bootstrap';
 import EventList from '../components/EventList'
+import EventListTest from '../components/EventListTest'
 
 
 const EventsPage = () => {
