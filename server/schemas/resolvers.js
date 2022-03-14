@@ -109,13 +109,36 @@ const resolvers = {
 
       let time = (event.time)
 
-      // let hour = (parseInt(time.slice(0, 2)) + 7)
-      // console.log(`
-      // -----hour---------`)
-      // console.log(hour)
+
+      // /^ (\d{ 4}-\d{ 2 } -\d{ 2 }) (T)(\d{ 2}\: \d{ 2})(\: \d{ 2}.\d{ 3}Z)$ / g
 
 
-      // Date.UTC(year, month, day, hour, minute)
+      let hour = (parseInt(time.slice(0, 2)) + 7)
+      console.log(`
+      -----hour---------`)
+      console.log(hour)
+
+
+      let eventDate = (event.eventDate)
+      console.log('- eventFormat 148 -------Eventdate-------')
+      console.log(eventDate)
+
+
+
+      let eventDateSlice = (JSON.stringify(eventDate)).slice(1, 11)
+      console.log('- eventFormat 127 -------Eventdate Sliced-------')
+      console.log(eventDateSlice)
+
+      const comma = eventDateSlice.replace(/-/g, ', ')
+      console.log(comma)
+
+      const yearPrep = comma.replace(/(0)([1-9],)/, '$2')
+      // const yearPrep = comma.replace(/(\s[^0]\d{1})+/g, '$1')
+      console.log(yearPrep)
+
+
+      // EXPECTED FORMAT: 
+      //Date.UTC(year, month, day, hour, minute)
       // const utcDate1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5))
       // expected output: Fri, 02 Feb 1996 03:04:05 GMT
       const utcDate = new Date(Date.UTC(2022, 2, 19, 26, 30))
@@ -135,12 +158,6 @@ UTC DATE:
 
 
 
-      let eventDate = (event.eventDate)
-      console.log('- eventFormat 109 -------Eventdate-------')
-      console.log(eventDate)
-
-      let eventDateSlice = (JSON.stringify(eventDate)).slice(1, 12)
-
 
 
 
@@ -156,6 +173,10 @@ UTC DATE:
 
       return event;
     },
+
+
+
+
 
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
