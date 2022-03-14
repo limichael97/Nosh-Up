@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
-
+import { Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -40,6 +40,7 @@ const Login = () => {
        
       console.log(data);
       Auth.login(data.login.token);
+        window.location= '/events'
     } catch (err) {
       console.error(err);
     }
@@ -48,6 +49,7 @@ const Login = () => {
       email: '',
       password: '',
     });
+
   };
 
   return (

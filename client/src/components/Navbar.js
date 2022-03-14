@@ -11,15 +11,27 @@ const Navbar = () => {
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isEventOpen, setEventOpen] = useState(false)
 
   const [show, setShow] = useState(false);
+  // const [showEvent, setEventShow] = useState(false);
+
 
   const handleClose = () => {
     setIsLoginOpen(false);
     setIsSignUpOpen(false);
     setShow(false);
+    setEventOpen(false);
+    // setEventShow(false)
   }
   const handleShow = () => setShow(true);
+
+  // const handleEventShow = () => setEventShow(true);
+
+  const toggleEvent =() => {
+    setEventOpen(true);
+    handleShow()
+  }
 
   const toggleLogin = () => {
     setIsLoginOpen(true);
@@ -59,14 +71,11 @@ const Navbar = () => {
             </ul>
 
             <div>
-              {/* <AddEvent /> */}
-            </div>
-            <div>
               {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
-              <Modal show={show} onHide={handleClose}>
+              <Modal id="modalid" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>Sign Up!</Modal.Title>
+                  {/* <Modal.Title>Login !</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>
                   {isLoginOpen && (
@@ -74,6 +83,9 @@ const Navbar = () => {
                   )}
                   {isSignUpOpen && (
                     <SignUp onClose={toggleSignUp} />
+                  )}
+                  {isEventOpen && (
+                    <AddEvent onClose={toggleEvent} />
                   )}
                 </Modal.Body>
                 <Modal.Footer>
@@ -84,14 +96,20 @@ const Navbar = () => {
               </Modal>
 
             </div>
+
             <form className="d-flex">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
               {Auth.loggedIn() ? (
-                <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                <>
+                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
+                  <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                </>
+
+
               ) : (
                 <>
-                  <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
-                  <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                  <button onClick={toggleLogin} className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#modalid">Login</button>
+                  <button onClick={toggleSignUp} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Sign Up</button>
                 </>
               )}
             </form>

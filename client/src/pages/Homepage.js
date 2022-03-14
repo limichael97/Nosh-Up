@@ -5,6 +5,7 @@ import AddEvent from '../components/AddEvent';
 import SingleEvent from './SingleEvent';
 import EventsPage from './EventsPage';
 import { Modal, Button } from 'react-bootstrap';
+import SearchEvent from './SearchEvent';
 
 
 const HomePage = () => {
