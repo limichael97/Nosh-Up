@@ -67,56 +67,115 @@ const AddEvent = () => {
 
 
     return(
+        // <main>
+        //     <div>
+
+        //         <h1>Add Event</h1>
+
+        //         <form onSubmit= {handleEventSubmit}>
+        //             <input
+        //                 className='form-input'
+        //                 placeholder='Title'
+        //                 name='title'
+        //                 type='text'
+        //                 id='title'
+        //                 value={eventState.title}
+        //                 onChange={handleEventChange}
+        //             />
+        //             <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
+        //                 <option value='American' id="1">American</option>
+        //                 <option value= 'Mexican' id="2">Mexican</option>
+        //                 <option value= 'Italian' id="3">Italian</option>
+        //                 <option value= 'Chinese' id="4">Chinese</option>
+        //                 <option value= 'Indian' id="5">Indian</option>
+        //                 <option value= 'Japanese' id="6">Japanese</option>
+        //             </select>
+        //             <input
+        //                 className='form-input form-control'
+        //                 placeholder='Event Details'
+        //                 name='description'
+        //                 type='text'
+        //                 id='description'
+        //                 value={eventState.description}
+        //                 onChange={handleEventChange}
+        //             />
+        //             <input
+        //                 className='form-input form-control'
+        //                 placeholder='Max Diners Desired'
+        //                 name='maxNoshers'
+        //                 type='number'
+        //                 id='maxNoshers'
+        //                 value={eventState.maxNoshers}
+        //                 onChange={handleEventChange}
+        //             />
+        //             <button className='btn d-block w-100' type='submit' variant='success'>
+        //             Submit
+        //             </button>
+
+        //         </form>
+
+        //     </div>
+        // </main>
         <main>
-            <div>
+            <form className="container py-3" onSubmit= {handleEventSubmit}>
+                <h2>Find An Event</h2>
+                <div className="row my-3 d-flex justify-content-start">
+                    <div className="col pe-0">
+                        <input
+                            className='form-input'
+                            placeholder='Title'
+                            name='title'
+                            type='text'
+                            id='title'
+                            value={eventState.title}
+                            onChange={handleEventChange}
+                        />
+                    </div>
 
-                <h1>Add Event</h1>
+                    <div className="col pe-0">
+                        <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
+                            <option value='American' id="1">American</option>
+                            <option value= 'Mexican' id="2">Mexican</option>
+                            <option value= 'Italian' id="3">Italian</option>
+                            <option value= 'Chinese' id="4">Chinese</option>
+                            <option value= 'Indian' id="5">Indian</option>
+                            <option value= 'Japanese' id="6">Japanese</option>
+                        </select>
+                    </div>
+                    <div className="col pe-0">
+                        <input
+                            className='form-input form-control'
+                            placeholder='Event Details'
+                            name='description'
+                            type='text'
+                            id='description'
+                            value={eventState.description}
+                            onChange={handleEventChange}
+                        />
+                    </div>
+                    <div className="col pe-0">
+                        <input
+                            className='form-input form-control'
+                            placeholder='Max Diners Desired'
+                            name='maxNoshers'
+                            type='number'
+                            id='maxNoshers'
+                            value={eventState.maxNoshers}
+                            onChange={handleEventChange}
+                        />
+                    </div>
+                    <div className="col">
+                        <button className='btn btn-color-one' type='submit'>
+                        Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
 
-                <form onSubmit= {handleEventSubmit}>
-                    <input
-                        className='form-input'
-                        placeholder='Title'
-                        name='title'
-                        type='text'
-                        id='title'
-                        value={eventState.title}
-                        onChange={handleEventChange}
-                    />
-                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
-                        <option value='American' id="1">American</option>
-                        <option value= 'Mexican' id="2">Mexican</option>
-                        <option value= 'Italian' id="3">Italian</option>
-                        <option value= 'Chinese' id="4">Chinese</option>
-                        <option value= 'Indian' id="5">Indian</option>
-                        <option value= 'Japanese' id="6">Japanese</option>
-                    </select>
-                    <input
-                        className='form-input form-control'
-                        placeholder='Event Details'
-                        name='description'
-                        type='text'
-                        id='description'
-                        value={eventState.description}
-                        onChange={handleEventChange}
-                    />
-                    <input
-                        className='form-input form-control'
-                        placeholder='Max Diners Desired'
-                        name='maxNoshers'
-                        type='number'
-                        id='maxNoshers'
-                        value={eventState.maxNoshers}
-                        onChange={handleEventChange}
-                    />
-                    <button className='btn d-block w-100' type='submit' variant='success'>
-                    Submit
-                    </button>
-
-                </form>
-
-            </div>
         </main>
     )
 }
+
+
 
 export default AddEvent;
