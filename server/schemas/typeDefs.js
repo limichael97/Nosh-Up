@@ -27,8 +27,8 @@ const typeDefs = gql`
         eventDate: String
         time: String
         guests: [String]
-        countNoshers: Int
-        maxNoshers: Int
+        countNoshers: String
+        maxNoshers: String
         comment: [ Comment ]
         vacancy: Boolean
     }
@@ -57,8 +57,8 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
-        countNoshers: Int
-        maxNoshers: Int
+        countNoshers: String
+        maxNoshers: String
         comment: [ String ]
         vacancy: Boolean
     }

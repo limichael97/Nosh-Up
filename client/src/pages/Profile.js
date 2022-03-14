@@ -12,7 +12,7 @@ const Profile = () => {
 
 
     const {loading, data} = useQuery(QUERY_SINGLE_USER, {
-        variables: urlUser,
+        variables: {username: urlUser},
     });
 
     const user = data?.user || {};

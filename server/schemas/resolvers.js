@@ -103,6 +103,7 @@ const resolvers = {
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
       console.log('line88' + context)
+      consolr.log(args)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)
