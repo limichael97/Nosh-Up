@@ -1,3 +1,43 @@
+# **Nosh Up**
+
+## Walk - Through Video Link
+
+## Intro
+
+Don't want to eat alone especially while traveling alone for work? We don't either! Join us on Nosh Up to meet new people, have good conversation and fun company when we go out together for a meal!  
+
+## Table of Contents
+
+---
+
+- [Concept](#concept)
+- [Motivation](#motivation)
+- [Goals](#goals)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Future](#future)
+- [Team](#team)
+- [References](#references)
+- [License](#license)
+
+&nbsp;
+
+## Concept
+
+## Motivation
+
+## Goals
+
+## Technologies
+
+## Usage
+
+## Future
+
+## Team
+
+## References
+
 ## Photo attributions
 
 Photo by <a href="https://unsplash.com/@alexhaney?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Haney</a> on <a href="https://unsplash.com/s/photos/people-eating?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
