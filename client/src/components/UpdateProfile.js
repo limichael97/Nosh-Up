@@ -48,7 +48,7 @@ const UpdateProfile = () => {
 
   return (
     <>
-        <form onSubmit={handleUserSubmit}>
+      <form className="container py-3" onSubmit={handleUserSubmit}>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Avatar</label>
             <select class="form-control" id="exampleFormControlSelect1">
@@ -60,18 +60,20 @@ const UpdateProfile = () => {
             </select>
         </div>
     <div>
-      <h1>Upload and Display Image usign React Hook's</h1>
+
+
+      
+    <label className="mt-3" htmlfor="exampleFormControlSelect1">Upload Image</label>
       {selectedImage && (
-        <div>
-        <img alt="not fount" width={"250px"} src={URL.createObjectURL(selectedImage)} />
-        <br />
-        <button onClick={()=>setSelectedImage(null)}>Remove</button>
+        <div className="mt-2">
+        <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
+      
+        <button className="btn-color-one" onClick={()=>setSelectedImage(null)}>Remove</button>
         </div>
       )}
-      <br />
-     
-      <br /> 
+
       <input
+        className="form-control mb-3"
         type="file"
         name="myImage"
         onChange={(event) => {
@@ -81,9 +83,9 @@ const UpdateProfile = () => {
       />
     </div>
 
-    <div class="form-group">
-            <label for="exampleFormControlSelect1">Favorite Cuisine</label>
-            <select name ='favoriteCuisine' onChange = {handleUserChange} value={UpdateState.favoriteCuisine}> 
+    <div className="form-group mb-3">
+            <label className="d-block" for="exampleFormControlSelect1">Favorite Cuisine</label>
+            <select className='form-input form-control mb-3' name ='favoriteCuisine' onChange = {handleUserChange} value={UpdateState.favoriteCuisine}> 
                 <option id="0">---</option>
                 <option value= 'American' id="1">American</option>
                 <option value= 'Mexican' id="2">Mexican</option>
@@ -93,19 +95,21 @@ const UpdateProfile = () => {
                 <option value= 'Japanese' id="6">Japanese</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="exampleFormControlTextarea1">Bio</label>
-            <input
-                className='form-input'
+            <textarea
+                className='form-input form-control mb-3'
                 placeholder='Let other noshers learn more about you'
                 name='bioText'
                 type='text'
                 id='bioText'
+                rows='4'
                 value={UpdateState.bioText}
-                onChange={handleUserChange}
-            />
+                onChange={handleUserChange}>
+                </textarea>
         </div>
         <button 
+            className="btn btn-color-one"
             type='submit'
             variant='success'>
             Submit

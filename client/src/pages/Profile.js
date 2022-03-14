@@ -23,11 +23,15 @@ const Profile = () => {
   return (
     <main>
         
-        <div>
-            <p>Name: {user.username}</p>
-            <p>Avatar (in text): {user.avatar}</p>
-            <p>Here's my bio: {user.bioText}</p>
-            <p>My favoriate cuisine: {user.favoriteCuisine}</p>
+        <div className="container mt-2">
+          <div className="row align-items-md-stretch">
+            <div className="col">
+              <p>Name: {user.username}</p>
+              <p>Avatar (in text): {user.avatar}</p>
+              <p>Here's my bio: {user.bioText}</p>
+              <p>My favoriate cuisine: {user.favoriteCuisine}</p>
+          </div>
+          </div>
         </div>
 
     </main>

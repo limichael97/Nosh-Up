@@ -272,6 +272,24 @@ select {
   -moz-appearance: none;
 }
 
+/* input[type="file"] {
+  background-color: var(--color-one);
+  border: var(--color-one);
+  color: #fff;
+}
+
+input[type="file"]:hover {
+  background-color: var(--color-one-light);
+  color: #fff;
+} */
+
+/* .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+
 /* Tomato */
 /* #ec5551 */
 /* rgb(236,85,81) */
