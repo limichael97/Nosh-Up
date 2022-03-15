@@ -1,66 +1,55 @@
 import { gql } from '@apollo/client';
 
+ export const QUERY_ME = gql`
+ {
+     me {
+         _id
+         username
+         email
+         password
+         avatar
+         bioText
+         favoriteCuisine
+         totalCount
+         myCurrentEvent {
+             _id
+             title
+             host
+             cuisineType
+             description
+             createdAt
+             eventDate
+             time
+             guests
+             countNoshers
+             maxNoshers
 
-export const QUERY_ME = gql`
-    {
-        me {
-            _id
-            username
-            email
-        }
-    }
+             vacancy
+         } 
+         myJoinedEvent {
+             _id
+             title
+             host
+             cuisineType
+             description
+             createdAt
+             eventDate
+             time
+             guests
+             countNoshers
+             maxNoshers
 
-`;
-// export const QUERY__ME = gql`
-// {
-//     me {
-//         _id
-//         username
-//         email
-//         password
-//         avatar
-//         bioText
-//         favoriteCuisine
-//         totalCount
-//         myCurrentEvent {
-//             _id
-//             title
-//             host
-//             cuisineType
-//             description
-//             createdAt
-//             eventDate
-//             time
-//             guests
-//             countNoshers
-//             maxNoshers
-//             comment
-//             vacancy
-//         } 
-//         myJoinedEvent {
-//             _id
-//             title
-//             host
-//             cuisineType
-//             description
-//             createdAt
-//             eventDate
-//             time
-//             guests
-//             countNoshers
-//             maxNoshers
-//             comment
-//             vacancy
-//         } 
-//         comment {
-//             _id
-//             commentText
-//             username
-//             createdAt
-//         }
-//     }
-// }
-// `;  
+             vacancy
+         } 
+         comment {
+             _id
+             commentText
+             username
+             createdAt
+         }
+     }
+ }
+ `;  
 
 export const QUERY_USERS = gql`
   query getUsers {
@@ -136,6 +125,28 @@ export const QUERY_SINGLE_USER = gql`
 export const QUERY_EVENTS = gql`
   query events($username: String) {
     events(username: $username) {
+        _id
+        host
+        title
+        cuisineType
+        city
+        description
+        createdAt
+        eventDate
+        time
+        guests
+        countNoshers
+        maxNoshers
+        # comment
+        vacancy
+    }
+    }
+`;
+
+//LookUpEvents(cuisineType: String, city: String): [Event]
+export const QUERY_LOOKUP_EVENTS = gql`
+  query LookUpEvents($cuisineType: String, $city: String) {
+    LookUpEvents(cuisineType: $cuisineType, city: $city) {
         _id
         host
         title
