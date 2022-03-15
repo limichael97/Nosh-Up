@@ -26,9 +26,9 @@ const eventSchema = new Schema({
     get: timestamp => dateFormat(timestamp)
   },
   eventDate: {
-    type: Date,
+    type: String,
     max: '2400-01-01',
-    get: timestamp => dateFormat(time)
+    get: date => eventFormat(date)
   },
 
   time: {
@@ -47,7 +47,7 @@ const eventSchema = new Schema({
     max: 12
   },
   maxNoshers: {
-    type: String
+    type: String,
   },
   comment: [commentSchema],
   // comment: [
