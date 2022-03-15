@@ -41,11 +41,14 @@ const Dashboard = () => {
             </div>
 
             <button onClick={toggleUpdateProfile} 
-                    className="btn btn-color-four me-2" 
+                    className="btn btn-color-four my-1" 
                     type="button" 
                     data-toggle="modal" 
                     data-target="#UpdateUserModal"
             >Update Profile</button>
+            </div>
+            </div>
+        </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -111,12 +114,6 @@ const Dashboard = () => {
             </div>
 
             </div>
-
-
-
-
-
-
 
         </>
     )

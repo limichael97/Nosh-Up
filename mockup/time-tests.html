@@ -55,14 +55,14 @@
     <div class="form-row align-items-center py-lg-5">
         <div class="row d-flex align-items-center">
               <div class="col">
-                <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
+                 <!-- <label class="sr-only" for="inlineFormInput">Name</label>  -->
                 <input id="date-input" type="date" class="form-control mb-2" placeholder="">
               </div>
               <div class="col">
-                <!-- <label class="sr-only" for="inlineFormInputGroup">Username</label> -->
+                <!-- <label class="sr-only" for="inlineFormInputGroup">Username</label>  -->
                 <div class="input-group mb-2">
                   <div class="input-group-prepend">
-                    <!-- <div class="input-group-text">@</div> -->
+                    <div class="input-group-text">@</div> 
                   </div>
                   <input id="time-input" type="time" class="form-control" placeholder="">
                 </div>
@@ -70,8 +70,12 @@
               <div class="col">
                 <button id="submit-date-time" type="button" class="btn btn-primary mb-2">Submit</button>
               </div>
+
+              <!-- <h3>Alt Date enter</h3>
+              Datetime: <input type="datetime-local" name"field3" id="event-date" -->
+
          </div>
-         <div class="row d-flex align-items-center py-5">
+         <!-- <div class="row d-flex align-items-center py-5">
             <div class="col">
                 <h3>Date Selected</h3>
                 <p id="date-selected"></p>
@@ -80,7 +84,7 @@
                 <h3>Time Selected</h3>
                 <p id="time-selected"></p>
             </div>
-       </div>
+       </div> -->
     </div>
     </form>
   </section>
@@ -89,74 +93,111 @@
 
   <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
 
+
+
 <script>
 
 var DateTime = luxon.DateTime;
 
+
+// for use with type="datetime-local"
+// var event_date = document.getElementById("event-date")
+// var entered_date;
+
 var user_date = document.getElementById("date-input");
 var user_time = document.getElementById("time-input");
-
 var entered_time;
 var entered_date;
-
 var date_time_entered = document.getElementById("submit-date-time");
 
+
 date_time_entered.addEventListener("click", function() {
-    entered_time = user_time.value;
     entered_date = user_date.value;
+    entered_time = user_time.value;
 
     // console.log("clicked")
 
-// --------------- getting today's date to compare --------
-    console.log('line 110 ' + entered_date)
-    console.log('line 112 ' + DateTime.now().toISODate())
-    console.log('line 113 ' + entered_time)
+// --------------- User Input Dates--------
+    console.log(`line 120 user_date:  ${entered_date}`)
+    console.log(`line 121 user_time:  ${entered_time}`)
 
-    eventD = entered_date
-    today = DateTime.now().toISODate()
+
+// --------------- getting today's date to compare --------
+    console.log(`
+    126 
+    time now/today in ms: ${DateTime.now().toLocal()}
+    `)
+    console.log(`
+    130
+    time now/today in ISO:  ${DateTime.now().toISODate()}
+    `)
+
+    //DateTime.now().setZone('America/New_York').minus({weeks:1}).endOf('day').toISO();
+    // console.log(line 119 ' + entered_time)
+
+    const isEvent = entered_date
+    // today = DateTime.now().toLocal();
+    const isToday = DateTime.now().toISODate()
+
+    // console.log(`
+    // 134 today: ${today}
+    // `)
 
 
     // --------------- Checking if today is before Event Date ------
-    console.log(today < eventD)
-    console.log(today > eventD)
+    console.log(isToday < isEvent)
+    console.log(isToday > isEvent)
 
-    // ----------- Testing Subtraction to see how many days left before event --------------
+    // ---- Testing Subtraction to see how many days left before event ---------
 
-    // var end = eventD
-    // var start = today
+    // var end = isEvent
+    // var start = isToday
 
-  // var end = DateTime.fromISO('2017-03-13');
-  // var start = DateTime.fromISO('2017-02-11');
+//   var end = DateTime.fromISO('2017-03-13');
+//   var start = DateTime.fromISO('2017-02-11');
 
-// const daysLeft = end.diff(start, ['months', 'days']).toObject() //=> { months: 1, days: 2 }
-    
-//     console.log(daysLeft)
-
-// console.log(luxon.DateTime.now().plus({ days: -1 }))
+  var end = DateTime.fromISO(isEvent);
+  var start = DateTime.fromISO(isToday);
 
 
-// // const newValue = end
-// const newValueParsed = DateTime.fromJSDate(new Date(newValue));
-// const laterDate = newValueParsed.plus({ days: 1, hours: 3, minutes: 13, seconds: 10 });
 
-const isToday = DateTime.fromJSDate(new Date(today));
-const isEvent = DateTime.fromJSDate(new Date(eventD))
+///////////////////////////////////////////////////
+
+// const isToday = DateTime.fromJSDate(new Date(today));
+// const isEvent = DateTime.fromJSDate(new Date(eventD))
 // const eventDate = DateTime.fromJSDate(eventD);
 
-console.log('line 146 ' + isToday)
+console.log('line 145 ' + isToday)
 console.log('line 147 ' + isEvent)
 
-var timeLeft = isEvent.diff(isToday, ['days', 'hours', 'minutes']).toObject()
-const daysLeft = 
+var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
+// const daysLeft = 
 
 console.log(timeLeft) 
 console.log(`${timeLeft.days} days until your event!`)
+
+//////////////////////////////////////////////////////
+
+
+
+
+}); 
+
+
+
+
+
+
+
+
+
+// console.log(luxon.DateTime.now().plus({ days: -1 }))
 
 // const diffInMonths = eventDate.diff(isToday, ['months', 'days', 'hours', 'minutes', 'seconds']);
 // diffInMonths.toObject(); // => {months: 0, days: 1, hours: 3, minutes: 13, seconds: 10}
 
 // console.log(diffInMonths)
-}); 
+
 
 // luxon.DateTime.now().plus({ days: 5 })
 // document.querySelector('#schedule-date').value = luxon.DateTime.now().toISODate();

@@ -26,6 +26,7 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         guests: [String]
         countNoshers: String
         maxNoshers: String
@@ -59,6 +60,7 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         countNoshers: String
         maxNoshers: String
         comment: [ String ]
@@ -79,7 +81,7 @@ const typeDefs = gql`
         joinEvent(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event
         removeEvent(eventId: ID!): Event
-        addComment(eventId: ID!, username: String!, commentText: String!) : Event
+        addComment(eventId: ID!, commentText: String!) : Event
     }
 
     type Auth {
