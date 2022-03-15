@@ -62,7 +62,7 @@ const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="/events">Events</a>
               </li>
               <li className="nav-item">
-                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
+              <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
               </li>
               </>
                 ) : (
@@ -75,7 +75,7 @@ const Navbar = () => {
               {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
               <Modal id="modalid" show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header >
                   {/* <Modal.Title>Login !</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>
@@ -103,7 +103,7 @@ const Navbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <button onClick={(evt) =>  {window.location= '/dashboard';}} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Dashboard</button>
-                  <button className="btn btn-color-one  me-2" type="button"><a className="nav-link active" href="/" onClick={Auth.logout}>Logout</a></button>
+                  <a href="/" onClick={Auth.logout}><button className="btn btn-color-four mx-2" type="button">Logout</button></a>
                 </>
               ) : (
                 <>
