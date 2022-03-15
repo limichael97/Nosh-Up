@@ -42,7 +42,7 @@ const EventList = () => {
     };
     
     return (
-        
+        <>
             <div className="container">
                 <h2>Find An Event</h2>
 
@@ -59,7 +59,7 @@ const EventList = () => {
                 </div>
                 <div className="col pe-0">
                     <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control'> 
-                        <option id="0">Anywhere</option>
+                        <option value={null} id="0">Anywhere</option>
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                         <option value= 'Carmichael' id="3">Carmichael</option>
@@ -68,9 +68,10 @@ const EventList = () => {
                         <option value= 'To be determined' id="6">To be determined</option>
                     </select>
                 </div>
+            </div>
 
 
-    {/*End of Search Bar, below are cards of events*/}
+
                 {
                     events && 
                         events.map(event => (
@@ -105,10 +106,10 @@ const EventList = () => {
                                 </div>
                         ))
                 }
-
+    </>
   )
 
 }
 
-export default EventList
+export default EventList;
 

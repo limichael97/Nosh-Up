@@ -27,7 +27,7 @@ const resolvers = {
       const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
       console.log(params);
 
-      if(cuisineType === null && city === null){
+      if((cuisineType === null && city === null) || (cuisineType === "All Cuisine" && city === "Anywhere")){
         //return all
         return Event.find().sort({ createdAt: -1 })
       }
