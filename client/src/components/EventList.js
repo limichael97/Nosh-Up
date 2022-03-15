@@ -88,7 +88,7 @@ const EventList = () => {
                                         </div>
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
+                                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
 
                                             <Link to={`/profiles/${event.host}`}>
                                                 <li className="list-group-item">Created by: {event.host}</li>
