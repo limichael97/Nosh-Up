@@ -5,6 +5,7 @@ import { QUERY_EVENTS } from '../utils/queries';
 import { Link } from 'react-router-dom';
 import { JOIN_EVENT } from '../utils/mutations';
 
+
 const EventList = () => {
 
   const { loading, data } = useQuery(QUERY_EVENTS)
@@ -73,3 +74,4 @@ const EventList = () => {
 }
 
 export default EventList
+

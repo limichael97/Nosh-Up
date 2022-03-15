@@ -54,7 +54,6 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
-
       var newUser = args.input
 
       console.log(args)
@@ -64,7 +63,6 @@ const resolvers = {
         { _id: context.user._id },
         newUser,
         { new: true }
-
       );
     },
 

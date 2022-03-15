@@ -1,7 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const Event = require('./Event');
-const Comment = require('./Comment');
+const commentSchema = require('./Comment');
+const Comment = require('./Comment')
 
 const userSchema = new Schema(
   {
@@ -44,7 +45,7 @@ const userSchema = new Schema(
 
       }
     ],
-    comment: [Comment]
+    comment: [commentSchema]
     // comment: [
     //   {
     //     type: Schema.Types.ObjectId,
