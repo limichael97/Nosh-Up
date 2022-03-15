@@ -32,6 +32,7 @@ const typeDefs = gql`
         comment: [ Comment ]
         vacancy: Boolean
     }
+    
     type Comment {
         _id: ID
         commentText: String
@@ -44,6 +45,7 @@ const typeDefs = gql`
         users: [User]
         user(username: String!): User
         events(username: String): [Event]
+        LookUpEvents(cuisineType: String, city: String): [Event]
         event(_id: ID!): Event
     }
 

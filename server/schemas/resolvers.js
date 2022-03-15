@@ -22,6 +22,25 @@ const resolvers = {
 
     },
 
+    LookUpEvents: async (parent, { cuisineType, city }) => {
+      const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
+      console.log(params);
+
+      if(cuisineType === null && city === null){
+        console.log("nothing")
+        return Event.find().sort({ createdAt: -1 })
+      }
+      else if (cuisineType === null) {
+        return Event.find({city}).sort({ createdAt: -1 })
+      }
+      else if(city === null){
+        return Event.find({cuisineType}).sort({ createdAt: -1 })
+      }
+
+      return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
+
+    },
+
     // get ONE Event
     event: async (parent, { _id }) => {
       return Event.findOne({ _id })
