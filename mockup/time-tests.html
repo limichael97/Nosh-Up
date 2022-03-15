@@ -96,68 +96,256 @@
 
 
 <script>
-
+/////////////////////////  TEST GROUP 2 Starts /////////////////////////////////
 var DateTime = luxon.DateTime;
 
+
+
+// const dayjs = require('dayjs');
+// const localizedFormat = require('dayjs/plugin/localizedFormat')
+// dayjs.extend(localizedFormat)
+
+
+    //  ---------  format ms to LLLL  Starts --------
+
+    // use on FE to convert GraphQL obj data???
+
+    var date_time_entered = document.getElementById("submit-date-time");
+
+date_time_entered.addEventListener("click", function() {
+
+  var user_date = document.getElementById("date-input");
+    var user_time = document.getElementById("time-input");
+
+    let time = user_time.value
+    let eventDateVal = user_date.value
+
+    console.log(`
+    121
+    ${user_time}
+    `)
+
+    // var entered_time;
+    // var entered_date;
+
+
+
+
+  ////////////////////////// MS Calc ////////////////////////
+  // const { DateTime } = require("luxon");
+
+  var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
+  // let test =  DateTime.fromJSDate(1647734400000).toLocaleString(DateTime.DATE_MED);
+
+  
+   console.log(`
+    132 ms converted from ISO 2022-03-20 : ${DateTime}
+                                user_time: 1647734400000
+    `)
+
+
+    // let eventDateNum = Number(eventDate) // for our eventeventDate when we get it
+
+
+    let eventDateNum = 1647734400000
+
+    // let string = new Date(currentEventDate).toISOString()
+    // let string = new Date(1647734400000).toLocalString() //not valid
+    let stringUser = new Date(eventDateNum).toISOString()
+    // let stringConvert = new Date(1647759600000).toISOString()
+    // let stringH = new Date();
+    // stringH.setHours(stringH.getHours()+7)
+
+    // var isodate = stringH.ISOString();
+
+    console.log(`
+    145 converted ms from user_time 1647734400000 : ${stringUser}
+   
+    `)
+    // converted ms from convert#  1647759600000 : ${stringConvert}
+
+     //(PST) is 8 hours behind (UTC) 7 PDT
+      // let hourCalc = JSON.stringify((parseInt(time.slice(0, 2)) + 7))
+
+
+    
+      let hourCalc = ((parseInt(time.slice(0, 2)) + 7))
+      console.log(`
+      155
+      hour Calc: ${hourCalc}
+      `)
+
+  
+    // --------getMinutes as String in order to concat back with UTC Hour
+    // time is a string
+    //need to get the first 2 numbers then the second 2 numbers  hours minutes
+
+
+
+      let min2 = ((time.slice(3)))
+      console.log(`
+      162s
+      time min2: ${min2}
+      `)
+
+      let timeMs = ((hourCalc * 60* 60+ min2*60)*1000)
+      console.log(`
+      169
+      Eventtime in ms : ${timeMs}
+      `)
+
+      let totalEventTime = eventDateNum + timeMs
+      console.log(`
+      199
+      Event time in ms : ${totalEventTime}
+      `)
+
+      let actualEventDate = new Date(totalEventTime).toISOString()
+      console.log(`
+      205
+      Event time in ms : ${actualEventDate}
+      `)
+
+
+
+    // 1647759600000
+    // 1647734400000
+    
+    // console.log(`
+    // 129 ${string}
+    // `)
+    // let testStr = dayjs(string).format('LLLL')
+    // console.log(`
+    // 158
+    // Final Event Date: ${testStr}
+    // `)
+    // console.log(testStr)
+    // return testStr
+  });
+
+
+
+//     entered_date = user_date.value;
+//     entered_time = user_time.value;
+
+//     // console.log("clicked")
+
+// // --------------- User Input Dates--------
+//     console.log(`line 126 user_date:  ${entered_date}`)
+//     console.log(`line 127 user_time:  ${entered_time}`)
+
+//     // --------------- getting today's date to compare --------
+//     console.log(`
+//     132
+//     time now/today in ms: ${DateTime.now().toLocal()}
+//     `)
+//     console.log(`
+//     136
+//     time now/today in ISO:  ${DateTime.now().toISODate()}
+//     `)
+
+
+//     // const adjEventDate = (event) => {
+
+// //  user_date:  2022-03-20 1647734400000
+// //  user_time:  18:00
+
+
+//     console.log(event.eventDate)
+//     var currentEventDate = Number(event.eventDate)
+
+//     var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
+//     console.log(`
+//     152
+//     ${DateTime}
+//     `)
+    // console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE))
+
+
+
+    //  ---------  format ms to LLLL  Ends --------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////  TEST GROUP 1 Starts /////////////////////////////////
 
 // for use with type="datetime-local"
 // var event_date = document.getElementById("event-date")
 // var entered_date;
 
-var user_date = document.getElementById("date-input");
-var user_time = document.getElementById("time-input");
-var entered_time;
-var entered_date;
-var date_time_entered = document.getElementById("submit-date-time");
+// var user_date = document.getElementById("date-input");
+// var user_time = document.getElementById("time-input");
+// var entered_time;
+// var entered_date;
+// var date_time_entered = document.getElementById("submit-date-time");
 
 
-date_time_entered.addEventListener("click", function() {
-    entered_date = user_date.value;
-    entered_time = user_time.value;
+// date_time_entered.addEventListener("click", function() {
+// //     entered_date = user_date.value;
+// //     entered_time = user_time.value;
 
-    // console.log("clicked")
+//  console.log("clicked")
 
-// --------------- User Input Dates--------
-    console.log(`line 120 user_date:  ${entered_date}`)
-    console.log(`line 121 user_time:  ${entered_time}`)
-
-
-// --------------- getting today's date to compare --------
-    console.log(`
-    126 
-    time now/today in ms: ${DateTime.now().toLocal()}
-    `)
-    console.log(`
-    130
-    time now/today in ISO:  ${DateTime.now().toISODate()}
-    `)
-
-    //DateTime.now().setZone('America/New_York').minus({weeks:1}).endOf('day').toISO();
-    // console.log(line 119 ' + entered_time)
-
-    const isEvent = entered_date
-    // today = DateTime.now().toLocal();
-    const isToday = DateTime.now().toISODate()
-
-    // console.log(`
-    // 134 today: ${today}
-    // `)
+// // --------------- User Input Dates--------
+//     console.log(`line 120 user_date:  ${entered_date}`)
+//     console.log(`line 121 user_time:  ${entered_time}`)
 
 
-    // --------------- Checking if today is before Event Date ------
-    console.log(isToday < isEvent)
-    console.log(isToday > isEvent)
+// // --------------- getting today's date to compare --------
+//     console.log(`
+//     126 
+//     time now/today in ms: ${DateTime.now().toLocal()}
+//     `)
+//     console.log(`
+//     130
+//     time now/today in ISO:  ${DateTime.now().toISODate()}
+//     `)
 
-    // ---- Testing Subtraction to see how many days left before event ---------
+//     //DateTime.now().setZone('America/New_York').minus({weeks:1}).endOf('day').toISO();
+//     // console.log(line 119 ' + entered_time)
 
-    // var end = isEvent
-    // var start = isToday
+//     const isEvent = entered_date
+//     // today = DateTime.now().toLocal();
+//     const isToday = DateTime.now().toISODate()
 
-//   var end = DateTime.fromISO('2017-03-13');
-//   var start = DateTime.fromISO('2017-02-11');
+//     // console.log(`
+//     // 134 today: ${today}
+//     // `)
 
-  var end = DateTime.fromISO(isEvent);
-  var start = DateTime.fromISO(isToday);
+
+//     // --------------- Checking if today is before Event Date ------
+//     console.log(isToday < isEvent)
+//     console.log(isToday > isEvent)
+
+//     // ---- Testing Subtraction to see how many days left before event ---------
+
+//     // var end = isEvent
+//     // var start = isToday
+
+// //   var end = DateTime.fromISO('2017-03-13');
+// //   var start = DateTime.fromISO('2017-02-11');
+
+//   var end = DateTime.fromISO(isEvent);
+//   var start = DateTime.fromISO(isToday);
+
+// /////////////////////////  TEST GROUP 1 Ends /////////////////////////////////
+
+
 
 
 
@@ -167,21 +355,21 @@ date_time_entered.addEventListener("click", function() {
 // const isEvent = DateTime.fromJSDate(new Date(eventD))
 // const eventDate = DateTime.fromJSDate(eventD);
 
-console.log('line 145 ' + isToday)
-console.log('line 147 ' + isEvent)
+// console.log('line 145 ' + isToday)
+// console.log('line 147 ' + isEvent)
 
-var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
-// const daysLeft = 
+// var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
+// // const daysLeft = 
 
-console.log(timeLeft) 
-console.log(`${timeLeft.days} days until your event!`)
+// console.log(timeLeft) 
+// console.log(`${timeLeft.days} days until your event!`)
 
 //////////////////////////////////////////////////////
 
 
 
 
-}); 
+// }); 
 
 
 

@@ -30,7 +30,7 @@ const Navbar = () => {
 
   // const handleEventShow = () => setEventShow(true);
 
-  const toggleEvent =() => {
+  const toggleEvent = () => {
     setEventOpen(true);
     handleShow()
   }
@@ -56,19 +56,19 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0 d-flex align-items">
               {Auth.loggedIn() ? (
-                  <>
+                <>
 
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="events">Events</a>
-              </li>
-              <li className="nav-item">
-                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
-              </li>
-              </>
-                ) : (
-                  <p></p>
-                )}
-              
+                  <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="/events">Events</a>
+                  </li>
+                  <li className="nav-item">
+                    <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
+                  </li>
+                </>
+              ) : (
+                <p></p>
+              )}
+
             </ul>
 
             <div>
@@ -102,7 +102,7 @@ const Navbar = () => {
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />  */}
               {Auth.loggedIn() ? (
                 <>
-                  <button onClick={(evt) =>  {window.location= '/dashboard';}} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Dashboard</button>
+                  <button onClick={(evt) => { window.location = '/dashboard'; }} className="btn btn-color-one" type="button" data-toggle="modal2" data-target="#modal2">Dashboard</button>
                   <a href="/" onClick={Auth.logout}><button className="btn btn-color-four mx-2" type="button">Logout</button></a>
                 </>
               ) : (
