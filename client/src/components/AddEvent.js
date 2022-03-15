@@ -12,7 +12,7 @@ const AddEvent = () => {
     console.log(userData)
     console.log(userData.username)
     console.log(data)
-    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', city: '', description: '', maxNoshers:''});
+    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', city: '', description: '', maxNoshers:'' , eventDate: '', time: ''});
 
     const [addEvent, { error }] = useMutation(ADD_EVENT);
     console.log(eventState)
@@ -83,6 +83,22 @@ const AddEvent = () => {
                         onChange={handleEventChange}
                     />
                 
+                    <input 
+                    className="form-control mb-3" 
+                    id="date-input" 
+                    type="date" 
+                    placeholder=""
+                    name="eventDate" 
+                    />
+
+                    <input 
+                    className="form-control mb-3" 
+                    id="time-input" 
+                    type="time" 
+                    placeholder="" 
+                    name="time" 
+                    />
+
                 <label htmlFor='Cuisine'> Cuisine</label>
                     <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control mb-3'
 > 
