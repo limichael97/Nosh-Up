@@ -27,13 +27,16 @@ const resolvers = {
       console.log(params);
 
       if(cuisineType === null && city === null){
-        console.log("nothing")
+        //return all
         return Event.find().sort({ createdAt: -1 })
       }
-      else if (cuisineType === null) {
+      if(cuisineType === null || cuisineType === "All Cuisine") {
+        //return only city match
         return Event.find({city}).sort({ createdAt: -1 })
       }
-      else if(city === null){
+      if(city === null || city === "Anywhere"){
+        //return onlt cuisine match
+        console.log("no city");
         return Event.find({cuisineType}).sort({ createdAt: -1 })
       }
 

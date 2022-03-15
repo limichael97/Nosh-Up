@@ -46,6 +46,7 @@ const EventList = () => {
 
                 <div className="col pe-0">
                     <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control'>
+                        <option value={null} id="0">All Cuisine</option>
                         <option value='American' id="1">American</option>
                         <option value='Mexican' id="2">Mexican</option>
                         <option value='Italian' id="3">Italian</option>
@@ -56,6 +57,7 @@ const EventList = () => {
                 </div>
                 <div className="col pe-0">
                     <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control'> 
+                        <option id="0">Anywhere</option>
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                         <option value= 'Carmichael' id="3">Carmichael</option>
