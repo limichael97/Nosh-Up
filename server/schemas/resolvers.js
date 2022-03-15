@@ -27,7 +27,7 @@ const resolvers = {
       const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
       console.log(params);
 
-      if(cuisineType === null && city === null){
+      if((cuisineType === null && city === null) || (cuisineType === "All Cuisine" && city === "Anywhere")){
         //return all
         return Event.find().sort({ createdAt: -1 })
       }
@@ -133,6 +133,7 @@ const resolvers = {
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
       console.log('line88' + context)
+      consolr.log(args)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)
@@ -187,8 +188,7 @@ const resolvers = {
       console.log(context.user)
       const comment = await Event.findOneAndUpdate(
         { _id: eventId },
-        { $push: { comment: { commentText, username: username } } },
-        // { $push: { reactions: { reactionBody, username: context.user.username } } },
+        { $push: { comment:  { commentText, username: context.user.username } }  },
         { new: true, runValidators: true }
       );
 

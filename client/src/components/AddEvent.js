@@ -49,6 +49,7 @@ const AddEvent = () => {
             });
 
         } catch (e) {
+            console.log('does not work')
             console.error(e);
         }
 
@@ -67,55 +68,6 @@ const AddEvent = () => {
 
 
     return(
-        // <main>
-        //     <div>
-
-        //         <h1>Add Event</h1>
-
-        //         <form onSubmit= {handleEventSubmit}>
-        //             <input
-        //                 className='form-input'
-        //                 placeholder='Title'
-        //                 name='title'
-        //                 type='text'
-        //                 id='title'
-        //                 value={eventState.title}
-        //                 onChange={handleEventChange}
-        //             />
-        //             <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType}> 
-        //                 <option value='American' id="1">American</option>
-        //                 <option value= 'Mexican' id="2">Mexican</option>
-        //                 <option value= 'Italian' id="3">Italian</option>
-        //                 <option value= 'Chinese' id="4">Chinese</option>
-        //                 <option value= 'Indian' id="5">Indian</option>
-        //                 <option value= 'Japanese' id="6">Japanese</option>
-        //             </select>
-        //             <input
-        //                 className='form-input form-control'
-        //                 placeholder='Event Details'
-        //                 name='description'
-        //                 type='text'
-        //                 id='description'
-        //                 value={eventState.description}
-        //                 onChange={handleEventChange}
-        //             />
-        //             <input
-        //                 className='form-input form-control'
-        //                 placeholder='Max Diners Desired'
-        //                 name='maxNoshers'
-        //                 type='number'
-        //                 id='maxNoshers'
-        //                 value={eventState.maxNoshers}
-        //                 onChange={handleEventChange}
-        //             />
-        //             <button className='btn d-block w-100' type='submit' variant='success'>
-        //             Submit
-        //             </button>
-
-        //         </form>
-
-        //     </div>
-        // </main>
         <main>
             <form className="container py-3" onSubmit= {handleEventSubmit}>
             <h2>Create An Event</h2>
@@ -144,7 +96,7 @@ const AddEvent = () => {
               
                     <label htmlFor='City'> City</label>
                     <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control mb-3'
-> 
+>                       <option  id="0">Select</option>
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                         <option value= 'Carmichael' id="3">Carmichael</option>

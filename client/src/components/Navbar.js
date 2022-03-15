@@ -62,7 +62,7 @@ const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="/events">Events</a>
               </li>
               <li className="nav-item">
-                  <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
+              <button onClick={toggleEvent} className="btn btn-color-one mx-2" type="button" data-toggle="modal1" data-target="#eventModal">Add Event</button>
               </li>
               </>
                 ) : (

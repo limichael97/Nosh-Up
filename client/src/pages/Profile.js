@@ -18,18 +18,17 @@ const Profile = () => {
 
 
   return (
-    <main>
-        <div>
-            <div className="col-md-4">
+    <div className="container mt-2">
+          <div className="row align-items-md-stretch">
+          <div className="col">
                     <img src={require(`../img/avatar-${user.avatar}.jpg`)} />
             </div>
             <p>Name: {user.username}</p>
             <p>Here's my bio: {user.bioText}</p>
             <p>My favoriate cuisine: {user.favoriteCuisine}</p>
 
-        </div>
-
-    </main>
+            </div>
+          </div>
   );
 };
 
