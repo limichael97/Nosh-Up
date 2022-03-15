@@ -54,7 +54,7 @@
     <form>
     <div class="form-row align-items-center py-lg-5">
         <div class="row d-flex align-items-center">
-              <div class="col">
+              <!-- <div class="col">
                  <!-- <label class="sr-only" for="inlineFormInput">Name</label>  -->
                 <input id="date-input" type="date" class="form-control mb-2" placeholder="">
               </div>
@@ -66,13 +66,13 @@
                   </div>
                   <input id="time-input" type="time" class="form-control" placeholder="">
                 </div>
-              </div>
+              </div> -->
               <div class="col">
                 <button id="submit-date-time" type="button" class="btn btn-primary mb-2">Submit</button>
               </div>
 
-              <!-- <h3>Alt Date enter</h3>
-              Datetime: <input type="datetime-local" name"field3" id="event-date" -->
+              <h3>Alt Date enter</h3>
+              Datetime: <input type="datetime-local" name"field3" id="event-date"
 
          </div>
          <!-- <div class="row d-flex align-items-center py-5">
@@ -101,9 +101,9 @@ var DateTime = luxon.DateTime;
 
 
 
-// const dayjs = require('dayjs');
-// const localizedFormat = require('dayjs/plugin/localizedFormat')
-// dayjs.extend(localizedFormat)
+const dayjs = require('dayjs');
+const localizedFormat = require('dayjs/plugin/localizedFormat')
+dayjs.extend(localizedFormat)
 
 
     //  ---------  format ms to LLLL  Starts --------
@@ -114,97 +114,116 @@ var DateTime = luxon.DateTime;
 
 date_time_entered.addEventListener("click", function() {
 
-  var user_date = document.getElementById("date-input");
-    var user_time = document.getElementById("time-input");
+  // var user_date = document.getElementById("date-input");
+    // var user_time = document.getElementById("time-input");
+  var event_date = document.getElementById("event-date");
 
-    let time = user_time.value
-    let eventDateVal = user_date.value
+let eventInput = event_date.value
+
+
+    // let time = user_time.value
+    // let eventDateVal = user_date.value
+
+    // console.log(`
+    // 121
+    // ${user_time}
+    // `)
 
     console.log(`
     121
-    ${user_time}
+    ${eventInput}
     `)
+
 
     // var entered_time;
     // var entered_date;
 
 
 
+    let createdDate = dayjs(eventInput).format('LLLL')
+    console.log(`
+150 ${eventInput}`)
 
+  // let createdDate = dayjs(date).format('LLLL')
+
+  var overrideZone = DateTime.fromISO(eventInput, { zone: "America/Los_Angeles" });
+
+console.log(`
+150 ${overrideZone}`)
   ////////////////////////// MS Calc ////////////////////////
   // const { DateTime } = require("luxon");
 
-  var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
+  // var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
   // let test =  DateTime.fromJSDate(1647734400000).toLocaleString(DateTime.DATE_MED);
 
   
-   console.log(`
-    132 ms converted from ISO 2022-03-20 : ${DateTime}
-                                user_time: 1647734400000
-    `)
+  //  console.log(`
+  //   132 ms converted from ISO 2022-03-20 : ${DateTime}
+  //                               user_time: 1647734400000
+  //   `)
 
 
     // let eventDateNum = Number(eventDate) // for our eventeventDate when we get it
 
 
-    let eventDateNum = 1647734400000
+    // let eventDateNum = 1647734400000
 
-    // let string = new Date(currentEventDate).toISOString()
-    // let string = new Date(1647734400000).toLocalString() //not valid
-    let stringUser = new Date(eventDateNum).toISOString()
-    // let stringConvert = new Date(1647759600000).toISOString()
-    // let stringH = new Date();
-    // stringH.setHours(stringH.getHours()+7)
+    // // let string = new Date(currentEventDate).toISOString()
+    // // let string = new Date(1647734400000).toLocalString() //not valid
+    // let stringUser = new Date(eventDateNum).toISOString()
+    // // let stringConvert = new Date(1647759600000).toISOString()
+    // // let stringH = new Date();
+    // // stringH.setHours(stringH.getHours()+7)
 
-    // var isodate = stringH.ISOString();
+    // // var isodate = stringH.ISOString();
 
-    console.log(`
-    145 converted ms from user_time 1647734400000 : ${stringUser}
+    // console.log(`
+    // 145 converted ms from user_time 1647734400000 : ${stringUser}
    
-    `)
-    // converted ms from convert#  1647759600000 : ${stringConvert}
+    // `)
+    // // converted ms from convert#  1647759600000 : ${stringConvert}
 
-     //(PST) is 8 hours behind (UTC) 7 PDT
-      // let hourCalc = JSON.stringify((parseInt(time.slice(0, 2)) + 7))
+    //  //(PST) is 8 hours behind (UTC) 7 PDT
+    //   // let hourCalc = JSON.stringify((parseInt(time.slice(0, 2)) + 7))
 
 
     
-      let hourCalc = ((parseInt(time.slice(0, 2)) + 7))
-      console.log(`
-      155
-      hour Calc: ${hourCalc}
-      `)
+    //   let hourCalc = ((parseInt(time.slice(0, 2)) + 7))
+    //   console.log(`
+    //   155
+    //   hour Calc: ${hourCalc}
+    //   `)
 
   
-    // --------getMinutes as String in order to concat back with UTC Hour
-    // time is a string
-    //need to get the first 2 numbers then the second 2 numbers  hours minutes
+    // // --------getMinutes as String in order to concat back with UTC Hour
+    // // time is a string
+    // //need to get the first 2 numbers then the second 2 numbers  hours minutes
 
 
 
-      let min2 = ((time.slice(3)))
-      console.log(`
-      162s
-      time min2: ${min2}
-      `)
+    //   let min2 = ((time.slice(3)))
+    //   console.log(`
+    //   162s
+    //   time min2: ${min2}
+    //   `)
 
-      let timeMs = ((hourCalc * 60* 60+ min2*60)*1000)
-      console.log(`
-      169
-      Eventtime in ms : ${timeMs}
-      `)
+    //   let timeMs = ((hourCalc * 60* 60+ min2*60)*1000)
+    //   console.log(`
+    //   169
+    //   Eventtime in ms : ${timeMs}
+    //   `)
 
-      let totalEventTime = eventDateNum + timeMs
-      console.log(`
-      199
-      Event time in ms : ${totalEventTime}
-      `)
+    //   let totalEventTime = eventDateNum + timeMs
+    //   console.log(`
+    //   199
+    //   Event time in ms : ${totalEventTime}
+    //   `)
 
-      let actualEventDate = new Date(totalEventTime).toISOString()
-      console.log(`
-      205
-      Event time in ms : ${actualEventDate}
-      `)
+    //   let actualEventDate = new Date(totalEventTime).toISOString()
+    //   console.log(`
+    //   205
+    //   Event time in ms : ${actualEventDate}
+    //   `)
 
 
 

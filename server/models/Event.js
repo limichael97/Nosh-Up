@@ -27,7 +27,8 @@ const eventSchema = new Schema({
   },
   eventDate: {
     type: Date,
-    max: '2400-01-01'
+    max: '2400-01-01',
+    get: timestamp => dateFormat(time)
   },
 
   time: {
