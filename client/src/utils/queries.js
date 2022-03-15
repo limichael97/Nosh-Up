@@ -137,7 +137,12 @@ export const QUERY_EVENTS = gql`
         guests
         countNoshers
         maxNoshers
-        # comment
+        comment {
+            _id
+            commentText
+            username
+            createdAt
+        }
         vacancy
     }
     }

@@ -5,6 +5,7 @@ import { QUERY_SINGLE_EVENT } from '../utils/queries';
 import { JOIN_EVENT, ADD_COMMENT } from '../utils/mutations';
 import Comment from "../components/Comment";
 import Auth from '../utils/auth';
+import CommentList from '../components/CommentList';
 
 const SingleEvent = () => {
 
@@ -20,7 +21,7 @@ const SingleEvent = () => {
   const event = data?.event || {};
 
   console.log(data)
-  console.log(event._id)
+  console.log(event)
 
   
     const handleJoin = async () => {
@@ -123,37 +124,9 @@ const SingleEvent = () => {
           </div>
         </div>
         <Comment eventId = {event._id}/>
+        <CommentList comment= {event.comment}/>
 
-        <div className="my-3 p-3 bg-body rounded shadow-sm">
-          <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-1 me-2"></span>
-
-            <p className="pb-3 mb-0 small lh-sm border-bottom">
-              <strong className="d-block text-gray-dark">@username</strong>
-              Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
-            </p>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-2 me-2"></span>
-
-            <p className="pb-3 mb-0 small lh-sm border-bottom">
-              <strong className="d-block text-gray-dark">@username</strong>
-              Some more representative placeholder content, related to this other user. Another status update, perhaps.
-            </p>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-3 me-2"></span>
-
-            <p className="pb-3 mb-0 small lh-sm border-bottom">
-              <strong className="d-block text-gray-dark">@username</strong>
-              This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-            </p>
-          </div>
-          <small className="d-block text-end mt-3">
-            <a href="/">All updates</a>
-          </small>
-        </div>
+        
 
         <div className="my-3 p-3 bg-body rounded shadow-sm">
           <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
@@ -180,53 +153,6 @@ const SingleEvent = () => {
               <span className="d-block">@username</span>
             </div>
           </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-6 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-1 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-2 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-3 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-
-
           <small className="d-block text-end mt-3">
             <a href="/">All suggestions</a>
           </small>

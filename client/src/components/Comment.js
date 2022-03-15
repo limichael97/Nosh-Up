@@ -16,6 +16,11 @@ const Comment = ({ eventId }) => {
         setCharacterCount(event.target.value.length);
     }
     };
+    
+    // alert(typeof commentText) // displays "string"
+    // alert(typeof eventId) // displays "number"
+
+
 
     const handleFormSubmit = async event => {
     event.preventDefault();

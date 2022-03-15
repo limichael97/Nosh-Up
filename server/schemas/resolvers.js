@@ -158,7 +158,7 @@ const resolvers = {
       console.log(context.user)
       const comment = await Event.findOneAndUpdate(
         { _id: eventId },
-        { $push: { comment:  { commentText, username: username } }  },
+        { $push: { comment:  { commentText, username: context.user.username } }  },
         // { $push: { reactions: { reactionBody, username: context.user.username } } },
         { new: true, runValidators: true }
       );
