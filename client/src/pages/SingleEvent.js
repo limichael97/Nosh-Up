@@ -1,7 +1,39 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useQuery, useMutation } from '@apollo/client';
+import { QUERY_SINGLE_EVENT } from '../utils/queries';
+import { JOIN_EVENT } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const SingleEvent = () => {
+
+  const { id: eventId } = useParams();
+  console.log(eventId)
+
+  const { loading, data } = useQuery(QUERY_SINGLE_EVENT, {
+    variables: { id: eventId }
+  });
+  const [joinEvent] = useMutation(JOIN_EVENT);
+
+
+  const event = data?.event || {};
+
+  console.log(data)
+  console.log(event)
+
+  
+    const handleJoin = async () => {
+        try {
+          await joinEvent({
+            variables: { eventId: eventId  }
+          });
+        } catch (e) {
+          console.error(e);
+        }
+    };
+
   return (
+    // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
     <>
       <div className="container">
         <div className="row align-items-md-stretch">
@@ -21,7 +53,7 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">Mulvaney's B&L</h6>
+                      <h6 className="mb-0">{event.title}</h6>
                       <p className="mb-0 opacity-75">1215 19th St, Sacramento, CA 95811</p>
                     </div>
                     <small className="opacity-50 text-nowrap">now</small>
@@ -45,8 +77,10 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">Join this event</h6>
-                      <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
+                    <button className="btn ml-auto" onClick={handleJoin}>
+                      Join this Event
+                    </button>                      
+                    <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
                     </div>
                     <small className="opacity-50 text-nowrap">1w</small>
                   </div>

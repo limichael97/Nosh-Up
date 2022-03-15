@@ -5,8 +5,6 @@ const SearchEvent = () => {
 
     return (
         <>
-            <h2>Find An Event</h2>
-            
             <EventList />
         </>
     )
