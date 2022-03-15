@@ -23,6 +23,7 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
+      default: "1"
     },
     bioText: {
       type: String,
