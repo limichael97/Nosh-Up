@@ -6,6 +6,8 @@ import { JOIN_EVENT, ADD_COMMENT } from '../utils/mutations';
 import Comment from "../components/Comment";
 import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
+import GuestList from '../components/GuestList';
+
 
 const SingleEvent = () => {
 
@@ -17,15 +19,16 @@ const SingleEvent = () => {
     variables: { id: eventId }
   });
 
-  const event = data?.event || {};
+  const event = data?.event || [];
 
   const [joinEvent] = useMutation(JOIN_EVENT);
   const [addComment] = useMutation(ADD_COMMENT);
 
   console.log(data)
-  console.log(event)
-  var array = data?.event.guests
-  console.log(array)
+  console.log(Array.isArray(event.guests))
+  console.log(event.guests.length)
+
+
   // console.log(array.length)
 
   const handleJoin = async () => {
@@ -62,7 +65,7 @@ const SingleEvent = () => {
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
                       <h6 className="mb-0">{event.title}</h6>
-                      <p className="mb-0 opacity-75">1215 19th St, Sacramento, CA 95811</p>
+                      <p className="mb-0 opacity-75">{event.city}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">now</small>
                   </div>
@@ -88,7 +91,7 @@ const SingleEvent = () => {
                     {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                    <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
+                    <p className="mb-0 opacity-75">{event.description}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">1w</small>
                   </div>
@@ -136,38 +139,10 @@ const SingleEvent = () => {
         </div>
         <Comment eventId = {event._id}/>
         <CommentList comment= {event.comment}/>
+        <GuestList guests = {event.guests}/> 
 
         
 
-        <div className="my-3 p-3 bg-body rounded shadow-sm">
-          <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
-
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-4 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-5 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <small className="d-block text-end mt-3">
-            <a href="/">All suggestions</a>
-          </small>
-        </div>
       </main>
     </>
   )

@@ -55,7 +55,7 @@ const Login = () => {
   return (
     <>
 
-    <h1>Login</h1>
+    <h2>Login</h2>
 
           <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>

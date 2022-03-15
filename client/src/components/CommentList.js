@@ -41,9 +41,6 @@ const CommentList = ( {comment} ) => {
                 comment &&
                     comment.map((comments) => (
                         <div key ={comments._id} className="d-flex text-muted pt-3">
-                            {
-
-                            }
                             <span class={`avatar avatar-1 me-2`}></span>
 
                             <p className="pb-3 mb-0 small lh-sm border-bottom">
