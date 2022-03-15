@@ -25,19 +25,20 @@ const Dashboard = () => {
 
     return(
         <>
+
             <div className="card mb-3" >
-            <div className="row g-0">
-                <div className="col-md-4">
-                    <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title">Name: {userData.username}</h5>
+                            <p className="card-text">Here's my bio: {userData.bioText}</p>
+                            <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-8">
-                <div className="card-body">
-                    <h5 className="card-title">Name: {userData.username}</h5>
-                    <p className="card-text">Here's my bio: {userData.bioText}</p>
-                    <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
-                </div>
-                </div>
-            </div>
             </div>
 
             <button onClick={toggleUpdateProfile} 
@@ -46,9 +47,7 @@ const Dashboard = () => {
                     data-toggle="modal" 
                     data-target="#UpdateUserModal"
             >Update Profile</button>
-            </div>
-            </div>
-        </div>
+ 
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
