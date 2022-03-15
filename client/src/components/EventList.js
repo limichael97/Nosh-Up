@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { JOIN_EVENT } from '../utils/mutations';
 import Auth from '../utils/auth'
 
+
 const EventList = () => {
+
     const [eventState, setEventState] = useState({ cuisineType: null, city: null});
     //const {loading, data} = useQuery(QUERY_EVENTS);
     const {loading, data} = useQuery(QUERY_LOOKUP_EVENTS, {
@@ -104,12 +106,9 @@ const EventList = () => {
                         ))
                 }
 
-            </div>
-
-    )
+  )
 
 }
 
 export default EventList
-
 

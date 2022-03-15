@@ -43,7 +43,6 @@ const UpdateProfile = () => {
     };
 
 
-
     return (
       <>
         <form className="container py-3" onSubmit={handleUserSubmit}>

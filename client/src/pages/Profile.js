@@ -26,6 +26,7 @@ const Profile = () => {
             <p>Name: {user.username}</p>
             <p>Here's my bio: {user.bioText}</p>
             <p>My favoriate cuisine: {user.favoriteCuisine}</p>
+
         </div>
 
     </main>
@@ -33,3 +34,16 @@ const Profile = () => {
 };
 
 export default Profile;
+
+/*
+        
+        <div className="container mt-2">
+          <div className="row align-items-md-stretch">
+            <div className="col">
+              <p>Name: {user.username}</p>
+              <p>Avatar (in text): {user.avatar}</p>
+              <p>Here's my bio: {user.bioText}</p>
+              <p>My favoriate cuisine: {user.favoriteCuisine}</p>
+          </div>
+          </div>
+*/

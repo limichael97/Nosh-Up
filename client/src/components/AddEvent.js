@@ -122,7 +122,7 @@ const AddEvent = () => {
             <div className="row my-3 d-flex justify-content-start">
                 <div className="col pe-0">
                     <input
-                        className='form-input form-control'
+                        className='form-input form-control mb-3'
                         placeholder='Title'
                         name='title'
                         type='text'
@@ -130,10 +130,9 @@ const AddEvent = () => {
                         value={eventState.title}
                         onChange={handleEventChange}
                     />
-                </div>
-
-                <div className="col pe-0">
-                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control'
+                
+                <label htmlFor='Cuisine'> Cuisine</label>
+                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control mb-3'
 > 
                         <option value='American' id="1">American</option>
                         <option value='Mexican' id="2">Mexican</option>
@@ -142,10 +141,9 @@ const AddEvent = () => {
                         <option value='Indian' id="5">Indian</option>
                         <option value='Japanese' id="6">Japanese</option>
                     </select>
-                </div>
-
-                <div className="col pe-0">
-                    <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control'
+              
+                    <label htmlFor='City'> City</label>
+                    <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control mb-3'
 > 
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
@@ -154,24 +152,21 @@ const AddEvent = () => {
                         <option value= 'Folsom' id="5">Folsom</option>
                         <option value= 'To be determined' id="6">To be determined</option>
                     </select>
-                </div>
-
-                <div className="col pe-0">
-                    <input
-                        className='form-input form-control'
-                        placeholder='Event Details'
+              
+                    <textarea
+                        className='form-control mb-3 h-25'
+                        placeholder='Description'
                         name='description'
                         type='text'
+                        rows="4" cols="50"
                         id='description'
                         value={eventState.description}
-                        onChange={handleEventChange}
-                    />
-                </div>
+                        onChange={handleEventChange}>
+                    </textarea>
 
-                <div className="col pe-0">
                     <label htmlFor='Max Noshers'> Max Noshers</label>
                     <input
-                        className='form-input form-control'
+                        className='form-input form-control mb-3'
                         placeholder='Including Host'
                         name='maxNoshers'
                         type='number'
@@ -179,8 +174,6 @@ const AddEvent = () => {
                         value={eventState.maxNoshers}
                         onChange={handleEventChange}
                     />
-                </div>
-                <div className="col">
                     <button className='btn btn-color-one' type='submit'>
                     Submit
                     </button>
