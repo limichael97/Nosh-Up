@@ -11,6 +11,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
+          console.log(userData.avatar)
         return userData;
       }
       throw new AuthenticationError('Not logged in');
@@ -18,6 +19,28 @@ const resolvers = {
 
     events: async (parent, { username }) => {
       const params = username ? { username } : {};
+      return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
+
+    },
+
+    LookUpEvents: async (parent, { cuisineType, city }) => {
+      const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
+      console.log(params);
+
+      if(cuisineType === null && city === null){
+        //return all
+        return Event.find().sort({ createdAt: -1 })
+      }
+      if(cuisineType === null || cuisineType === "All Cuisine") {
+        //return only city match
+        return Event.find({city}).sort({ createdAt: -1 })
+      }
+      if(city === null || city === "Anywhere"){
+        //return onlt cuisine match
+        console.log("no city");
+        return Event.find({cuisineType}).sort({ createdAt: -1 })
+      }
+
       return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
 
     },
