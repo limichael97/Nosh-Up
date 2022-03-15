@@ -96,7 +96,7 @@ mutation joinEvent($eventId: ID!) {
             guests
             countNoshers
             maxNoshers
-            comment
+          
             vacancy
         } 
         myJoinedEvent {
@@ -112,7 +112,7 @@ mutation joinEvent($eventId: ID!) {
             guests
             countNoshers
             maxNoshers
-            comment
+
             vacancy
         } 
         comment {
