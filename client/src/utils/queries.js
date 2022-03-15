@@ -148,6 +148,28 @@ export const QUERY_EVENTS = gql`
     }
 `;
 
+//LookUpEvents(cuisineType: String, city: String): [Event]
+export const QUERY_LOOKUP_EVENTS = gql`
+  query LookUpEvents($cuisineType: String, $city: String) {
+    LookUpEvents(cuisineType: $cuisineType, city: $city) {
+        _id
+        host
+        title
+        cuisineType
+        city
+        description
+        createdAt
+        eventDate
+        time
+        guests
+        countNoshers
+        maxNoshers
+        # comment
+        vacancy
+    }
+    }
+`;
+
 export const  QUERY_SINGLE_EVENT = gql`
     query getSingleEvent($id: ID!) {
         event(_id: $id){

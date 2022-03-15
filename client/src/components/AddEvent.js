@@ -96,7 +96,7 @@ const AddEvent = () => {
               
                     <label htmlFor='City'> City</label>
                     <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control mb-3'
-> 
+>                       <option  id="0">Select</option>
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                         <option value= 'Carmichael' id="3">Carmichael</option>

@@ -3,6 +3,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 const mongoose = require('mongoose');
 
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -18,6 +19,28 @@ const resolvers = {
 
     events: async (parent, { username }) => {
       const params = username ? { username } : {};
+      return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
+
+    },
+
+    LookUpEvents: async (parent, { cuisineType, city }) => {
+      const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
+      console.log(params);
+
+      if((cuisineType === null && city === null) || (cuisineType === "All Cuisine" && city === "Anywhere")){
+        //return all
+        return Event.find().sort({ createdAt: -1 })
+      }
+      if(cuisineType === null || cuisineType === "All Cuisine") {
+        //return only city match
+        return Event.find({city}).sort({ createdAt: -1 })
+      }
+      if(city === null || city === "Anywhere"){
+        //return onlt cuisine match
+        console.log("no city");
+        return Event.find({cuisineType}).sort({ createdAt: -1 })
+      }
+
       return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
 
     },
@@ -54,7 +77,6 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
-
       var newUser = args.input
 
       console.log(args)
@@ -64,7 +86,6 @@ const resolvers = {
         { _id: context.user._id },
         newUser,
         { new: true }
-
       );
     },
 
@@ -85,6 +106,7 @@ const resolvers = {
       return { token, user };
     },
 
+
     addEvent: async (parent, args, context) => {
       // console.log(context)
       console.log(args)
@@ -100,6 +122,13 @@ const resolvers = {
 
       return event;
     },
+
+
+
+
+
+
+
 
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
@@ -127,6 +156,7 @@ const resolvers = {
     },
 
 
+
     updateEvent: async (parent, args, context) => {
 
       var newEvent = args.input
@@ -152,24 +182,23 @@ const resolvers = {
       )
     },
 
-    addComment: async (parent, {eventId, username, commentText}, context) => {
+    addComment: async (parent, { eventId, username, commentText }, context) => {
 
       console.log(eventId)
       console.log(context.user)
       const comment = await Event.findOneAndUpdate(
         { _id: eventId },
         { $push: { comment:  { commentText, username: context.user.username } }  },
-        // { $push: { reactions: { reactionBody, username: context.user.username } } },
         { new: true, runValidators: true }
       );
 
       await User.findOneAndUpdate(
-        {_id: context.user._id},
-        { $push: { comment:  { commentText, username: username } }  },
+        { _id: context.user._id },
+        { $push: { comment: { commentText, username: username } } },
         { new: true, runValidators: true }
       )
 
-  
+
       return comment;
 
     }

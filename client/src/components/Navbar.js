@@ -54,7 +54,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+            <ul className="navbar-nav me-auto mb-2 mb-md-0 d-flex align-items">
               {Auth.loggedIn() ? (
                   <>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
               {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
               <Modal id="modalid" show={show} onHide={handleClose}>
-                <Modal.Header >
+                <Modal.Header>
                   {/* <Modal.Title>Login !</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>

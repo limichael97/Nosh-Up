@@ -26,12 +26,14 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         guests: [String]
         countNoshers: String
         maxNoshers: String
         comment: [ Comment ]
         vacancy: Boolean
     }
+    
     type Comment {
         _id: ID
         commentText: String
@@ -44,6 +46,7 @@ const typeDefs = gql`
         users: [User]
         user(username: String!): User
         events(username: String): [Event]
+        LookUpEvents(cuisineType: String, city: String): [Event]
         event(_id: ID!): Event
     }
 
@@ -57,6 +60,7 @@ const typeDefs = gql`
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         countNoshers: String
         maxNoshers: String
         comment: [ String ]

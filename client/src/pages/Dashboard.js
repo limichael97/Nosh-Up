@@ -6,11 +6,9 @@ import { QUERY_ME } from '../utils/queries';
 
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
-    const userData = data?.me || {}
+    const userData = data?.me || { avatar: '1',}
     const CurrentEvents = userData.myCurrentEvent;
-    if(!userData.avatar){
-        userData.avatar="1";
-    }
+
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
 
@@ -27,27 +25,29 @@ const Dashboard = () => {
 
     return(
         <>
+
             <div className="card mb-3" >
-            <div className="row g-0">
-                <div className="col-md-4">
-                    <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title">Name: {userData.username}</h5>
+                            <p className="card-text">Here's my bio: {userData.bioText}</p>
+                            <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-8">
-                <div className="card-body">
-                    <h5 className="card-title">Name: {userData.username}</h5>
-                    <p className="card-text">Here's my bio: {userData.bioText}</p>
-                    <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
-                </div>
-                </div>
-            </div>
             </div>
 
             <button onClick={toggleUpdateProfile} 
-                    className="btn btn-color-four me-2" 
+                    className="btn btn-color-four my-1" 
                     type="button" 
                     data-toggle="modal" 
                     data-target="#UpdateUserModal"
             >Update Profile</button>
+ 
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -113,12 +113,6 @@ const Dashboard = () => {
             </div>
 
             </div>
-
-
-
-
-
-
 
         </>
     )
