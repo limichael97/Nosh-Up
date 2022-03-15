@@ -26,6 +26,10 @@ const CommentList = ( {comment} ) => {
 
     // const avatars = userData.avatar
 
+    // const avatarFunction=(comments) => {
+    //     console.log(comments)
+    // }
+
 
 
     return(
@@ -40,7 +44,7 @@ const CommentList = ( {comment} ) => {
                             {
 
                             }
-                            <span class="avatar avatar-1 me-2"></span>
+                            <span class={`avatar avatar-1 me-2`}></span>
 
                             <p className="pb-3 mb-0 small lh-sm border-bottom">
                                 <Link to ={`/profiles/${comments.username}`}>
