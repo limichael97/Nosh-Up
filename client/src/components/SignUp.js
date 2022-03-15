@@ -65,6 +65,7 @@ const Signup = () => {
 
   return (
     <>
+    <h1></h1>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                 <Alert
                   dismissible

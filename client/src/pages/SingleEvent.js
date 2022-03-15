@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_SINGLE_EVENT } from '../utils/queries';
@@ -9,43 +9,37 @@ import CommentList from '../components/CommentList';
 
 const SingleEvent = () => {
 
+
   const { id: eventId } = useParams();
   console.log(eventId)
 
   const { loading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { id: eventId }
   });
-  const [joinEvent] = useMutation(JOIN_EVENT);
-  const [addComment] = useMutation(ADD_COMMENT);
 
   const event = data?.event || {};
 
+  const [joinEvent] = useMutation(JOIN_EVENT);
+  const [addComment] = useMutation(ADD_COMMENT);
+
   console.log(data)
   console.log(event)
+  var array = data?.event.guests
+  console.log(array)
+  // console.log(array.length)
+
+  const handleJoin = async () => {
+      try {
+        await joinEvent({
+          variables: { eventId: eventId }
+        });
+      } catch (e) {
+        console.log('Does not work')
+        console.error(e);
+      }
+  };
 
   
-    const handleJoin = async () => {
-        try {
-          await joinEvent({
-            variables: { eventId: {...event._id} }
-          });
-        } catch (e) {
-          console.log('Does not work')
-          console.error(e);
-        }
-    };
-
-    // const handleComment = async () => {
-    //   try {
-    //     await addComment({
-    //       variables: {eventId, commentText}
-    //     })
-    //   } catch (e) {
-    //     console.log('Does not work')
-    //     console.error(e);
-    //   }
-    // }
-
   return (
     // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
     <>
@@ -106,9 +100,26 @@ const SingleEvent = () => {
         </div>
       </div>
       <div>
-      <button className="btn ml-auto" onClick={handleJoin}>
-                      Join this Event
-      </button>     
+        <div className='m-4'>
+          <p>{event.maxNoshers}</p>
+          <p>{event.guests}</p>
+        </div>
+      {/* {
+        (event.maxNoshers == event.guests.length) ? (
+          <button className="btn ml-auto" disabled="disabled">
+          This event is full
+        </button>  
+        ): (
+          <button className="btn ml-auto" onClick={handleJoin}>
+            Join this Event
+          </button>     
+        )
+      } */}
+
+        <button className="btn ml-auto" onClick={handleJoin}>
+            Join this Event
+          </button>    
+
       </div>
 
 

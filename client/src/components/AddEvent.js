@@ -12,7 +12,7 @@ const AddEvent = () => {
     console.log(userData)
     console.log(userData.username)
     console.log(data)
-    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'', city: '', description: '', maxNoshers:''});
+    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'American', city: 'Sacramento', description: '', maxNoshers:''});
 
     const [addEvent, { error }] = useMutation(ADD_EVENT);
     console.log(eventState)
@@ -84,8 +84,7 @@ const AddEvent = () => {
                     />
                 
                 <label htmlFor='Cuisine'> Cuisine</label>
-                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control mb-3'
-> 
+                    <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control mb-3'> 
                         <option value='American' id="1">American</option>
                         <option value='Mexican' id="2">Mexican</option>
                         <option value='Italian' id="3">Italian</option>
@@ -95,8 +94,7 @@ const AddEvent = () => {
                     </select>
               
                     <label htmlFor='City'> City</label>
-                    <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control mb-3'
->                       <option  id="0">Select</option>
+                    <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control mb-3'>                       <option  id="0">Select</option>
                         <option value='Sacramento' id="1">Sacramento</option>
                         <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                         <option value= 'Carmichael' id="3">Carmichael</option>
