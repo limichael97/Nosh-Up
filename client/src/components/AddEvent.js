@@ -7,20 +7,18 @@ import { QUERY_ME } from '../utils/queries';
 
 const AddEvent = () => {
 
-  const { loading, data } = useQuery(QUERY_ME)
-  const userData = data?.me || {}
-  console.log(userData)
-  console.log(userData.username)
-  console.log(data)
-  const [eventState, setEventState] = useState({ host: '', title: '', cuisineType: '', city: '', description: '', maxNoshers: '', eventDate: '', time: '' });
+    const { loading, data } = useQuery(QUERY_ME)
+    const userData = data?.me || {}
+    console.log(userData)
+    console.log(userData.username)
+    console.log(data)
+    const [eventState, setEventState] = useState({ host: '', title: '', cuisineType:'American', city: 'Sacramento', description: '', maxNoshers:''});
 
   const [addEvent, { error }] = useMutation(ADD_EVENT);
   console.log(eventState)
 
-
-
-  const handleEventChange = (event) => {
-    const { name, value } = event.target;
+    const handleEventChange = (event) => {
+        const { name, value } = event.target;
 
     setEventState({
       ...eventState,
