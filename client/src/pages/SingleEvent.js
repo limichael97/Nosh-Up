@@ -117,7 +117,7 @@ const SingleEvent = (username) => {
 
                     // ) :
                      (
-                      <button className="btn ml-auto btn-primary" onClick={handleJoin}>
+                      <button className="btn ml-auto btn-color-four my-1" onClick={handleJoin}>
                         Join this Event
                       </button>     
                     )
@@ -137,7 +137,7 @@ const SingleEvent = (username) => {
             dinner_dining
           </span>
           <div className="lh-1">
-            <h1 className="h6 mb-0 text-white lh-1">Meet Your</h1>
+            <h1 className="h4 mb-0 text-white lh-1">Meet Your</h1>
             <small>Fellow Noshers</small>
           </div>
         </div>
@@ -152,8 +152,7 @@ const SingleEvent = (username) => {
             }
         </div>
         <div className="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
-
+            <h6 className="border-bottom pb-2 mb-0">Noshers Attending</h6>
             {
               event.guests &&
                 event.guests.map((guest) => (

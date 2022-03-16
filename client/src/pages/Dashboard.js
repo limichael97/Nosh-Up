@@ -15,20 +15,24 @@ console.log(userData)
 
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
-
     const handleClose = () => {
         setIsUpdateUserOpen(false);
         setShow(false);
     }
     const handleShow = () => setShow(true);
-
     const toggleUpdateProfile = () => {
         setIsUpdateUserOpen(true);
         handleShow();
     }
-
     return(
         <>
+    <div class ="container">
+        <div className="row mb-5">
+            <div className="col">
+                <div className="card" >
+                    <div className="row g-0">
+                        <div className="col-2 me-4">
+                            <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
 
             <div className="card mb-3" >
                 <div className="row g-0">
@@ -44,23 +48,15 @@ console.log(userData)
                     </div>
                 </div>
             </div>
-
-            <button onClick={toggleUpdateProfile} 
-                    className="btn btn-color-four my-1" 
-                    type="button" 
-                    data-toggle="modal" 
-                    data-target="#UpdateUserModal"
-            >Update Profile</button>
- 
-
+        </div>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Header>
+                    <Modal.Title>Update Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {isUpdateUserOpen && (
                         <UpdateProfile onClose={toggleUpdateProfile} />
-                    )} 
+                    )}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
@@ -69,9 +65,8 @@ console.log(userData)
                 </Modal.Footer>
             </Modal>
 
-
          {CurrentEvents && CurrentEvents.length ? (
-             <h2>My Current Events</h2>
+            <h2 className="mb-4 mt-4">My Current Events</h2>
          ):(
             <h2>You Have not created an event yet...</h2>
          )}
@@ -80,6 +75,12 @@ console.log(userData)
             {
                 CurrentEvents && CurrentEvents.map(event => (
                     
+            <div className="col">
+                <div className="card">
+                <div className="col-auto d-none d-lg-block featured-img-2"></div>
+                <div className="card-body">
+                    <h5 className="card-title">My Current Hosted Events</h5>
+                    <p className="card-text">This card will hold the information for my current hosted events.</p>
                     <div className="col-12 col-md-4">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div className="card">
@@ -114,6 +115,7 @@ console.log(userData)
             <h2>You Have not joined an event yet...</h2>
          )}
             
+            <h2 className="mb-4 mt-4">My Joined Events</h2>
             {
                 JoinedEvents && JoinedEvents.map(event => (
             
@@ -140,26 +142,20 @@ console.log(userData)
                 </div>
                     </div>
                 </div>
+            </div>
+            </div>
+        </div>
+
                 ))
             }
         </>
     )
 }
-
 export default Dashboard;
-
-
 /*
-
-
-
-
-
       {userData.avatar && (
         <div>
         <img alt="not fount" width={"150px"} src={URL.createObjectURL(userData.avatar)} />
         </div>
       )}
-
-
       */
