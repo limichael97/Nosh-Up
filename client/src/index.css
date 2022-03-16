@@ -19,7 +19,7 @@ body {
 }
 
 .restuarant-profile-pic {
-  background-image: url("http://placekitten.com/700/300");
+  background-image: url("img/peeps-GirlInGroup-Alex.jpeg");
   background-size: cover;
 }
 
@@ -202,7 +202,7 @@ span {
       rgba(0, 0, 0, 0.05),
       rgba(0, 0, 0, 0.05)
     ),
-    url(./img/food-steak.jpg);
+    url(./img/peeps-CoupleStreetCafe-Wiktor.jpeg);
   background-position: 50% 50%;
   background-size: cover;
   width: 25rem;

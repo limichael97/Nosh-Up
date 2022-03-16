@@ -1,51 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_SINGLE_EVENT } from '../utils/queries';
+import { QUERY_SINGLE_EVENT, QUERY_ME } from '../utils/queries';
 import { JOIN_EVENT, ADD_COMMENT } from '../utils/mutations';
 import Comment from "../components/Comment";
-import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
+import GuestList from '../components/GuestList';
 
-const SingleEvent = () => {
 
+const SingleEvent = (username) => {
+  console.log(username)
   const { id: eventId } = useParams();
-  console.log(eventId)
 
   const { loading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { id: eventId }
   });
+
+  const event = data?.event || [];
+
   const [joinEvent] = useMutation(JOIN_EVENT);
-  const [addComment] = useMutation(ADD_COMMENT);
-
-  const event = data?.event || {};
-
   console.log(data)
-  console.log(event)
+  console.log(event.comment)
+  var eventGuests = event.guests
+  console.log(eventGuests)
+
+  var CurUser = []
+  if(eventGuests)
+  {
+      for(var i = 0; i <eventGuests.length; i++) {
+          console.log(eventGuests[i]);
+          CurUser.push(eventGuests[i]);
+
+      }
+      console.log(CurUser)
+  }
+  console.log(CurUser.length)
+
+  const handleJoin = async event => {
+    window.location.reload();
+      try {
+        await joinEvent({
+          variables: { eventId: eventId }
+        });
+      } catch (e) {
+        console.log('Does not work')
+        console.error(e);
+      }
+  };
+
 
   
-    const handleJoin = async () => {
-        try {
-          await joinEvent({
-            variables: { eventId: {...event._id} }
-          });
-        } catch (e) {
-          console.log('Does not work')
-          console.error(e);
-        }
-    };
-
-    // const handleComment = async () => {
-    //   try {
-    //     await addComment({
-    //       variables: {eventId, commentText}
-    //     })
-    //   } catch (e) {
-    //     console.log('Does not work')
-    //     console.error(e);
-    //   }
-    // }
-
   return (
     // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
     <>
@@ -58,7 +62,7 @@ const SingleEvent = () => {
           </div>
           <div className="col-md-6">
             <div className="h-100 p-5 border rounded-3">
-              {/* <h2>Add borders</h2>  */}
+              <h2>{event.title}</h2> 
 
               <div className="list-group">
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -67,8 +71,8 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">{event.title}</h6>
-                      <p className="mb-0 opacity-75">1215 19th St, Sacramento, CA 95811</p>
+                      <h6 className="mb-0">Restaurant</h6>
+                      <p className="mb-0 opacity-75">{event.city}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">now</small>
                   </div>
@@ -80,7 +84,7 @@ const SingleEvent = () => {
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
                       <h6 className="mb-0">March 20th, 2022</h6>
-                      <p className="mb-0 opacity-75">Never been here but I've heard it's delicious! Anyone wanna join me? Going for pulled pork.</p>
+                      <p className="mb-0 opacity-75">{event.description}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">3d</small>
                   </div>
@@ -91,71 +95,72 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                    {/* <button className="btn ml-auto" onClick={handleJoin}>
+                      {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                    <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
+                    <p className="mb-0 opacity-75">{event.maxNoshers}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">1w</small>
                   </div>
                 </a>
+
+                  {
+                    (event.maxNoshers == CurUser.length) ? (
+                      <button className="btn ml-auto btn-danger" disabled="disabled">
+                      This event is full
+                    </button>  
+                    ): 
+                    // (event.host ) ? (
+                    //   <button className="btn ml-auto btn-danger" disabled="disabled">
+                    //   This is your event 
+                    // </button>  
+
+                    // ) :
+                     (
+                      <button className="btn ml-auto btn-color-four my-1" onClick={handleJoin}>
+                        Join this Event
+                      </button>     
+                    )
+                  }
               </div>
               {/* <button className="btn btn-outline-secondary mt-3" type="button">CTA?</button>  */}
             </div>
           </div>
         </div>
       </div>
-      <div>
-      <button className="btn ml-auto" onClick={handleJoin}>
-                      Join this Event
-      </button>     
-      </div>
+      <p>{event.maxNoshers}</p>
 
 
       <main className="container py-5">
-
         <div className="d-flex align-items-center p-3 my-3 text-white bg-color-one rounded shadow-sm">
           <span className="material-icons fs-1 me-2">
             dinner_dining
           </span>
           <div className="lh-1">
-            <h1 className="h6 mb-0 text-white lh-1">Meet Your</h1>
+            <h1 className="h4 mb-0 text-white lh-1">Meet Your</h1>
             <small>Fellow Noshers</small>
           </div>
         </div>
         <Comment eventId = {event._id}/>
-        <CommentList comment= {event.comment}/>
-
-        
-
         <div className="my-3 p-3 bg-body rounded shadow-sm">
-          <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
+            <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
+            {
+              event.comment &&
+                event.comment.map((comments) => (
+                  <CommentList comment= {comments}/>
+              ))
+            }
+        </div>
+        <div className="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 className="border-bottom pb-2 mb-0">Noshers Attending</h6>
+            {
+              event.guests &&
+                event.guests.map((guest) => (
+                  <GuestList guests = {guest} /> 
 
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-4 me-2"></span>
+                ))
+            }
 
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <div className="d-flex text-muted pt-3">
-            <span class="avatar avatar-5 me-2"></span>
-
-            <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div className="d-flex justify-content-between">
-                <strong className="text-gray-dark">Full Name</strong>
-                <a href="/">Follow</a>
-              </div>
-              <span className="d-block">@username</span>
-            </div>
-          </div>
-          <small className="d-block text-end mt-3">
-            <a href="/">All suggestions</a>
-          </small>
         </div>
       </main>
     </>

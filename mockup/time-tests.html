@@ -54,25 +54,25 @@
     <form>
     <div class="form-row align-items-center py-lg-5">
         <div class="row d-flex align-items-center">
-              <div class="col">
-                 <!-- <label class="sr-only" for="inlineFormInput">Name</label>  -->
+              <!-- <div class="col">
+                 <label class="sr-only" for="inlineFormInput">Name</label> 
                 <input id="date-input" type="date" class="form-control mb-2" placeholder="">
               </div>
-              <div class="col">
+              <!-- <div class="col"> -->
                 <!-- <label class="sr-only" for="inlineFormInputGroup">Username</label>  -->
-                <div class="input-group mb-2">
+                <!-- <div class="input-group mb-2">
                   <div class="input-group-prepend">
                     <div class="input-group-text">@</div> 
                   </div>
                   <input id="time-input" type="time" class="form-control" placeholder="">
                 </div>
-              </div>
+              </div> -->
               <div class="col">
                 <button id="submit-date-time" type="button" class="btn btn-primary mb-2">Submit</button>
               </div>
 
-              <!-- <h3>Alt Date enter</h3>
-              Datetime: <input type="datetime-local" name"field3" id="event-date" -->
+              <h3>Alt Date enter</h3>
+              Datetime: <input type="datetime-local" name"field3" id="event-date"
 
          </div>
          <!-- <div class="row d-flex align-items-center py-5">
@@ -95,129 +95,182 @@
 
 
 
+
+
+
 <script>
 
-var DateTime = luxon.DateTime;
+// const dayjs = require('dayjs');
+// const localizedFormat = require('dayjs/plugin/localizedFormat')
+// dayjs.extend(localizedFormat)
 
 
-// for use with type="datetime-local"
-// var event_date = document.getElementById("event-date")
-// var entered_date;
 
-var user_date = document.getElementById("date-input");
-var user_time = document.getElementById("time-input");
-var entered_time;
-var entered_date;
+
+// ------------ DATE Comparisons  Start ------
+
+var  DateTime = luxon.DateTime
 var date_time_entered = document.getElementById("submit-date-time");
 
-
 date_time_entered.addEventListener("click", function() {
-    entered_date = user_date.value;
-    entered_time = user_time.value;
 
-    // console.log("clicked")
+  // console.log("clicked")
 
-// --------------- User Input Dates--------
-    console.log(`line 120 user_date:  ${entered_date}`)
-    console.log(`line 121 user_time:  ${entered_time}`)
+var event_date = document.getElementById("event-date")
 
 
-// --------------- getting today's date to compare --------
+
+
+// ------------ EVENT Vars Start ---------
+var  isEvent = event_date.value  // is a DOMString local time Zone
+console.log(`
+122 isEvent: ${isEvent}
+`)
+
+isEventObj = new Date(isEvent) //create a date OBJ
+console.log(`
+127 isEventOBj: ${isEventObj}
+`)
+
+isEventStr = new Date(isEvent).toLocaleString
+console.log(`
+132 isEventStr: ${isEvent}
+`)
+// ------------ EVENT Vars End ---------
+
+
+// ----------- TODAY Vars  Start ----------------
+isTodayObj = new Date  // is a date Obj
+console.log(`
+140 isTodayObj: ${isTodayObj}
+`)
+
+const isToday = new Date();
+isTodayStr = isToday.toLocaleString() //  String, local time zone
+console.log(`
+146 isTodayStr: ${isTodayStr}
+`)
+
+// ----------- TODAY Vars  End ----------------
+
+
+
+// ----- Checking if today is before Event Date ----
+console.log(isTodayObj < isEventObj)
+console.log(isTodayObj >  isEventObj)
+
+
+// const date1 = dayjs('2019-01-25')
+// date1.diff('2018-06-05', 'month', true) // 7.645161290322581
+
+// const daysLeft = isEventObj.diff(isTodayObj, 'day', true)
+//  console.log(`
+// 168 DaysLeft: ${daysLeft}
+// `)
+
+const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+
+// a and b are javascript Date objects
+function dateDiffInDays(a, b) {
+  // Discard the time and time-zone information.
+  const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+  const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+
+  return Math.floor((utc2 - utc1) / _MS_PER_DAY); //Returns x rounded down to its nearest integer
+}
+
+// test it
+const a = isTodayObj,
+    b = isEventObj,
+    difference = dateDiffInDays(a, b);
     console.log(`
-    126 
-    time now/today in ms: ${DateTime.now().toLocal()}
-    `)
-    console.log(`
-    130
-    time now/today in ISO:  ${DateTime.now().toISODate()}
-    `)
-
-    //DateTime.now().setZone('America/New_York').minus({weeks:1}).endOf('day').toISO();
-    // console.log(line 119 ' + entered_time)
-
-    const isEvent = entered_date
-    // today = DateTime.now().toLocal();
-    const isToday = DateTime.now().toISODate()
-
-    // console.log(`
-    // 134 today: ${today}
-    // `)
+//187 difference: : ${difference}
+// `)
 
 
-    // --------------- Checking if today is before Event Date ------
-    console.log(isToday < isEvent)
-    console.log(isToday > isEvent)
+//  isToday = DateTime.now().toLocal()
+//  console.log(`
+// 128 isToday: ${isToday}
+// `)
 
-    // ---- Testing Subtraction to see how many days left before event ---------
+// isEvent = eventDate.toLocal().toISOString();
+// console.log(`
+// 13 isToday: ${isEvent}
+// `)
 
-    // var end = isEvent
-    // var start = isToday
+
+
+// const daysLeft = isEvent.diff(isToday)
+// console.log(`
+// 141 Days Left:  ${dayLeft}
+// `)
+
+  
+
+
+// ---- Testing Subtraction to see how many days left before event ---------
+
+// var end = isEvent
+// // var start = isToday
 
 //   var end = DateTime.fromISO('2017-03-13');
 //   var start = DateTime.fromISO('2017-02-11');
 
-  var end = DateTime.fromISO(isEvent);
-  var start = DateTime.fromISO(isToday);
+// // var end = DateTime.fromISO(isEvent);
+// //   var start = DateTime.fromISO(isToday);
 
 
+// var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
 
-///////////////////////////////////////////////////
+// var timeLeft = isEvent.diff(today, ['days', 'hours', 'minutes']).toObject()
+// const daysLeft =
 
-// const isToday = DateTime.fromJSDate(new Date(today));
-// const isEvent = DateTime.fromJSDate(new Date(eventD))
-// const eventDate = DateTime.fromJSDate(eventD);
-
-console.log('line 145 ' + isToday)
-console.log('line 147 ' + isEvent)
-
-var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
-// const daysLeft = 
-
-console.log(timeLeft) 
-console.log(`${timeLeft.days} days until your event!`)
-
-//////////////////////////////////////////////////////
-
-
-
-
-}); 
+// console.log(timeLeft)
+// console.log(`${timeLeft.days} days until your event!`)
 
 
 
 
 
+})
+
+// date_time_entered.addEventListener("click", function() {
+//     entered_date = user_date.value;
+//     entered_time = user_time.value;
+
+
+
+// today = DateTime.now().toLocal();
+// isEvent = (entered_date).toLocal();//not a function
 
 
 
 
-// console.log(luxon.DateTime.now().plus({ days: -1 }))
+// console.log('line  ' + today)
+// console.log('line  ' + isEvent)
 
-// const diffInMonths = eventDate.diff(isToday, ['months', 'days', 'hours', 'minutes', 'seconds']);
-// diffInMonths.toObject(); // => {months: 0, days: 1, hours: 3, minutes: 13, seconds: 10}
+// var timeLeft = isEvent.diff(today, ['days', 'hours', 'minutes']).toObject()
+// const daysLeft =
 
-// console.log(diffInMonths)
+//   console.log(timeLeft)
+// console.log(`${timeLeft.days} days until your event!`)
 
 
-// luxon.DateTime.now().plus({ days: 5 })
-// document.querySelector('#schedule-date').value = luxon.DateTime.now().toISODate();
-// document.querySelector('#schedule-time').value = luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
+// ----------- DATE Comparisons  End -------------
 
-// luxon.DateTime.now().toLocaleString(DateTime.DATETIME_MED);
-// console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE))
-// console.log("DATE TIME",luxon.DateTime.now().toISODate())
-// console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.DATETIME_MED))
- 
-// var DateTime = luxon.DateTime.fromISO("2022-02-05").toLocaleString()
-// 2022-02-08
 
-// var DateTime = luxon.DateTime.fromISO("2022-02-05").toMillis();
-// console.log("LUXON", DateTime);
 
-//  var your_var = luxon.DateTime.fromISO(your_other_var).toFormat('MM-dd-yyyy');
+
+
+
+
+
+
+
+
+
 
 </script>
-
 
 <!-- body -->
 <main>
@@ -276,3 +329,347 @@ console.log(`${timeLeft.days} days until your event!`)
       
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+// <script>
+// /////////////////////////  TEST GROUP 2 Starts /////////////////////////////////
+// var DateTime = luxon.DateTime;
+
+
+
+// const dayjs = require('dayjs');
+// const localizedFormat = require('dayjs/plugin/localizedFormat')
+// dayjs.extend(localizedFormat)
+
+
+//     //  ---------  format ms to LLLL  Starts --------
+
+//     // use on FE to convert GraphQL obj data???
+
+//     var date_time_entered = document.getElementById("submit-date-time");
+
+// date_time_entered.addEventListener("click", function() {
+
+//   // var user_date = document.getElementById("date-input");
+//     // var user_time = document.getElementById("time-input");
+//   var event_date = document.getElementById("event-date");
+
+// let eventInput = event_date.value
+
+
+//     // let time = user_time.value
+//     // let eventDateVal = user_date.value
+
+//     // console.log(`
+//     // 121
+//     // ${user_time}
+//     // `)
+
+//     console.log(`
+//     121
+//     ${eventInput}
+//     `)
+
+
+//     // var entered_time;
+//     // var entered_date;
+
+
+
+//     let createdDate = dayjs(eventInput).format('LLLL')
+//     console.log(`
+// 150 ${eventInput}`)
+
+//   // let createdDate = dayjs(date).format('LLLL')
+
+//   var overrideZone = DateTime.fromISO(eventInput, { zone: "America/Los_Angeles" });
+
+// console.log(`
+
+// 150 ${overrideZone}`)
+  ////////////////////////// MS Calc ////////////////////////
+  // const { DateTime } = require("luxon");
+
+  // var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
+  // let test =  DateTime.fromJSDate(1647734400000).toLocaleString(DateTime.DATE_MED);
+
+  
+  //  console.log(`
+  //   132 ms converted from ISO 2022-03-20 : ${DateTime}
+  //                               user_time: 1647734400000
+  //   `)
+
+
+    // let eventDateNum = Number(eventDate) // for our eventeventDate when we get it
+
+
+    // let eventDateNum = 1647734400000
+
+    // // let string = new Date(currentEventDate).toISOString()
+    // // let string = new Date(1647734400000).toLocalString() //not valid
+    // let stringUser = new Date(eventDateNum).toISOString()
+    // // let stringConvert = new Date(1647759600000).toISOString()
+    // // let stringH = new Date();
+    // // stringH.setHours(stringH.getHours()+7)
+
+    // // var isodate = stringH.ISOString();
+
+    // console.log(`
+    // 145 converted ms from user_time 1647734400000 : ${stringUser}
+   
+    // `)
+    // // converted ms from convert#  1647759600000 : ${stringConvert}
+
+    //  //(PST) is 8 hours behind (UTC) 7 PDT
+    //   // let hourCalc = JSON.stringify((parseInt(time.slice(0, 2)) + 7))
+
+
+    
+    //   let hourCalc = ((parseInt(time.slice(0, 2)) + 7))
+    //   console.log(`
+    //   155
+    //   hour Calc: ${hourCalc}
+    //   `)
+
+  
+    // // --------getMinutes as String in order to concat back with UTC Hour
+    // // time is a string
+    // //need to get the first 2 numbers then the second 2 numbers  hours minutes
+
+
+
+    //   let min2 = ((time.slice(3)))
+    //   console.log(`
+    //   162s
+    //   time min2: ${min2}
+    //   `)
+
+    //   let timeMs = ((hourCalc * 60* 60+ min2*60)*1000)
+    //   console.log(`
+    //   169
+    //   Eventtime in ms : ${timeMs}
+    //   `)
+
+    //   let totalEventTime = eventDateNum + timeMs
+    //   console.log(`
+    //   199
+    //   Event time in ms : ${totalEventTime}
+    //   `)
+
+    //   let actualEventDate = new Date(totalEventTime).toISOString()
+    //   console.log(`
+    //   205
+    //   Event time in ms : ${actualEventDate}
+    //   `)
+
+
+
+    // 1647759600000
+    // 1647734400000
+    
+    // console.log(`
+    // 129 ${string}
+    // `)
+    // let testStr = dayjs(string).format('LLLL')
+    // console.log(`
+    // 158
+    // Final Event Date: ${testStr}
+    // `)
+    // console.log(testStr)
+    // return testStr
+  });
+
+
+
+//     entered_date = user_date.value;
+//     entered_time = user_time.value;
+
+//     // console.log("clicked")
+
+// // --------------- User Input Dates--------
+//     console.log(`line 126 user_date:  ${entered_date}`)
+//     console.log(`line 127 user_time:  ${entered_time}`)
+
+//     // --------------- getting today's date to compare --------
+//     console.log(`
+//     132
+//     time now/today in ms: ${DateTime.now().toLocal()}
+//     `)
+//     console.log(`
+//     136
+//     time now/today in ISO:  ${DateTime.now().toISODate()}
+//     `)
+
+
+//     // const adjEventDate = (event) => {
+
+// //  user_date:  2022-03-20 1647734400000
+// //  user_time:  18:00
+
+
+//     console.log(event.eventDate)
+//     var currentEventDate = Number(event.eventDate)
+
+//     var DateTime = luxon.DateTime.fromISO("2022-03-20").toMillis();
+//     console.log(`
+//     152
+//     ${DateTime}
+//     `)
+    // console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE))
+
+
+
+    //  ---------  format ms to LLLL  Ends --------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////  TEST GROUP 1 Starts /////////////////////////////////
+
+// for use with type="datetime-local"
+// var event_date = document.getElementById("event-date")
+// var entered_date;
+
+// var user_date = document.getElementById("date-input");
+// var user_time = document.getElementById("time-input");
+// var entered_time;
+// var entered_date;
+// var date_time_entered = document.getElementById("submit-date-time");
+
+
+// date_time_entered.addEventListener("click", function() {
+// //     entered_date = user_date.value;
+// //     entered_time = user_time.value;
+
+//  console.log("clicked")
+
+// // --------------- User Input Dates--------
+//     console.log(`line 120 user_date:  ${entered_date}`)
+//     console.log(`line 121 user_time:  ${entered_time}`)
+
+
+// // --------------- getting today's date to compare --------
+//     console.log(`
+//     126 
+//     time now/today in ms: ${DateTime.now().toLocal()}
+//     `)
+//     console.log(`
+//     130
+//     time now/today in ISO:  ${DateTime.now().toISODate()}
+//     `)
+
+//     //DateTime.now().setZone('America/New_York').minus({weeks:1}).endOf('day').toISO();
+//     // console.log(line 119 ' + entered_time)
+
+//     const isEvent = entered_date
+//     // today = DateTime.now().toLocal();
+//     const isToday = DateTime.now().toISODate()
+
+//     // console.log(`
+//     // 134 today: ${today}
+//     // `)
+
+
+//     // --------------- Checking if today is before Event Date ------
+//     console.log(isToday < isEvent)
+//     console.log(isToday > isEvent)
+
+//     // ---- Testing Subtraction to see how many days left before event ---------
+
+//     // var end = isEvent
+//     // var start = isToday
+
+// //   var end = DateTime.fromISO('2017-03-13');
+// //   var start = DateTime.fromISO('2017-02-11');
+
+//   var end = DateTime.fromISO(isEvent);
+//   var start = DateTime.fromISO(isToday);
+
+// /////////////////////////  TEST GROUP 1 Ends /////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////
+
+// const isToday = DateTime.fromJSDate(new Date(today));
+// const isEvent = DateTime.fromJSDate(new Date(eventD))
+// const eventDate = DateTime.fromJSDate(eventD);
+
+// console.log('line 145 ' + isToday)
+// console.log('line 147 ' + isEvent)
+
+// var timeLeft = end.diff(start, ['days', 'hours', 'minutes']).toObject()
+// // const daysLeft = 
+
+// console.log(timeLeft) 
+// console.log(`${timeLeft.days} days until your event!`)
+
+//////////////////////////////////////////////////////
+
+
+
+
+// }); 
+
+
+
+
+
+
+
+
+
+// console.log(luxon.DateTime.now().plus({ days: -1 }))
+
+// const diffInMonths = eventDate.diff(isToday, ['months', 'days', 'hours', 'minutes', 'seconds']);
+// diffInMonths.toObject(); // => {months: 0, days: 1, hours: 3, minutes: 13, seconds: 10}
+
+// console.log(diffInMonths)
+
+
+// luxon.DateTime.now().plus({ days: 5 })
+// document.querySelector('#schedule-date').value = luxon.DateTime.now().toISODate();
+// document.querySelector('#schedule-time').value = luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
+
+// luxon.DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+// console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.TIME_SIMPLE))
+// console.log("DATE TIME",luxon.DateTime.now().toISODate())
+// console.log("DATE TIME",luxon.DateTime.now().toLocaleString(DateTime.DATETIME_MED))
+ 
+// var DateTime = luxon.DateTime.fromISO("2022-02-05").toLocaleString()
+// 2022-02-08
+
+// var DateTime = luxon.DateTime.fromISO("2022-02-05").toMillis();
+// console.log("LUXON", DateTime);
+
+//  var your_var = luxon.DateTime.fromISO(your_other_var).toFormat('MM-dd-yyyy');
+
+ -->
+

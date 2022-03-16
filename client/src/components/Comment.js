@@ -44,23 +44,24 @@ const Comment = ({ eventId }) => {
 
   return (
     <div>
-      <p className="m-0">
+      <p className="m-0"><small className='text-muted'>
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
 
-      </p>
+        </small></p>
       <form className="flex-row justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
         <textarea
-          placeholder="Leave a reaction to this thought..."
+          placeholder="Leave a reaction to this event..."
           value = {commentText}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
 
         ></textarea>
-
-        <button className="btn col-12 col-md-3" type="submit">
+        <div class="container">
+        <button className="btn col-12 col-md-3 btn-color-four my-1" type="submit">
           Submit
         </button>
+        </div>
       </form>
     </div>
   );

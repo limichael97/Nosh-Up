@@ -46,9 +46,9 @@ const UpdateProfile = () => {
     return (
       <>
         <form className="container py-3" onSubmit={handleUserSubmit}>
-        <img src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
+        <img className="mb-3" src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
         <div className="form-group mb-3">
-              <label for="exampleFormControlSelect1">Avatar</label>
+              <label for="exampleFormControlSelect1">Select Avatar:</label>
               <select class="form-control" name="avatar" onChange = {handleUserChange} value={UpdateState.avatar}>
               <option value ="1">1</option>
               <option value ="2">2</option>
@@ -64,7 +64,7 @@ const UpdateProfile = () => {
           </div>
 
       <div className="form-group mb-3">
-              <label className="d-block" for="exampleFormControlSelect1">Favorite Cuisine</label>
+              <label className="d-block" for="exampleFormControlSelect1">Favorite Cuisine:</label>
               <select className='form-input form-control mb-3' name ='favoriteCuisine' onChange = {handleUserChange} value={UpdateState.favoriteCuisine}> 
                   <option id="0">---</option>
                   <option value= 'American' id="1">American</option>
@@ -89,7 +89,7 @@ const UpdateProfile = () => {
                   </textarea>
           </div>
           <button 
-              className="btn btn-color-one"
+              className="btn btn-color-four my-1"
               type='submit'
               variant='success'>
               Submit
