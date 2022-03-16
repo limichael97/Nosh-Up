@@ -1,6 +1,8 @@
-const { User, Event } = require('../models');
+const { User, Event, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth')
+const { signToken } = require('../utils/auth');
+const mongoose = require('mongoose');
+
 
 const resolvers = {
   Query: {
@@ -9,6 +11,9 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
+          .populate('myCurrentEvent')
+          .populate('myJoinedEvent');
+          console.log(userData.myCurrentEvent)
         return userData;
       }
       throw new AuthenticationError('Not logged in');
@@ -16,6 +21,28 @@ const resolvers = {
 
     events: async (parent, { username }) => {
       const params = username ? { username } : {};
+      return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
+
+    },
+
+    LookUpEvents: async (parent, { cuisineType, city }) => {
+      const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
+      console.log(params);
+
+      if((cuisineType === null && city === null) || (cuisineType === "All Cuisine" && city === "Anywhere")){
+        //return all
+        return Event.find().sort({ createdAt: -1 })
+      }
+      if(cuisineType === null || cuisineType === "All Cuisine") {
+        //return only city match
+        return Event.find({city}).sort({ createdAt: -1 })
+      }
+      if(city === null || city === "Anywhere"){
+        //return onlt cuisine match
+        console.log("no city");
+        return Event.find({cuisineType}).sort({ createdAt: -1 })
+      }
+
       return Event.find(params).sort({ createdAt: -1 }) // sort most recent first
 
     },
@@ -33,6 +60,7 @@ const resolvers = {
     },
     // get a user by username
     user: async (parent, { username }) => {
+      console.log(username);
       return User.findOne({ username })
         .select('-__v -password')
         .populate('myCurrentEvent')
@@ -43,10 +71,24 @@ const resolvers = {
   Mutation: {
 
     addUser: async (parent, args) => {
+      console.log("Get Signup Info");
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    updateUser: async (parent, args, context) => {
+      var newUser = args.input
+
+      console.log(args)
+      console.log(newUser)
+
+      return await User.findOneAndUpdate(
+        { _id: context.user._id },
+        newUser,
+        { new: true }
+      );
     },
 
     login: async (parent, { email, password }) => {
@@ -66,9 +108,11 @@ const resolvers = {
       return { token, user };
     },
 
+
     addEvent: async (parent, args, context) => {
       // console.log(context)
       console.log(args)
+      console.log(context.user)
 
       const event = await Event.create({ ...args.input });
       console.log(event)
@@ -79,12 +123,19 @@ const resolvers = {
         { new: true }
       );
 
+      await Event.findByIdAndUpdate(
+        { _id: event._id },
+        { $push: { guests: context.user.username } },
+        { new: true }
+      );
+
       return event;
     },
 
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
       console.log('line88' + context)
+      console.log(args)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)
@@ -107,6 +158,7 @@ const resolvers = {
     },
 
 
+
     updateEvent: async (parent, args, context) => {
 
       var newEvent = args.input
@@ -125,14 +177,35 @@ const resolvers = {
       );
     },
 
-
-
     removeEvent: async (parent, args, context) => {
 
       return Event.findOneAndDelete(
         { _id: args.eventId }
       )
+    },
+
+    addComment: async (parent, { eventId, username, commentText }, context) => {
+
+      console.log(eventId)
+      console.log(context.user)
+      const comment = await Event.findOneAndUpdate(
+        { _id: eventId },
+        { $push: { comment:  { commentText, username: context.user.username } }  },
+        { new: true, runValidators: true }
+      );
+
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $push: { comment: { commentText, username: username } } },
+        { new: true, runValidators: true }
+      )
+
+
+      return comment;
+
     }
+
+
   }
 };
 

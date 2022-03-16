@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Nosh Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    
+    <header>
+        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-color-two">
+          <div className="container-fluid">
+            <a className="navbar-brand ms-1 mb-1" href="/"><span className="material-icons-outlined me-2 adjust-icons">storefront</span>Nosh Up</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              <ul className="navbar-nav me-auto mb-2 mb-md-0">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" href="single-event.html">Single Event</a>
+                </li>
+              </ul>
+              <form className="d-flex">
+                <!-- <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                <button className="btn btn-color-four me-2" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+                <button className="btn btn-color-one" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+<main className="py-5">
+    <div className="d-flex align-items-center container p-3 my-5 text-white bg-primary rounded shadow-sm">
+        <span className="material-icons fs-1 me-2">
+            restaurant
+        </span>
+      <div className="lh-1">
+        <h1 className="h6 mb-0 text-white lh-1">Bootstrap</h1>
+        <small>Since 2011</small>
+      </div>
+    </div>
+
+    <div className="row align-items-md-stretch">
+        <div className="col-md-6 restuarant-profile-pic">
+          <div className="h-100 p-5 rounded-3">
+          
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="h-100 p-5 border rounded-3">
+            <!-- <h2>Add borders</h2> -->
+           
+
+            <div className="list-group">
+                <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <span className="material-icons">
+                      place
+                    </span>   
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0">Mulvaney's B&L</h6>
+                      <p className="mb-0 opacity-75">1215 19th St, Sacramento, CA 95811</p>
+                    </div>
+                    <small className="opacity-50 text-nowrap">now</small>
+                  </div>
+                </a>
+                <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                   <span className="material-icons fs-3">
+                    today
+                   </span>   
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0">March 20th, 2022</h6>
+                      <p className="mb-0 opacity-75">Never been here but I've heard it's delicious! Anyone wanna join me? Going for pulled pork.</p>
+                    </div>
+                    <small className="opacity-50 text-nowrap">3d</small>
+                  </div>
+                </a>
+                <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <span className="material-icons">
+                        group_add
+                    </span>  
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0">Join this event</h6>
+                      <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
+                    </div>
+                    <small className="opacity-50 text-nowrap">1w</small>
+                  </div>
+                </a>
+              </div>
+            <!-- <button className="btn btn-outline-secondary mt-3" type="button">CTA?</button> -->
+          </div>
+        </div>
+      </div>
+  
+    <div className="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 className="border-bottom pb-2 mb-0">Event Conversation</h6>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+        <p className="pb-3 mb-0 small lh-sm border-bottom">
+          <strong className="d-block text-gray-dark">@username</strong>
+          Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+        </p>
+      </div>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+  
+        <p className="pb-3 mb-0 small lh-sm border-bottom">
+          <strong className="d-block text-gray-dark">@username</strong>
+          Some more representative placeholder content, related to this other user. Another status update, perhaps.
+        </p>
+      </div>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+  
+        <p className="pb-3 mb-0 small lh-sm border-bottom">
+          <strong className="d-block text-gray-dark">@username</strong>
+          This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
+        </p>
+      </div>
+      <small className="d-block text-end mt-3">
+        <a href="/">All updates</a>
+      </small>
+    </div>
+  
+    <div className="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 className="border-bottom pb-2 mb-0">Events I'm Hosting</h6>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+      <div className="d-flex text-muted pt-3">
+        <svg className="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+        <div className="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div className="d-flex justify-content-between">
+            <strong className="text-gray-dark">Full Name</strong>
+            <a href="/">Follow</a>
+          </div>
+          <span className="d-block">@username</span>
+        </div>
+      </div>
+      <small className="d-block text-end mt-3">
+        <a href="/">All suggestions</a>
+      </small>
+    </div>
+  </main>
+
+
+ <!-- Login Modal -->
+ <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+  <div className="modal-dialog" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="loginModalLabel">Welcome Back Nosher!</h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        <form className="">
+          <div className="form-floating mb-3">
+            <input type="email" className="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+            <label htmlFor="floatingInput">Email address</label>
+          </div>
+          <div className="form-floating mb-3">
+            <input type="password" className="form-control rounded-4" id="floatingPassword" placeholder="Password">
+            <label htmlFor="floatingPassword">Password</label>
+          </div>
+          <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Log In</button>
+          <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-color-four" data-dismiss="modal">Close</button>
+        <!-- <button type="button" className="btn btn-color-one">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Sign Up Modal -->
+      <div className="modal fade" id="signUpModal" tabIndex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="signUpModalLabel">Hello Nosher!</h5>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <form className="">
+                <div className="form-floating mb-3">
+                  <input type="text" className="form-control rounded-4" id="floatingInput" placeholder="">
+                  <label htmlFor="floatingInput">Name</label>
+                </div>
+                <div className="form-floating mb-3">
+                  <input type="email" className="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+                  <label htmlFor="floatingInput">Email address</label>
+                </div>
+                <div className="form-floating mb-3">
+                  <input type="password" className="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                  <label htmlFor="floatingPassword">Password</label>
+                </div>
+                <button className="w-100 mb-2 btn btn-lg rounded-4 btn-color-one" type="submit">Sign up</button>
+                <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+              </form>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-color-four" data-dismiss="modal">Close</button>
+              <!-- <button type="button" className="btn btn-color-one">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<footer className="text-muted py-5">
+  <div className="container">
+    <p className="float-end mb-1">
+      <a href="/">Back to top</a>
+    </p>
+    <p className="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p className="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+ 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 16 16">
+      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 16 16">
+    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+  </symbol>
+  </svg>
+
+
+  </body>
+</html>

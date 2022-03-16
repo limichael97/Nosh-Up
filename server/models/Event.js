@@ -1,5 +1,8 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment')
+const commentSchema = require('./Comment');
+const Comment = require('./Comment')
+const eventFormat = require('../utils/eventFormat');
+const dateFormat = require('../utils/dateFormat');
 
 const eventSchema = new Schema({
   title: {
@@ -11,25 +14,32 @@ const eventSchema = new Schema({
   cuisineType: {
     type: String,
   },
+  city: {
+    type: String,
+  },
   description: {
     type: String,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
+    get: timestamp => dateFormat(timestamp)
   },
   eventDate: {
-    type: Date,
-    min: Date.now,
-    max: '2400-01-01'
+    type: String,
+    max: '2400-01-01',
+    get: date => eventFormat(date)
   },
+
   time: {
-    type: Date,
-    default: Date.now
+    type: String
+  },
+
+  adjEventDt: {
+    type: String,
   },
 
   guests: [String],
-
 
   countNoshers: {
     type: Number,
@@ -37,15 +47,26 @@ const eventSchema = new Schema({
     max: 12
   },
   maxNoshers: {
-    type: Number,
-    min: 2,
-    max: 12,
+    type: String,
   },
-  comments: [commentSchema],
+  comment: [commentSchema],
+  // comment: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Comment'
+  //   }
+  // ],
   vacancy: {
     type: Boolean
   },
-});
+},
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true
+    }
+  }
+);
 
 const Event = model('Event', eventSchema);
 

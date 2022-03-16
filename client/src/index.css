@@ -1,13 +1,311 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 75rem;
+  padding-top: 4.5rem;
+  font-family: "Roboto", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.restuarant-profile-pic {
+  background-image: url("img/peeps-GirlInGroup-Alex.jpeg");
+  background-size: cover;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.adjust-icons {
+  position: relative;
+  top: 5px;
+}
+
+:root {
+  --color-one: #ec5551;
+  --color-two: #961e12;
+  --color-three: #ffe50a;
+  --color-four: #fd9c02;
+  --color-five: #f6f6f6;
+
+  --color-one-light: #ee7c78;
+  --color-two-light: #a0463e;
+  --color-three-light: #fae953;
+  --color-four-light: #f8b64d;
+
+  --color-one-disabled: #f0a19e;
+}
+
+span {
+  font-weight: bolder;
+}
+.bg-color-one {
+  background-color: var(--color-one);
+}
+
+.bg-color-two {
+  background-color: var(--color-two);
+}
+
+.bg-color-three {
+  background-color: var(--color-three);
+}
+
+.bg-color-four {
+  background-color: var(--color-four);
+}
+
+.btn-color-one {
+  background-color: var(--color-one);
+  border: var(--color-one);
+  color: #fff;
+}
+
+.btn-color-one:hover {
+  background-color: var(--color-one-light);
+  color: #fff;
+}
+
+.btn-color-one:disabled {
+  background-color: var(--color-one-disabled);
+  border: var(--color-one-disabled);
+  color: #fff;
+}
+
+.btn-color-one:disabled {
+  background-color: var(--color-one-disabled);
+  color: #fff;
+}
+
+.btn-color-two {
+  background-color: var(--color-two);
+  border: var(--color-two);
+  color: #fff;
+}
+
+.btn-color-two:hover {
+  background-color: var(--color-two-light);
+  color: #fff;
+}
+
+.btn-color-three {
+  background-color: var(--color-three);
+  border: var(--color-three);
+  color: #fff;
+}
+
+.btn-color-three:hover {
+  background-color: var(--color-three-light);
+  color: #fff;
+}
+
+.btn-color-four {
+  background-color: var(--color-four);
+  border: var(--color-four);
+  color: #fff;
+}
+
+.btn-color-four:hover {
+  background-color: var(--color-four-light);
+  color: #fff;
+}
+
+.color-one {
+  color: var(--color-one);
+}
+
+.color-two {
+  color: var(--color-two);
+}
+
+.color-three {
+  color: var(--color-three);
+}
+
+.color-four {
+  color: var(--color-four);
+}
+
+.color-five {
+  color: var(--color-five);
+}
+
+.close {
+  border: none;
+  background-color: #fff;
+}
+
+.logo {
+  width: 85px;
+}
+
+.hero-1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url(./img/food-main-hero.jpg);
+  background-position: 50% 65%;
+  background-size: cover;
+}
+
+.hero-2 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url(./img/food-riceVeg-hero.jpg);
+  background-position: 50% 95%;
+  background-size: cover;
+}
+
+.featured-img-1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/food-chips.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 25rem;
+}
+
+.featured-img-2 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/food-salad.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 25rem;
+}
+
+.featured-img-3 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url(./img/peeps-CoupleStreetCafe-Wiktor.jpeg);
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 25rem;
+}
+
+.avatar {
+  background-position: 50% 18%;
+  background-size: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+}
+
+.avatar-1 {
+  background-image: url(./img/avatar-1.jpg);
+}
+
+.avatar-2 {
+  background-image: url(./img/avatar-2.jpg);
+}
+
+.avatar-3 {
+  background-image: url(./img/avatar-3.jpg);
+}
+
+.avatar-4 {
+  background-image: url(./img/avatar-4.jpg);
+}
+
+.avatar-5 {
+  background-image: url(./img/avatar-5.jpg);
+}
+
+.avatar-6 {
+  background-image: url(./img/avatar-6.jpg);
+}
+
+.avatar-7 {
+  background-image: url(./img/avatar-7.jpg);
+}
+
+.avatar-8 {
+  background-image: url(./img/avatar-8.jpg);
+}
+
+.avatar-9 {
+  background-image: url(./img/avatar-9.jpg);
+}
+
+.avatar-10 {
+  background-image: url(./img/avatar-10.jpg);
+}
+
+select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgb(145, 143, 143) 60%),
+    linear-gradient(135deg, rgb(145, 143, 143) 60% 40%, transparent 50%) !important;
+  background-position:
+    calc(100% - 26px) 14px,
+    calc(100% - 20px) 14px,
+    100% 0;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* input[type="file"] {
+  background-color: var(--color-one);
+  border: var(--color-one);
+  color: #fff;
+}
+
+input[type="file"]:hover {
+  background-color: var(--color-one-light);
+  color: #fff;
+} */
+
+/* .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+
+/* Tomato */
+/* #ec5551 */
+/* rgb(236,85,81) */
+
+/* Brown */
+/* #961e12 */
+/* rgb(150,30,18) */
+
+/* Gold */
+/* #ffe50a */
+/* rgb(255,229,10) */
+
+/* Orange */
+/* #fd9c02 */
+/* rgb(253,156,2) */
+
+/* Whitesmoke */
+/* #f6f6f6 */
+/* rgb(246,246,246) */

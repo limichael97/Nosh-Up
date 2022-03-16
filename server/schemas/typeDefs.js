@@ -1,5 +1,5 @@
 const { gql } = require('apollo-server-express');
-
+ 
 const typeDefs = gql`
 
     type User {
@@ -21,16 +21,19 @@ const typeDefs = gql`
         title: String
         host: String
         cuisineType: String
+        city: String
         description: String
         createdAt: String
         eventDate: String
         time: String
+        adjEventDt: String
         guests: [String]
-        countNoshers: Int
-        maxNoshers: Int
-        comments: [ Comment ]
+        countNoshers: String
+        maxNoshers: String
+        comment: [ Comment ]
         vacancy: Boolean
     }
+    
     type Comment {
         _id: ID
         commentText: String
@@ -43,6 +46,7 @@ const typeDefs = gql`
         users: [User]
         user(username: String!): User
         events(username: String): [Event]
+        LookUpEvents(cuisineType: String, city: String): [Event]
         event(_id: ID!): Event
     }
 
@@ -51,23 +55,33 @@ const typeDefs = gql`
         title: String
         host: String
         cuisineType: String
+        city: String
         description: String
         createdAt: String
         eventDate: String
         time: String
-        countNoshers: Int
-        maxNoshers: Int
-        comments: [ String ]
+        adjEventDt: String
+        countNoshers: String
+        maxNoshers: String
+        comment: [ String ]
         vacancy: Boolean
+    }
+
+    input UserInput {
+        avatar: String
+        bioText: String
+        favoriteCuisine: String
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        updateUser(input: UserInput!): User
         addEvent(input: EventInput!): Event
         joinEvent(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event
         removeEvent(eventId: ID!): Event
+        addComment(eventId: ID!, commentText: String!) : Event
     }
 
     type Auth {
