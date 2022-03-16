@@ -123,9 +123,17 @@ const SingleEvent = () => {
             <small>Fellow Noshers</small>
           </div>
         </div>
-        <Comment eventId={event._id} />
-        <CommentList comment={event.comment} />
-
+        <Comment eventId = {event._id}/>
+        <div className="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
+        {
+                event.comment &&
+                event.comment.map((comments) => (
+        <CommentList comment= {comments}/>
+                ))
+        }
+        </div>
+        
 
 
         <div className="my-3 p-3 bg-body rounded shadow-sm">

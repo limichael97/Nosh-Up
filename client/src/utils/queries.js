@@ -17,6 +17,7 @@ import { gql } from '@apollo/client';
              host
              cuisineType
              description
+             city
              createdAt
              eventDate
              time
@@ -32,6 +33,7 @@ import { gql } from '@apollo/client';
              host
              cuisineType
              description
+             city
              createdAt
              eventDate
              time

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const CommentList = ( {comment} ) => {
+
     console.log(comment)
 
     // const usernames = comment.map(data => {
@@ -14,11 +15,51 @@ const CommentList = ( {comment} ) => {
     //     return container;
     // })
 
-    // console.log(usernames)
+
+    const { loading, data } =useQuery(QUERY_SINGLE_USER, {
+        variables: {username: comment.username}
+    })
+
+    const temp = data?.user || {};
+    const CurUser = temp.avatar;
+
+
+/*
+    var CurUser = []
+    if(comment)
+    {
+        for(var i = 0; i <comment.length; i++) {
+            console.log(comment[i].username);
+            CurUser.push(comment[i].username);
+            const { loading, data } =useQuery(QUERY_SINGLE_USER, {
+                variables: {username: CurUser[i]}
+            })
+            const temp = data?.user || {};
+            CurUser[i] = temp.avatar;
+        }
+        console.log(CurUser)
+    }
+
+*/
+
+
+
+
+/*
+    if(comment){
+    console.log(UserName)
+      const { loading, data } =useQuery(QUERY_SINGLE_USER, {
+        variables: {username: UpdateState}
+     })
+     const userData = data?.me || {}
+     console.log(userData.avatar);
+    }
+*/
     // const { loading, data } =useQuery(QUERY_SINGLE_USER, {
-    //     variables: {username: comment.comments.username}
+    //     variables: {username: comment.[comments].username}
     // })
     // const userData = data?.me || {}
+
 
     // if(!userData.avatar){
     //     userData.avatar="1";
@@ -34,28 +75,25 @@ const CommentList = ( {comment} ) => {
 
     return(
 
-        <div className="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
 
-            {
-                comment &&
-                    comment.map((comments) => (
-                        <div key ={comments._id} className="d-flex text-muted pt-3">
+
+    
+
+                        <div key ={comment._id} className="d-flex text-muted pt-3">
                             {
-
+                             
                             }
-                            <span class={`avatar avatar-1 me-2`}></span>
+                            <span class={`avatar avatar-${CurUser} me-2`}></span>
 
                             <p className="pb-3 mb-0 small lh-sm border-bottom">
-                                <Link to ={`/profiles/${comments.username}`}>
-                                    <strong className="d-block text-gray-dark">{comments.username}</strong>
+                                <Link to ={`/profiles/${comment.username}`}>
+                                    <strong className="d-block text-gray-dark">{comment.username}</strong>
                                 </Link>
-                                <p >{comments.commentText}</p> 
+                                <p >{comment.commentText}</p> 
                             </p>
                         </div>
-                    ))
-            }
-        </div>
+      
+ 
     )
 }
 
