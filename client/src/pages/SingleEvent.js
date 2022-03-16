@@ -105,8 +105,8 @@ const SingleEvent = () => {
           </div>
         </div>
       </div>
-      <div>
-      <button className="btn ml-auto" onClick={handleJoin}>
+      <div className="py-5 text-center">
+      <button className="btn ml-auto btn-color-four my-1" onClick={handleJoin}>
                       Join this Event
       </button>     
       </div>
@@ -129,7 +129,7 @@ const SingleEvent = () => {
         
 
         <div className="my-3 p-3 bg-body rounded shadow-sm">
-          <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
+          <h6 className="border-bottom pb-2 mb-0">Noshers Attending</h6>
 
           <div className="d-flex text-muted pt-3">
             <span class="avatar avatar-4 me-2"></span>

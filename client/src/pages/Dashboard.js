@@ -24,22 +24,24 @@ const Dashboard = () => {
     }
 
     return(
-        <>
-
-            <div className="card mb-3" >
+    <>
+        <div class ="container">
+        <div className="row">
+            <div className="card" >
                 <div className="row g-0">
-                    <div className="col-md-4">
+                    <div className="col-md-2">
                         <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Name: {userData.username}</h5>
-                            <p className="card-text">Here's my bio: {userData.bioText}</p>
-                            <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
+                            <h2 className="card-title"><strong className="">User Name: {userData.username}</strong></h2>
+                            <p className="card-text h3">My Bio: {userData.bioText}</p>
+                            <p className="card-text h4"><small className="text-muted">My favorite cuisine: {userData.favoriteCuisine}</small></p>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <button onClick={toggleUpdateProfile} 
                     className="btn btn-color-four my-1" 
@@ -51,7 +53,7 @@ const Dashboard = () => {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Update Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {isUpdateUserOpen && (
@@ -67,7 +69,7 @@ const Dashboard = () => {
 
 
 
-            <h2>My Current Events</h2>
+            <h2 className="mb-4 mt-4">My Current Events</h2>
             <div className="row row-cols-1 row-cols-md-2 g-4">
             {
                 CurrentEvents && CurrentEvents.map(event => (
@@ -76,8 +78,8 @@ const Dashboard = () => {
                 <div className="card">
                 <div className="col-auto d-none d-lg-block featured-img-2"></div>
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 className="card-title">My Current Hosted Events</h5>
+                    <p className="card-text">This card will hold the information for my current hosted events.</p>
                 </div>
                 </div>
             </div>
@@ -87,7 +89,7 @@ const Dashboard = () => {
             </div>
 
             
-            <h2>My Joined Events</h2>
+            <h2 className="mb-4 mt-4">My Joined Events</h2>
             <div className="row row-cols-1 row-cols-md-2 g-4">
 
             <div className="col">
@@ -96,8 +98,8 @@ const Dashboard = () => {
                 
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 className="card-title">My Current Joined Events</h5>
+                    <p className="card-text">This card will hold the information for my current joined events.</p>
                 </div>
                 </div>
             </div>
@@ -106,15 +108,16 @@ const Dashboard = () => {
                 <div className="card">
                 <div className="col-auto d-none d-lg-block featured-img-1"></div>
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 className="card-title">My Current Joined Events</h5>
+                    <p className="card-text">This card will hold the information for my current joined events.</p>
                 </div>
                 </div>
             </div>
 
             </div>
-
-        </>
+            </div>
+        </div>
+    </>
     )
 }
 
