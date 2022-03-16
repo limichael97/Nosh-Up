@@ -109,12 +109,14 @@ const SingleEvent = (username) => {
                       <button className="btn ml-auto btn-danger" disabled="disabled">
                       This event is full
                     </button>  
-                    ): (event.host ) ? (
-                      <button className="btn ml-auto btn-danger" disabled="disabled">
-                      This is your event 
-                    </button>  
+                    ): 
+                    // (event.host ) ? (
+                    //   <button className="btn ml-auto btn-danger" disabled="disabled">
+                    //   This is your event 
+                    // </button>  
 
-                    ) : (
+                    // ) :
+                     (
                       <button className="btn ml-auto btn-primary" onClick={handleJoin}>
                         Join this Event
                       </button>     

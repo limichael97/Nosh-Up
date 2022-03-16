@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_EVENTS, QUERY_LOOKUP_EVENTS } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_LOOKUP_EVENTS } from '../utils/queries';
 import { Link } from 'react-router-dom';
-import { JOIN_EVENT } from '../utils/mutations';
 import CardImage from "../img/food-steak.jpg";
 import Auth from '../utils/auth'
 
@@ -11,28 +10,13 @@ const EventList = (username) => {
     console.log(username)
 
     const [eventState, setEventState] = useState({ cuisineType: null, city: null});
-    //const {loading, data} = useQuery(QUERY_EVENTS);
     const {loading, data} = useQuery(QUERY_LOOKUP_EVENTS, {
         variables: {cuisineType:eventState.cuisineType, city: eventState.city},
     });
-    // const [joinEvent] = useMutation(JOIN_EVENT);
-    
-    //const events = data?.events;
+
     const events = data?.LookUpEvents;
     console.log(data)
     console.log(events)
-    // console.log(events.title)
-
-
-    // const handleJoin = async () => {
-    //     try {
-    //       await joinEvent({
-    //         variables: { eventId: events._id  }
-    //       });
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-    // };
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
@@ -97,7 +81,7 @@ const EventList = (username) => {
 
                             </ul>
                             <div className="card-body">
-                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`}  className="text-reset text-decoration-none">See Details</Link></button>
+                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} params = {{search: username}} className="text-reset text-decoration-none">See Details</Link></button>
                             </div>
                         </div>
                             </div>
