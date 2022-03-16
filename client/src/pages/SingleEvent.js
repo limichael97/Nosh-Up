@@ -23,28 +23,28 @@ const SingleEvent = () => {
   console.log(data)
   console.log(event)
 
-  
-    const handleJoin = async () => {
-        try {
-          await joinEvent({
-            variables: { eventId: {...event._id} }
-          });
-        } catch (e) {
-          console.log('Does not work')
-          console.error(e);
-        }
-    };
 
-    // const handleComment = async () => {
-    //   try {
-    //     await addComment({
-    //       variables: {eventId, commentText}
-    //     })
-    //   } catch (e) {
-    //     console.log('Does not work')
-    //     console.error(e);
-    //   }
-    // }
+  const handleJoin = async () => {
+    try {
+      await joinEvent({
+        variables: { eventId: { ...event._id } }
+      });
+    } catch (e) {
+      console.log('Does not work')
+      console.error(e);
+    }
+  };
+
+  // const handleComment = async () => {
+  //   try {
+  //     await addComment({
+  //       variables: {eventId, commentText}
+  //     })
+  //   } catch (e) {
+  //     console.log('Does not work')
+  //     console.error(e);
+  //   }
+  // }
 
   return (
     // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
@@ -79,7 +79,7 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">March 20th, 2022</h6>
+                      <h6 className="mb-0">{event.eventDate}</h6>
                       <p className="mb-0 opacity-75">Never been here but I've heard it's delicious! Anyone wanna join me? Going for pulled pork.</p>
                     </div>
                     <small className="opacity-50 text-nowrap">3d</small>
@@ -91,10 +91,10 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                    {/* <button className="btn ml-auto" onClick={handleJoin}>
+                      {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                    <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
+                      <p className="mb-0 opacity-75">And meet some fellow noshers!</p>
                     </div>
                     <small className="opacity-50 text-nowrap">1w</small>
                   </div>
@@ -106,9 +106,9 @@ const SingleEvent = () => {
         </div>
       </div>
       <div>
-      <button className="btn ml-auto" onClick={handleJoin}>
-                      Join this Event
-      </button>     
+        <button className="btn ml-auto" onClick={handleJoin}>
+          Join this Event
+        </button>
       </div>
 
 
@@ -123,6 +123,7 @@ const SingleEvent = () => {
             <small>Fellow Noshers</small>
           </div>
         </div>
+
         <Comment eventId = {event._id}/>
         <div className="my-3 p-3 bg-body rounded shadow-sm">
             <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
@@ -134,6 +135,7 @@ const SingleEvent = () => {
         }
         </div>
         
+
 
         <div className="my-3 p-3 bg-body rounded shadow-sm">
           <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
