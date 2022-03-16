@@ -7,7 +7,8 @@ import CardImage from "../img/food-steak.jpg";
 import Auth from '../utils/auth'
 
 
-const EventList = () => {
+const EventList = (username) => {
+    console.log(username)
 
     const [eventState, setEventState] = useState({ cuisineType: null, city: null});
     //const {loading, data} = useQuery(QUERY_EVENTS);
@@ -96,7 +97,7 @@ const EventList = () => {
 
                             </ul>
                             <div className="card-body">
-                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`}  className="text-reset text-decoration-none">See Details</Link></button>
                             </div>
                         </div>
                             </div>

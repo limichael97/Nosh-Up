@@ -11,6 +11,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
+          .populate('myCurrentEvent')
           console.log(userData.avatar)
         return userData;
       }

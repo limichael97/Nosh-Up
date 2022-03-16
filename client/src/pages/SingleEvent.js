@@ -8,16 +8,13 @@ import CommentList from '../components/CommentList';
 import GuestList from '../components/GuestList';
 
 
-const SingleEvent = () => {
+const SingleEvent = (username) => {
+  console.log(username)
   const { id: eventId } = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { id: eventId }
   });
-
-  const { loading2, data2 } =useQuery(QUERY_ME)
-  const meData = data2?.me || {}
-  console.log(data2)
 
   const event = data?.event || [];
 
