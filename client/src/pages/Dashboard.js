@@ -3,11 +3,14 @@ import { Modal, Button } from 'react-bootstrap';
 import UpdateProfile from '../components/UpdateProfile';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
+import { Link } from 'react-router-dom';
+import CardImage from "../img/food-steak.jpg";
 
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
-    const userData = data?.me || { avatar: '1',}
+    const userData = data?.me || { }
     const CurrentEvents = userData.myCurrentEvent;
+    const JoinedEvents = userData.myJoinedEvent;
 
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
@@ -29,7 +32,7 @@ const Dashboard = () => {
             <div className="card mb-3" >
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />
+                    {userData.avatar && <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />}
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
@@ -66,54 +69,78 @@ const Dashboard = () => {
             </Modal>
 
 
-
-            <h2>My Current Events</h2>
+         {CurrentEvents && CurrentEvents.length ? (
+             <h2>My Current Events</h2>
+         ):(
+            <h2>You Have not created an event yet...</h2>
+         )}
+            
             <div className="row row-cols-1 row-cols-md-2 g-4">
             {
                 CurrentEvents && CurrentEvents.map(event => (
                     
-            <div className="col">
-                <div className="card">
-                <div className="col-auto d-none d-lg-block featured-img-2"></div>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div className="col-12 col-md-4">
+                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div className="card">
+                        <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                    <div className="card-body">
+                        <h5 className="card-title">{event.cuisineType}</h5>
+                        <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
+                      
+                        <Link to ={`/profiles/${event.host}`}>
+                        <li className="list-group-item">Created by: {event.host}</li>
+                        </Link>
+
+                    </ul>
+                    <div className="card-body">
+                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                    </div>
                 </div>
+                    </div>
                 </div>
-            </div>
             
             ))}
 
             </div>
 
+            {JoinedEvents && JoinedEvents.length ? (
+             <h2>My Joined Events</h2>
+         ):(
+            <h2>You Have not joined an event yet...</h2>
+         )}
             
-            <h2>My Joined Events</h2>
-            <div className="row row-cols-1 row-cols-md-2 g-4">
+            {
+                JoinedEvents && JoinedEvents.map(event => (
+            
+                    <div className="col-12 col-md-4">
+                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div className="card">
+                        <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                    <div className="card-body">
+                        <h5 className="card-title">{event.cuisineType}</h5>
+                        <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
+                      
+                        <Link to ={`/profiles/${event.host}`}>
+                        <li className="list-group-item">Created by: {event.host}</li>
+                        </Link>
 
-            <div className="col">
-                <div className="card">
-                <div className="col-auto d-none d-lg-block featured-img-3">
-                
+                    </ul>
+                    <div className="card-body">
+                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                    </div>
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
                 </div>
-                </div>
-            </div>
-
-            <div className="col">
-                <div className="card">
-                <div className="col-auto d-none d-lg-block featured-img-1"></div>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                </div>
-            </div>
-
-            </div>
-
+                ))
+            }
         </>
     )
 }
