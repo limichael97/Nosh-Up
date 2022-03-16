@@ -55,76 +55,40 @@ const EventList = (username) => {
                         </select>
                     </div>
                 </div>
-            
 
                 <div className="row mb-2">
                 {
-                    events && 
-                        events.map(event => (
-                           
-                            <div className="col-12 col-md-4">
-                            <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div className="card">
-                                <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                    events &&
+                    events.map(event => (
+
+                    <div key={event._id} className="col-12 col-md-4">
+                        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div className="card">
+                            <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
                             <div className="card-body">
-                                <h5 className="card-title">{event.cuisineType}</h5>
-                                <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                            <h5 className="card-title">{event.cuisineType}</h5>
+                            <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
                             </div>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                                <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
-                              
-                                <Link to ={`/profiles/${event.host}`}>
+                            <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
+                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li>
+
+                            <Link to={`/profiles/${event.host}`}>
                                 <li className="list-group-item">Created by: {event.host}</li>
-                                </Link>
+                            </Link>
 
                             </ul>
                             <div className="card-body">
-                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} params = {{search: username}} className="text-reset text-decoration-none">See Details</Link></button>
+                            <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
                             </div>
                         </div>
-                            </div>
                         </div>
-                   
-                        ))
+                    </div>
+
+                    ))
                 }
                 </div>
-        
-
-
-            <div className="row mb-2">
-            {
-                events &&
-                events.map(event => (
-
-                <div key={event._id} className="col-12 col-md-4">
-                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div className="card">
-                        <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
-                        <div className="card-body">
-                        <h5 className="card-title">{event.cuisineType}</h5>
-                        <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
-                        </div>
-                        <ul className="list-group list-group-flush">
-                        <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
-                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li>
-
-                        <Link to={`/profiles/${event.host}`}>
-                            <li className="list-group-item">Created by: {event.host}</li>
-                        </Link>
-
-                        </ul>
-                        <div className="card-body">
-                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                ))
-            }
-            </div>
         </div>
     </>
   )
