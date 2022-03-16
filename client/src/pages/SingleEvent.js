@@ -1,37 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_SINGLE_EVENT } from '../utils/queries';
+import { QUERY_SINGLE_EVENT, QUERY_ME } from '../utils/queries';
 import { JOIN_EVENT, ADD_COMMENT } from '../utils/mutations';
 import Comment from "../components/Comment";
-import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
 import GuestList from '../components/GuestList';
 
 
 const SingleEvent = () => {
-
-
   const { id: eventId } = useParams();
-  console.log(eventId)
 
   const { loading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { id: eventId }
   });
 
+  const { loading2, data2 } =useQuery(QUERY_ME)
+  const meData = data2?.me || {}
+  console.log(data2)
+
   const event = data?.event || [];
 
   const [joinEvent] = useMutation(JOIN_EVENT);
-  const [addComment] = useMutation(ADD_COMMENT);
-
   console.log(data)
-  console.log(Array.isArray(event.guests))
-  console.log(event.guests.length)
+  console.log(event.comment)
+  var eventGuests = event.guests
+  console.log(eventGuests)
 
+  var CurUser = []
+  if(eventGuests)
+  {
+      for(var i = 0; i <eventGuests.length; i++) {
+          console.log(eventGuests[i]);
+          CurUser.push(eventGuests[i]);
 
-  // console.log(array.length)
+      }
+      console.log(CurUser)
+  }
+  console.log(CurUser.length)
 
-  const handleJoin = async () => {
+  const handleJoin = async event => {
+    window.location.reload();
       try {
         await joinEvent({
           variables: { eventId: eventId }
@@ -41,6 +50,7 @@ const SingleEvent = () => {
         console.error(e);
       }
   };
+
 
   
   return (
@@ -55,7 +65,7 @@ const SingleEvent = () => {
           </div>
           <div className="col-md-6">
             <div className="h-100 p-5 border rounded-3">
-              {/* <h2>Add borders</h2>  */}
+              <h2>{event.title}</h2> 
 
               <div className="list-group">
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -64,7 +74,7 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">{event.title}</h6>
+                      <h6 className="mb-0">Restaurant</h6>
                       <p className="mb-0 opacity-75">{event.city}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">now</small>
@@ -77,7 +87,7 @@ const SingleEvent = () => {
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
                       <h6 className="mb-0">March 20th, 2022</h6>
-                      <p className="mb-0 opacity-75">Never been here but I've heard it's delicious! Anyone wanna join me? Going for pulled pork.</p>
+                      <p className="mb-0 opacity-75">{event.description}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">3d</small>
                   </div>
@@ -91,43 +101,43 @@ const SingleEvent = () => {
                     {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                    <p className="mb-0 opacity-75">{event.description}</p>
+                    <p className="mb-0 opacity-75">{event.maxNoshers}</p>
                     </div>
                     <small className="opacity-50 text-nowrap">1w</small>
                   </div>
                 </a>
+
+                  {
+                    (event.maxNoshers == CurUser.length) ? (
+                      <button className="btn ml-auto btn-danger" disabled="disabled">
+                      This event is full
+                    </button>  
+                    ): (event.host ) ? (
+                      <button className="btn ml-auto btn-danger" disabled="disabled">
+                      This is your event 
+                    </button>  
+
+                    ) : (
+                      <button className="btn ml-auto btn-primary" onClick={handleJoin}>
+                        Join this Event
+                      </button>     
+                    )
+                  }
               </div>
               {/* <button className="btn btn-outline-secondary mt-3" type="button">CTA?</button>  */}
             </div>
           </div>
         </div>
       </div>
+      <p>{event.maxNoshers}</p>
       <div>
-        <div className='m-4'>
-          <p>{event.maxNoshers}</p>
-          <p>{event.guests}</p>
-        </div>
-      {/* {
-        (event.maxNoshers == event.guests.length) ? (
-          <button className="btn ml-auto" disabled="disabled">
-          This event is full
-        </button>  
-        ): (
-          <button className="btn ml-auto" onClick={handleJoin}>
-            Join this Event
-          </button>     
-        )
-      } */}
 
-        <button className="btn ml-auto" onClick={handleJoin}>
-            Join this Event
-          </button>    
+
+  
 
       </div>
 
-
       <main className="container py-5">
-
         <div className="d-flex align-items-center p-3 my-3 text-white bg-color-one rounded shadow-sm">
           <span className="material-icons fs-1 me-2">
             dinner_dining
@@ -138,11 +148,27 @@ const SingleEvent = () => {
           </div>
         </div>
         <Comment eventId = {event._id}/>
-        <CommentList comment= {event.comment}/>
-        <GuestList guests = {event.guests}/> 
+        <div className="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
+            {
+              event.comment &&
+                event.comment.map((comments) => (
+                  <CommentList comment= {comments}/>
+              ))
+            }
+        </div>
+        <div className="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 className="border-bottom pb-2 mb-0">People Attending</h6>
 
-        
+            {
+              event.guests &&
+                event.guests.map((guest) => (
+                  <GuestList guests = {guest} /> 
 
+                ))
+            }
+
+        </div>
       </main>
     </>
   )

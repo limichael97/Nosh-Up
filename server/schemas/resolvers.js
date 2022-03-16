@@ -110,6 +110,7 @@ const resolvers = {
     addEvent: async (parent, args, context) => {
       // console.log(context)
       console.log(args)
+      console.log(context.user)
 
       const event = await Event.create({ ...args.input });
       console.log(event)
@@ -120,15 +121,14 @@ const resolvers = {
         { new: true }
       );
 
+      await Event.findByIdAndUpdate(
+        { _id: event._id },
+        { $push: { guests: context.user.username } },
+        { new: true }
+      );
+
       return event;
     },
-
-
-
-
-
-
-
 
     joinEvent: async (parent, args, context) => {
       console.log(args.eventId)

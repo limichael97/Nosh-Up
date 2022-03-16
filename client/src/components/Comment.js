@@ -43,7 +43,7 @@ const Comment = ({ eventId }) => {
     };
 
   return (
-    <div>
+    <div > 
       <p className="m-0">
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
@@ -58,7 +58,7 @@ const Comment = ({ eventId }) => {
 
         ></textarea>
 
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn col-12 col-md-3 btn-primary" type="submit">
           Submit
         </button>
       </form>
