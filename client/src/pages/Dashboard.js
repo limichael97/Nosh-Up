@@ -11,7 +11,7 @@ const Dashboard = () => {
     const userData = data?.me || { }
     const CurrentEvents = userData.myCurrentEvent;
     const JoinedEvents = userData.myJoinedEvent;
-console.log(CurrentEvents);
+console.log(userData)
 
     const [isUpdateUserOpen, setIsUpdateUserOpen] = useState(false); 
     const [show, setShow] = useState(false);
