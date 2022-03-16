@@ -32,16 +32,22 @@ console.log(userData)
                 <div className="card" >
                     <div className="row g-0">
                         <div className="col-2 me-4">
-                        {userData.avatar && <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />}
+                            
+                            {userData.avatar && <img src={require(`../img/avatar-${userData.avatar}.jpg`)} />}
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-6">
                             <div className="card-body">
-                                <h5 className="card-title">Name: {userData.username}</h5>
-                                <p className="card-text">Here's my bio: {userData.bioText}</p>
-                                <p className="card-text"><small className="text-muted">My favoriate cuisine: {userData.favoriteCuisine}</small></p>
+                                    <h2 className="card-title"><strong className="">User Name: {userData.username}</strong></h2>
+                                    <p className="card-text h3">My Bio: {userData.bioText}</p>
+                                    <p className="card-text h4"><small className="text-muted">My favorite cuisine: {userData.favoriteCuisine}</small></p>
+                                    <button onClick={toggleUpdateProfile}
+                                    className="btn btn-color-four my-1"
+                                    type="button"
+                                    data-toggle="modal"
+                                    data-target="#UpdateUserModal"
+                            >Update Profile</button>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -71,16 +77,54 @@ console.log(userData)
             {
                 CurrentEvents && CurrentEvents.map(event => (
                     
-            <div className="col">
-                <div className="card">
-                    <div className="col-auto d-none d-lg-block featured-img-2"></div>
-                        <div className="card-body">
-                            <h5 className="card-title">My Current Hosted Events</h5>
-                            <p className="card-text">This card will hold the information for my current hosted events.</p>
-                            <div className="col-12 col-md-4">
-                            <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div className="card">
-                                <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+            
+                    <div className="col-12 col-md-4">
+                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div className="card">
+                            <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                            <div className="card-body">
+                                <h5 className="card-title">{event.cuisineType}</h5>
+                                <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                            </div>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                                <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
+                            
+                                <Link to ={`/profiles/${event.host}`}>
+                                <li className="list-group-item">Created by: {event.host}</li>
+                                </Link>
+
+                            </ul>
+                            <div className="card-body">
+                                <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>            ))}
+
+            </div>
+ 
+            </div>
+
+         
+
+            <div>
+            {JoinedEvents && JoinedEvents.length ? (
+                <h2 className="mb-4 mt-4">My Joined Events</h2>
+            ):(
+            <h2 className="mb-4 mt-4">You Have not joined an event yet...</h2>
+            )}
+                
+            </div>
+
+            
+            {
+                JoinedEvents && JoinedEvents.map(event => (
+            
+                <div className="col-12 col-md-4">
+                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div className="card">
+                            <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
                             <div className="card-body">
                                 <h5 className="card-title">{event.cuisineType}</h5>
                                 <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
@@ -100,60 +144,14 @@ console.log(userData)
                         </div>
                     </div>
                 </div>
-            </div>
-            ))
-            }
-            </div>
 
-         
 
-            {JoinedEvents && JoinedEvents.length ? (
-             <h2>My Joined Events</h2>
-         ):(
-            <h2>You Have not joined an event yet...</h2>
-         )}
-            
-            <h2 className="mb-4 mt-4">My Joined Events</h2>
-            {
-                JoinedEvents && JoinedEvents.map(event => (
-            
-                    <div className="col-12 col-md-4">
-                        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div className="card">
-                                <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
-                                <div className="card-body">
-                                    <h5 className="card-title">{event.cuisineType}</h5>
-                                    <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
-                                </div>
-                                <ul className="list-group list-group-flush">
-                                    <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                                    <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> March 20th, 2022</li>
-                                
-                                    <Link to ={`/profiles/${event.host}`}>
-                                    <li className="list-group-item">Created by: {event.host}</li>
-                                    </Link>
-
-                                </ul>
-                                <div className="card-body">
-                                    <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 ))
             }
-        </div>
     </div>
-
-
-    </>
+    </div>
+        </>
     )
 }
+
 export default Dashboard;
-/*
-      {userData.avatar && (
-        <div>
-        <img alt="not fount" width={"150px"} src={URL.createObjectURL(userData.avatar)} />
-        </div>
-      )}
-      */
