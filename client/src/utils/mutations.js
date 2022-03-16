@@ -56,7 +56,6 @@ mutation addEvent($input: EventInput!) {
     description
     createdAt
     eventDate
-    time
     guests
     countNoshers
     maxNoshers
@@ -92,7 +91,6 @@ mutation joinEvent($eventId: ID!) {
             description
             createdAt
             eventDate
-            time
             guests
             countNoshers
             maxNoshers
@@ -108,7 +106,6 @@ mutation joinEvent($eventId: ID!) {
             description
             createdAt
             eventDate
-            time
             guests
             countNoshers
             maxNoshers
@@ -137,7 +134,6 @@ mutation updateEvent($eventId: ID!, $input: EventInput!) {
     description
     createdAt
     eventDate
-    time
     guests
     countNoshers
     maxNoshers
@@ -165,7 +161,6 @@ mutation removeEvent($eventId: ID!) {
     description
     createdAt
     eventDate
-    time
     guests
     countNoshers
     maxNoshers
@@ -192,7 +187,6 @@ mutation addComment($eventId: ID!, $commentText: String!) {
     description
     createdAt
     eventDate
-    time
     guests
     countNoshers
     maxNoshers
@@ -206,8 +200,3 @@ mutation addComment($eventId: ID!, $commentText: String!) {
   }
 }
 `;
-
-
-
-
-

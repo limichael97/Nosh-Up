@@ -1,5 +1,5 @@
 const { gql } = require('apollo-server-express');
- 
+
 const typeDefs = gql`
 
     type User {
@@ -25,8 +25,6 @@ const typeDefs = gql`
         description: String
         createdAt: String
         eventDate: String
-        time: String
-        adjEventDt: String
         guests: [String]
         countNoshers: String
         maxNoshers: String
@@ -59,8 +57,6 @@ const typeDefs = gql`
         description: String
         createdAt: String
         eventDate: String
-        time: String
-        adjEventDt: String
         countNoshers: String
         maxNoshers: String
         comment: [ String ]

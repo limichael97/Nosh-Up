@@ -89,7 +89,7 @@ const HomePage = () => {
                 once logged in, login turns into logout */}
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header>
-                  <Modal.Title>Sign Up!</Modal.Title>
+                  {/* <Modal.Title>Sign Up!</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>
                   {isLoginOpen && (
