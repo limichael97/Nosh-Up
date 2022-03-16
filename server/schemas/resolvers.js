@@ -11,7 +11,9 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          console.log(userData.avatar)
+          .populate('myCurrentEvent')
+          .populate('myJoinedEvent');
+          console.log(userData.myCurrentEvent)
         return userData;
       }
       throw new AuthenticationError('Not logged in');
@@ -110,6 +112,7 @@ const resolvers = {
     addEvent: async (parent, args, context) => {
       // console.log(context)
       console.log(args)
+      console.log(context.user)
 
       const event = await Event.create({ ...args.input });
       console.log(event)
@@ -120,20 +123,19 @@ const resolvers = {
         { new: true }
       );
 
+      await Event.findByIdAndUpdate(
+        { _id: event._id },
+        { $push: { guests: context.user.username } },
+        { new: true }
+      );
+
       return event;
     },
-
-
-
-
-
-
-
 
     joinEvent: async (parent, args, context) => {
       console.log('line87' + args)  //eventId
       console.log('line88' + context)
-      consolr.log(args)
+      console.log(args)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)

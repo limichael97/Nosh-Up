@@ -26,8 +26,9 @@ const eventSchema = new Schema({
     get: timestamp => dateFormat(timestamp)
   },
   eventDate: {
-    type: Date,
-    max: '2400-01-01'
+    type: String,
+    max: '2400-01-01',
+    get: date => eventFormat(date)
   },
 
   time: {
@@ -46,7 +47,7 @@ const eventSchema = new Schema({
     max: 12
   },
   maxNoshers: {
-    type: String
+    type: String,
   },
   comment: [commentSchema],
   // comment: [
@@ -66,10 +67,6 @@ const eventSchema = new Schema({
     }
   }
 );
-
-eventSchema.virtual('commentCount').get(function () {
-  return this.comments.length;
-});
 
 const Event = model('Event', eventSchema);
 
