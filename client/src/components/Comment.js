@@ -57,10 +57,11 @@ const Comment = ({ eventId }) => {
           onChange={handleChange}
 
         ></textarea>
-
+        <div class="container">
         <button className="btn col-12 col-md-3 btn-color-four my-1" type="submit">
           Submit
         </button>
+        </div>
       </form>
     </div>
   );

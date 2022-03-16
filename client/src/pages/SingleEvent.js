@@ -67,7 +67,7 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">{event.title}</h6>
+                      <h5 className="mb-0">{event.title}</h5>
                       <p className="mb-0 opacity-75">1215 19th St, Sacramento, CA 95811</p>
                     </div>
                     <small className="opacity-50 text-nowrap">now</small>
@@ -79,7 +79,7 @@ const SingleEvent = () => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">March 20th, 2022</h6>
+                      <h5 className="mb-0">March 20th, 2022</h5>
                       <p className="mb-0 opacity-75">Never been here but I've heard it's delicious! Anyone wanna join me? Going for pulled pork.</p>
                     </div>
                     <small className="opacity-50 text-nowrap">3d</small>
@@ -105,21 +105,21 @@ const SingleEvent = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 text-center">
+      <div className="py-2 text-center">
       <button className="btn ml-auto btn-color-four my-1" onClick={handleJoin}>
                       Join this Event
       </button>     
       </div>
 
 
-      <main className="container py-5">
+      <main className="container py-2">
 
         <div className="d-flex align-items-center p-3 my-3 text-white bg-color-one rounded shadow-sm">
           <span className="material-icons fs-1 me-2">
             dinner_dining
           </span>
           <div className="lh-1">
-            <h1 className="h6 mb-0 text-white lh-1">Meet Your</h1>
+            <h1 className="h4 mb-0 text-white lh-1">Meet Your</h1>
             <small>Fellow Noshers</small>
           </div>
         </div>

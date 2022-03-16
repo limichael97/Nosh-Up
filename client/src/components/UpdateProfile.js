@@ -46,7 +46,7 @@ const UpdateProfile = () => {
     return (
       <>
         <form className="container py-3" onSubmit={handleUserSubmit}>
-        <img src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
+        <img className="mb-3" src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
         <div className="form-group mb-3">
               <label for="exampleFormControlSelect1">Select Avatar:</label>
               <select class="form-control" name="avatar" onChange = {handleUserChange} value={UpdateState.avatar}>
