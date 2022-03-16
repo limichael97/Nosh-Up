@@ -55,6 +55,8 @@ const Login = () => {
   return (
     <>
 
+    <h2>Login</h2>
+
           <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
