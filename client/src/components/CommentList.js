@@ -13,21 +13,19 @@ const CommentList = ( {comment} ) => {
 
     const temp = data?.user || {};
     const CurUser = temp.avatar;
-
+    
     return(
         <div key ={comment._id} className="d-flex text-muted pt-3">
-
-            <span class={`avatar avatar-${CurUser} me-2`}></span>
-
-            <p className="pb-3 mb-0 small lh-sm border-bottom">
-                <Link to ={`/profiles/${comment.username}`}>
-                    <strong className="d-block text-gray-dark">{comment.username}</strong>
-                </Link>
-                <p >{comment.commentText}</p> 
-            </p>
-        </div>
-
-
+            <div key ={comment._id} className="d-flex text-muted pt-3">
+                <span class={`avatar avatar-${CurUser} me-2`}></span>
+                <p className="pb-3 mb-0 small lh-sm border-bottom">
+                    <Link to ={`/profiles/${comment.username}`}>
+                        <strong className="d-block text-gray-dark">{comment.username}</strong>
+                    </Link>
+                    <p >{comment.commentText}</p> 
+                </p>
+            </div>
+         </div>
     )
 }
 

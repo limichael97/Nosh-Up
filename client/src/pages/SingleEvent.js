@@ -95,7 +95,7 @@ const SingleEvent = (username) => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                    {/* <button className="btn ml-auto" onClick={handleJoin}>
+                      {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
                     <p className="mb-0 opacity-75">{event.maxNoshers}</p>
@@ -129,12 +129,7 @@ const SingleEvent = (username) => {
         </div>
       </div>
       <p>{event.maxNoshers}</p>
-      <div>
 
-
-  
-
-      </div>
 
       <main className="container py-5">
         <div className="d-flex align-items-center p-3 my-3 text-white bg-color-one rounded shadow-sm">
