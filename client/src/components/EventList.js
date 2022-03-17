@@ -94,6 +94,7 @@ const EventList = (username) => {
                             <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
                             </div>
                         </div>
+
                         </div>
                     </div>
 

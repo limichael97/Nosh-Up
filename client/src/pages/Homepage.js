@@ -88,7 +88,7 @@ const HomePage = () => {
               {/* logged out, click on login button, modal has close
                 once logged in, login turns into logout */}
               <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                   <Modal.Title>Sign Up!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
