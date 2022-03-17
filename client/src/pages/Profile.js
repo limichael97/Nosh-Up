@@ -18,15 +18,14 @@ const Profile = () => {
 
 
   return (
-    <div className="container mt-2">
+    <div className="container mt-2 py-5">
           <div className="row align-items-md-stretch">
           <div className="col">
-                    <img src={require(`../img/avatar-${user.avatar}.jpg`)} />
+                <img className="avatar-img" src={require(`../img/avatar-${user.avatar}.jpg`)} />
+              <h2 className="mt-2">Name: {user.username}</h2>
+              <p className="mb-1">Here's my bio: {user.bioText}</p>
+              <p>My favorite cuisine: {user.favoriteCuisine}</p>
             </div>
-            <p>Name: {user.username}</p>
-            <p>Here's my bio: {user.bioText}</p>
-            <p>My favoriate cuisine: {user.favoriteCuisine}</p>
-
             </div>
           </div>
   );

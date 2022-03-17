@@ -6,6 +6,8 @@ import { JOIN_EVENT, ADD_COMMENT } from '../utils/mutations';
 import Comment from "../components/Comment";
 import CommentList from '../components/CommentList';
 import GuestList from '../components/GuestList';
+import { Link } from 'react-router-dom';
+
 
 
 const SingleEvent = (username) => {
@@ -70,10 +72,9 @@ const SingleEvent = (username) => {
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                      <h6 className="mb-0">Restaurant</h6>
-                      <p className="mb-0 opacity-75">{event.city}</p>
+                      <p className="mb-0 ">{event.city}</p>
                     </div>
-                    <small className="opacity-50 text-nowrap">now</small>
+                    {/* <small className="opacity-50 text-nowrap">now</small> */}
                   </div>
                 </a>
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -83,21 +84,48 @@ const SingleEvent = (username) => {
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
                       <h6 className="mb-0">{event.eventDate}</h6>
-                      <p className="mb-0 opacity-75">{event.description}</p>
                     </div>
                     {/* <small className="opacity-50 text-nowrap">3d</small> */}
                   </div>
                 </a>
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                  <span className="material-icons">
-                    group_add
+                  <span className="">
+                    Details:
+                  </span>
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0 ">{event.description}</h6>
+                    </div>
+                    {/* <small className="opacity-50 text-nowrap">3d</small> */}
+                  </div>
+                </a>
+
+                <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                  <span className="">
+                    Host:
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
                     <div>
                       {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                      <p className="mb-0 opacity-75">{event.maxNoshers}</p>
+                      <Link to={`/profiles/${event.host}`}>
+                        <p className="">{event.host}</p>
+                      </Link>                    </div>
+                    {/* <small className="opacity-50 text-nowrap">1w</small> */}
+                  </div>
+                </a>
+
+                <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                  <span className="">
+                    Total Noshers:
+                  </span>
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      {/* <button className="btn ml-auto" onClick={handleJoin}>
+                      Join this Event
+                    </button>                       */}
+                      <p className="mb-0 ">{event.maxNoshers}</p>
                     </div>
                     {/* <small className="opacity-50 text-nowrap">1w</small> */}
                   </div>
