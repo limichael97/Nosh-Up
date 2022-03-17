@@ -17,6 +17,17 @@ const EventList = (username) => {
     const events = data?.LookUpEvents;
     console.log(data)
     console.log(events)
+    // var eventDatee = events.eventDate
+    // var CurEventDay = []
+    // if(eventDatee)
+    // {
+    //     for(var i = 0; i <eventDatee.length; i++) {
+    //         console.log(eventDatee[i]);
+    //         CurEventDay.push(eventDatee[i]);
+  
+    //     }
+    //     console.log(CurEventDay)
+    // }
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
@@ -72,10 +83,10 @@ const EventList = (username) => {
                             <ul className="list-group list-group-flush">
                             <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
                             <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
-                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li>
+                            {/* <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li> */}
 
                             <Link to={`/profiles/${event.host}`}>
-                                <li className="list-group-item">Created by: {event.host}</li>
+                                <li className="list-group-item">Host: {event.host}</li>
                             </Link>
 
                             </ul>
