@@ -24,7 +24,6 @@ const Dashboard = () => {
     setIsUpdateUserOpen(true);
     handleShow();
   }
-
   return (
     <>
       <div class="container py-5">
@@ -97,6 +96,7 @@ const Dashboard = () => {
                         <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
                       </div>
                     </div>
+
                   </div>
                 </div>))}
 
@@ -109,43 +109,44 @@ const Dashboard = () => {
               <h2 className="mb-4 mt-4">You Have not joined an event yet...</h2>
             )}
 
+          </div>
 
-            {
-              JoinedEvents && JoinedEvents.map(event => (
 
-                <div className="col-12 col-md-4">
-                  <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div className="card">
-                      <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
-                      <div className="card-body">
-                        <h5 className="card-title">{event.cuisineType}</h5>
-                        <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
-                      </div>
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
+          {
+            JoinedEvents && JoinedEvents.map(event => (
 
-                        <Link to={`/profiles/${event.host}`}>
-                          <li className="list-group-item">Created by: {event.host}</li>
-                        </Link>
+              <div className="col-12 col-md-4">
+                <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div className="card">
+                    <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                    <div className="card-body">
+                      <h5 className="card-title">{event.cuisineType}</h5>
+                      <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                      <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
 
-                      </ul>
-                      <div className="card-body">
-                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
-                      </div>
+                      <Link to={`/profiles/${event.host}`}>
+                        <li className="list-group-item">Created by: {event.host}</li>
+                      </Link>
+
+                    </ul>
+                    <div className="card-body">
+                      <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
                     </div>
                   </div>
-
                 </div>
+              </div>
 
 
-              ))
-            }
-          </div>
+            ))
+          }
         </div>
-
-      </>
-      )
+      </div>
+    </>
+  )
 }
 
-      export default Dashboard;
+export default Dashboard;
+
