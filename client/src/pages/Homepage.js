@@ -60,7 +60,7 @@ const HomePage = () => {
                       <p className="card-text mb-auto">Never eat alone again with <span className="color-two">Nosh Up</span>, an easy way to find your perfect foodie match.<br />
                         <br />Meet. Eat. No strings attached!</p>
                     </div>
-                    <div className="col-auto d-none d-lg-block featured-img-1">
+                    <div className="col-auto d-lg-block featured-img-1 order-xs-first order-xl-last">
 
                     </div>
                   </div>
@@ -70,7 +70,7 @@ const HomePage = () => {
               <div className="row mb-2">
                 <div className="col-md-12">
                   <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div className="col-auto d-none d-lg-block featured-img-2">
+                    <div className="col-auto d-lg-block featured-img-2">
 
                     </div>
                     <div className="col p-4 d-flex flex-column position-static">
@@ -89,7 +89,7 @@ const HomePage = () => {
                 once logged in, login turns into logout */}
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header>
-                  <Modal.Title>Sign Up!</Modal.Title>
+
                 </Modal.Header>
                 <Modal.Body>
                   {isLoginOpen && (
@@ -129,8 +129,7 @@ const HomePage = () => {
                       {/* <div className="mb-1 text-muted">Nov 12</div> */}
                       <p className="card-text mb-auto">Start planning your next meal with new friends. Sign up and navigate to your Dashboard. Create your simple profile and plan an event or visit the Events page to join events other <span className="color-one">Noshers</span> are hosting.</p>
                     </div>
-                    <div className="col-auto d-none d-lg-block featured-img-3">
-
+                    <div className="col-auto d-lg-block featured-img-3 order-xs-first order-xl-last">
                     </div>
                   </div>
                 </div>

@@ -17,6 +17,17 @@ const EventList = (username) => {
     const events = data?.LookUpEvents;
     console.log(data)
     console.log(events)
+    // var eventDatee = events.eventDate
+    // var CurEventDay = []
+    // if(eventDatee)
+    // {
+    //     for(var i = 0; i <eventDatee.length; i++) {
+    //         console.log(eventDatee[i]);
+    //         CurEventDay.push(eventDatee[i]);
+  
+    //     }
+    //     console.log(CurEventDay)
+    // }
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
@@ -29,7 +40,7 @@ const EventList = (username) => {
     
     return (
         <>
-            <div className="container">
+            <div className="container py-5">
                  <div className="row mb-2">
                     <h2>Find An Event</h2>
                     <div className="col pe-0">
@@ -49,46 +60,47 @@ const EventList = (username) => {
                             <option value='Sacramento' id="1">Sacramento</option>
                             <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                             <option value= 'Carmichael' id="3">Carmichael</option>
-                            <option value= 'Roseville' id="4">Rosevilile</option>
+                            <option value= 'Roseville' id="4">Roseville</option>
                             <option value= 'Folsom' id="5">Folsom</option>
                             <option value= 'To be determined' id="6">To be determined</option>
                         </select>
                     </div>
                 </div>
 
-            <div className="row mb-2">
-            {
-                events &&
-                events.map(event => (
+                <div className="row mb-2">
+                {
+                    events &&
+                    events.map(event => (
 
-                <div key={event._id} className="col-12 col-md-4">
-                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div className="card">
-                        <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
-                        <div className="card-body">
-                        <h5 className="card-title">{event.cuisineType}</h5>
-                        <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                    <div key={event._id} className="col-12 col-md-4">
+                        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div className="card">
+                            <img src={CardImage} alt="Nosh Up Logo" className="card-img-top" />
+                            <div className="card-body">
+                            <h5 className="card-title">{event.cuisineType}</h5>
+                            <p className="card-text"><span className="material-icons adjust-icons me-1">restaurant</span>{event.title}</p>
+                            </div>
+                            <ul className="list-group list-group-flush">
+                            <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
+                            <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
+                            {/* <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li> */}
+
+                            <Link to={`/profiles/${event.host}`}>
+                                <li className="list-group-item">Host: {event.host}</li>
+                            </Link>
+
+                            </ul>
+                            <div className="card-body">
+                            <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                            </div>
                         </div>
-                        <ul className="list-group list-group-flush">
-                        <li className="list-group-item"><span className="material-icons adjust-icons">place</span> {event.city}</li>
-                        <li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> {event.eventDate}</li>
-                            {/*<li className="list-group-item"><span className="material-icons adjust-icons color-two">today</span> Variable: Days Until Your event goes here</li>*/}
 
-                        <Link to={`/profiles/${event.host}`}>
-                            <li className="list-group-item">Created by: {event.host}</li>
-                        </Link>
-
-                        </ul>
-                        <div className="card-body">
-                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
                         </div>
                     </div>
-                    </div>
+
+                    ))
+                }
                 </div>
-
-                ))
-            }
-            </div>
         </div>
     </>
   )

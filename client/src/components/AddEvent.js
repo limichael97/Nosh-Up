@@ -103,11 +103,11 @@ const AddEvent = () => {
             </select>
 
             <label htmlFor='City'> City</label>
-            <select name='city' onChange={handleEventChange} value={eventState.city} className='form-input form-control mb-3'>                       
+              <select name='city' onChange={handleEventChange} value={eventState.city} className='form-input form-control mb-3'>                      
               <option value='Sacramento' id="1">Sacramento</option>
               <option value='Rancho Cordova' id="2">Rancho Cordova</option>
               <option value='Carmichael' id="3">Carmichael</option>
-              <option value='Roseville' id="4">Rosevilile</option>
+              <option value='Roseville' id="4">Roseville</option>
               <option value='Folsom' id="5">Folsom</option>
               <option value='To be determined' id="6">To be determined</option>
             </select>
