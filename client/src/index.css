@@ -1,6 +1,6 @@
 body {
   min-height: 75rem;
-  padding-top: 4.5rem;
+  padding-top: 7rem;
   font-family: "Roboto", sans-serif;
 }
 
@@ -159,6 +159,7 @@ span {
     url(./img/food-main-hero.jpg);
   background-position: 50% 65%;
   background-size: cover;
+  
 }
 
 .hero-2 {

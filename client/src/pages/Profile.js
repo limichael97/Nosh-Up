@@ -18,7 +18,7 @@ const Profile = () => {
 
 
   return (
-    <div className="container mt-2">
+    <div className="container mt-2 py-5">
           <div className="row align-items-md-stretch">
           <div className="col">
                 <img className="avatar-img" src={require(`../img/avatar-${user.avatar}.jpg`)} />
