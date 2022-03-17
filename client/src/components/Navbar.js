@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
-import Logo from "../img/w-logo-310.png";
+import Logo from "../img/w-logo-500-sq-t.png";
 import Auth from '../utils/auth';
 import AddEvent from './AddEvent';
 import Dashboard from '../pages/Dashboard';
