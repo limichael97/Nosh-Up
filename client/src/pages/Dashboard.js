@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button } from 'react-bootstrap';
 import UpdateProfile from '../components/UpdateProfile';
 import { useQuery, useMutation } from '@apollo/client';
-import { REMOVE_EVENT } from '../utils/mutations';
+import { REMOVE_EVENT, REMOVE_JOINEVENT } from '../utils/mutations';
 
 import { QUERY_ME } from '../utils/queries';
 import { Link } from 'react-router-dom';
@@ -11,6 +11,8 @@ import CardImage from "../img/food-steak.jpg";
 const Dashboard = () => {
     const { loading, data } =useQuery(QUERY_ME)
     const [removeEvent, { error }] = useMutation(REMOVE_EVENT);
+    const [removeJoined, { error2 }] = useMutation(REMOVE_JOINEVENT);
+
 
     const userData = data?.me || { }
     const CurrentEvents = userData.myCurrentEvent;
@@ -25,6 +27,20 @@ const Dashboard = () => {
         console.log(eventId)
         console.log('works')
          removeEvent({
+            variables: { eventId: eventId }
+        });
+        } catch (e) {
+        console.log('Does not work')
+        console.error(e);
+        }
+    }
+
+    const handleRemoveJoin = (eventId) => {
+        window.location.reload();
+        try {
+        console.log(eventId)
+        console.log('works')
+        removeJoined({
             variables: { eventId: eventId }
         });
         } catch (e) {
@@ -157,6 +173,9 @@ const Dashboard = () => {
                     </ul>
                     <div className="card-body">
                         <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to ={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                    </div>
+                    <div className="card-body">
+                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal" onClick={() => handleRemoveJoin(event._id)}>Leave Event</button>
                     </div>
                 </div>
                     </div>

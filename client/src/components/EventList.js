@@ -9,14 +9,12 @@ import Auth from '../utils/auth'
 const EventList = (username) => {
     console.log(username)
 
-    const [eventState, setEventState] = useState({ cuisineType: null, city: null});
+    const [eventState, setEventState] = useState({ cuisineType: "All Cuisine", city: "Anywhere"});
     const {loading, data} = useQuery(QUERY_LOOKUP_EVENTS, {
         variables: {cuisineType:eventState.cuisineType, city: eventState.city},
     });
 
     const events = data?.LookUpEvents;
-    console.log(data)
-    console.log(events)
     // var eventDatee = events.eventDate
     // var CurEventDay = []
     // if(eventDatee)
@@ -28,6 +26,8 @@ const EventList = (username) => {
     //     }
     //     console.log(CurEventDay)
     // }
+
+    var current = new Date()
 
     const handleEventChange = (event) => {
         const { name, value } = event.target;
@@ -45,7 +45,7 @@ const EventList = (username) => {
                     <h2>Find An Event</h2>
                     <div className="col pe-0">
                         <select name ='cuisineType' onChange = {handleEventChange} value={eventState.cuisineType} className='form-input form-control'>
-                            <option value={null} id="0">All Cuisine</option>
+                            <option value="All Cuisine" id="0">All Cuisine</option>
                             <option value='American' id="1">American</option>
                             <option value='Mexican' id="2">Mexican</option>
                             <option value='Italian' id="3">Italian</option>
@@ -56,7 +56,7 @@ const EventList = (username) => {
                     </div>
                     <div className="col pe-0">
                         <select name ='city' onChange = {handleEventChange} value={eventState.city} className='form-input form-control'> 
-                            <option value={null} id="0">Anywhere</option>
+                            <option value="Anywhere" id="0">Anywhere</option>
                             <option value='Sacramento' id="1">Sacramento</option>
                             <option value= 'Rancho Cordova' id="2">Rancho Cordova</option>
                             <option value= 'Carmichael' id="3">Carmichael</option>
@@ -71,7 +71,8 @@ const EventList = (username) => {
                 {
                     events &&
                     events.map(event => (
-
+                    
+                    (current < new Date(event.eventDate))? (
                     <div key={event._id} className="col-12 col-md-4">
                         <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="card">
@@ -97,7 +98,9 @@ const EventList = (username) => {
 
                         </div>
                     </div>
+                    ): (<p></p>)
 
+                    
                     ))
                 }
                 </div>
