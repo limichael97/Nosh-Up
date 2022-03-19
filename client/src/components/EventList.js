@@ -98,7 +98,7 @@ const EventList = (username) => {
 
                         </div>
                     </div>
-                    ): (<p></p>)
+                    ): ("")
 
                     
                     ))
