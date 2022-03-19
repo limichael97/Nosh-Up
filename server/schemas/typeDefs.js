@@ -79,6 +79,7 @@ const typeDefs = gql`
         updateUser(input: UserInput!): User
         addEvent(input: EventInput!): Event
         joinEvent(eventId: ID!): User
+        removeJoined(eventId: ID!): User
         updateEvent(eventId: ID!, input: EventInput!): Event
         removeEvent(eventId: ID!): Event
         addComment(eventId: ID!, commentText: String!) : Event
