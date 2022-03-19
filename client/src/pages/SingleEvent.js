@@ -156,7 +156,6 @@ const SingleEvent = (username) => {
           </div>
         </div>
       </div>
-      <p>{event.maxNoshers}</p>
 
 
       <main className="container py-5">

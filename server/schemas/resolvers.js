@@ -27,17 +27,16 @@ const resolvers = {
 
     LookUpEvents: async (parent, { cuisineType, city }) => {
       const params =  {cuisineType, city}  ? {  cuisineType, city  } : {};
-      console.log(params);
 
-      if((cuisineType === null && city === null) || (cuisineType === "All Cuisine" && city === "Anywhere")){
+      if(( (cuisineType === "All Cuisine" && city === "Anywhere"))){
         //return all
         return Event.find().sort({ createdAt: -1 })
       }
-      if(cuisineType === null || cuisineType === "All Cuisine") {
+      if(cuisineType === "All Cuisine") {
         //return only city match
         return Event.find({city}).sort({ createdAt: -1 })
       }
-      if(city === null || city === "Anywhere"){
+      if(city === "Anywhere"){
         //return onlt cuisine match
         console.log("no city");
         return Event.find({cuisineType}).sort({ createdAt: -1 })
@@ -111,11 +110,11 @@ const resolvers = {
 
     addEvent: async (parent, args, context) => {
       // console.log(context)
-      console.log(args)
-      console.log(context.user)
+      // console.log(args)
+      // console.log(context.user)
 
       const event = await Event.create({ ...args.input });
-      console.log(event)
+      // console.log(event)
 
       await User.findByIdAndUpdate(
         { _id: context.user._id },
@@ -133,9 +132,9 @@ const resolvers = {
     },
 
     joinEvent: async (parent, args, context) => {
-      console.log('line87' + args)  //eventId
-      console.log('line88' + context)
-      console.log(args)
+      // console.log('line87' + args)  //eventId
+      // console.log('line88' + context)
+      // console.log(args)
 
       // const joinEvent = await Even.create({ ...args.input });
       // console.log(joinEvent)
@@ -183,6 +182,27 @@ const resolvers = {
         { _id: args.eventId }
       )
     },
+
+    
+    removeJoined: async (parent, args, context) => {
+
+      console.log("line 191" + context.user.username)
+      const join = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { myJoinedEvent:  args.eventId  } },
+        { new: true, runValidators: true }
+      );
+
+      await Event.findOneAndUpdate(
+        { _id: args.eventId },
+        { $pull: { guests: context.user.username  } },
+        { new: true, runValidators: true }
+      )
+
+      return join;
+
+    },
+
 
     addComment: async (parent, { eventId, username, commentText }, context) => {
 
