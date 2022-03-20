@@ -2,6 +2,10 @@
 
 ## Walk - Through Video Link
 
+Walk Through: [Nosh Up on Youtube](https://youtu.be/N718Fk6aM-M)
+
+&nbsp;
+
 ## Intro
 
 Don't want to eat alone especially while traveling alone for work? We don't either! Join us on Nosh Up to meet new people, have good conversation and fun company when we go out together for a meal!
