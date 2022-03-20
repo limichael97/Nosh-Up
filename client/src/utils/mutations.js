@@ -122,6 +122,60 @@ mutation joinEvent($eventId: ID!) {
 }
 `;
 
+//joinEvent(eventId: ID!): User
+export const REMOVE_JOINEVENT = gql`
+mutation removeJoined($eventId: ID!) {
+  removeJoined(eventId: $eventId){
+        _id
+        username
+        email
+        password
+        avatar
+        bioText
+        favoriteCuisine
+        totalCount
+        myCurrentEvent {
+            _id
+            title
+            host
+            cuisineType
+            city
+            description
+            createdAt
+            eventDate
+            time
+            guests
+            countNoshers
+            maxNoshers
+          
+            vacancy
+        } 
+        myJoinedEvent {
+            _id
+            title
+            host
+            cuisineType
+            city
+            description
+            createdAt
+            eventDate
+            time
+            guests
+            countNoshers
+            maxNoshers
+
+            vacancy
+        } 
+        comment {
+            _id
+            commentText
+            username
+            createdAt
+        }
+  }
+}
+`;
+
 //updateEvent(eventId: ID!, input: EventInput!): Event
 export const UPDATE_EVENT = gql`
 mutation updateEvent($eventId: ID!, $input: EventInput!) {
