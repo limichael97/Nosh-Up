@@ -4,7 +4,6 @@ import { QUERY_LOOKUP_EVENTS } from '../utils/queries';
 import { Link } from 'react-router-dom';
 import CardImage from "../img/food-steak.jpg";
 import Auth from '../utils/auth'
-import DateCompare from './DateCompare';
 
 
 const EventList = (username) => {
