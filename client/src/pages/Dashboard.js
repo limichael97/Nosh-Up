@@ -128,9 +128,9 @@ const Dashboard = () => {
                         </Link>
 
                       </ul>
-                      <div className="card-body">
-                        <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
-                        <button id={`${event._id}`} className="btn btn-color-two mx-4" type="button" data-toggle="modal1" data-target="#eventModal" onClick={() => handleRemove(event._id)}>Cancel This Event</button>
+                      <div className="card-body d-flex flex-column">
+                        <button className="btn btn-color-one p-2" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                        <button id={`${event._id}`} className="btn btn-color-two p-2" type="button" data-toggle="modal1" data-target="#eventModal" onClick={() => handleRemove(event._id)}>Cancel This Event</button>
                       </div>
 
                     </div>
