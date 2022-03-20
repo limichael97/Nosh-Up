@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
- export const QUERY_ME = gql`
+export const QUERY_ME = gql`
  {
      me {
          _id
@@ -20,11 +20,9 @@ import { gql } from '@apollo/client';
              city
              createdAt
              eventDate
-             time
              guests
              countNoshers
              maxNoshers
-
              vacancy
          } 
          myJoinedEvent {
@@ -36,11 +34,9 @@ import { gql } from '@apollo/client';
              city
              createdAt
              eventDate
-             time
              guests
              countNoshers
              maxNoshers
-
              vacancy
          } 
          comment {
@@ -51,7 +47,7 @@ import { gql } from '@apollo/client';
          }
      }
  }
- `;  
+ `;
 
 export const QUERY_USERS = gql`
   query getUsers {
@@ -91,11 +87,9 @@ export const QUERY_SINGLE_USER = gql`
             description
             createdAt
             eventDate
-            time
             guests
             countNoshers
             maxNoshers
-
             vacancy
         } 
         myJoinedEvent {
@@ -107,11 +101,9 @@ export const QUERY_SINGLE_USER = gql`
             description
             createdAt
             eventDate
-            time
             guests
             countNoshers
             maxNoshers
-          
             vacancy
         } 
         comment {
@@ -135,7 +127,6 @@ export const QUERY_EVENTS = gql`
         description
         createdAt
         eventDate
-        time
         guests
         countNoshers
         maxNoshers
@@ -162,7 +153,6 @@ export const QUERY_LOOKUP_EVENTS = gql`
         description
         createdAt
         eventDate
-        time
         guests
         countNoshers
         maxNoshers
@@ -172,7 +162,7 @@ export const QUERY_LOOKUP_EVENTS = gql`
     }
 `;
 
-export const  QUERY_SINGLE_EVENT = gql`
+export const QUERY_SINGLE_EVENT = gql`
     query getSingleEvent($id: ID!) {
         event(_id: $id){
             _id
@@ -183,7 +173,6 @@ export const  QUERY_SINGLE_EVENT = gql`
             description
             createdAt
             eventDate
-            time
             guests
             countNoshers
             maxNoshers
