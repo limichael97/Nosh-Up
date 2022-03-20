@@ -27,31 +27,30 @@ const SingleEvent = (username) => {
   console.log(eventGuests)
 
   var CurUser = []
-  if(eventGuests)
-  {
-      for(var i = 0; i <eventGuests.length; i++) {
-          console.log(eventGuests[i]);
-          CurUser.push(eventGuests[i]);
+  if (eventGuests) {
+    for (var i = 0; i < eventGuests.length; i++) {
+      console.log(eventGuests[i]);
+      CurUser.push(eventGuests[i]);
 
-      }
-      console.log(CurUser)
+    }
+    console.log(CurUser)
   }
   console.log(CurUser.length)
 
   const handleJoin = async event => {
     window.location.reload();
-      try {
-        await joinEvent({
-          variables: { eventId: eventId }
-        });
-      } catch (e) {
-        console.log('Does not work')
-        console.error(e);
-      }
+    try {
+      await joinEvent({
+        variables: { eventId: eventId }
+      });
+    } catch (e) {
+      console.log('Does not work')
+      console.error(e);
+    }
   };
 
 
-  
+
   return (
     // Title Location, Date, Creqated by, max noshers, current noshers, description, join this event
     <>
@@ -64,7 +63,7 @@ const SingleEvent = (username) => {
           </div>
           <div className="col-md-6">
             <div className="h-100 p-5 border rounded-3">
-              <h2>{event.title}</h2> 
+              <h2>{event.title}</h2>
 
               <div className="list-group">
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -90,7 +89,7 @@ const SingleEvent = (username) => {
                   </div>
                 </a>
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                <span className="">
+                  <span className="">
                     Details:
                   </span>
                   <div className="d-flex gap-2 w-100 justify-content-between">
@@ -110,13 +109,13 @@ const SingleEvent = (username) => {
                       {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                            <Link to={`/profiles/${event.host}`}>
-                                <p className="">{event.host}</p>
-                            </Link>                    </div>
+                      <Link to={`/profiles/${event.host}`}>
+                        <p className="">{event.host}</p>
+                      </Link>                    </div>
                     {/* <small className="opacity-50 text-nowrap">1w</small> */}
                   </div>
                 </a>
-                
+
                 <a href="/" className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                   <span className="">
                     Total Noshers:
@@ -126,30 +125,30 @@ const SingleEvent = (username) => {
                       {/* <button className="btn ml-auto" onClick={handleJoin}>
                       Join this Event
                     </button>                       */}
-                    <p className="mb-0 ">{event.maxNoshers}</p>
+                      <p className="mb-0 ">{event.maxNoshers}</p>
                     </div>
                     {/* <small className="opacity-50 text-nowrap">1w</small> */}
                   </div>
                 </a>
 
-                  {
-                    (event.maxNoshers == CurUser.length) ? (
-                      <button className="btn ml-auto btn-danger" disabled="disabled">
+                {
+                  (event.maxNoshers == CurUser.length) ? (
+                    <button className="btn ml-auto btn-danger" disabled="disabled">
                       This event is full
-                    </button>  
-                    ): 
+                    </button>
+                  ) :
                     // (event.host ) ? (
                     //   <button className="btn ml-auto btn-danger" disabled="disabled">
                     //   This is your event 
                     // </button>  
 
                     // ) :
-                     (
+                    (
                       <button className="btn ml-auto btn-color-four my-1" onClick={handleJoin}>
                         Join this Event
-                      </button>     
+                      </button>
                     )
-                  }
+                }
               </div>
               {/* <button className="btn btn-outline-secondary mt-3" type="button">CTA?</button>  */}
             </div>
@@ -168,25 +167,25 @@ const SingleEvent = (username) => {
             <small>Fellow Noshers</small>
           </div>
         </div>
-        <Comment eventId = {event._id}/>
+        <Comment eventId={event._id} />
         <div className="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
-            {
-              event.comment &&
-                event.comment.map((comments) => (
-                  <CommentList comment= {comments}/>
-              ))
-            }
+          <h6 className="border-bottom pb-2 mb-0">Join The Event Conversation</h6>
+          {
+            event.comment &&
+            event.comment.map((comments) => (
+              <CommentList comment={comments} />
+            ))
+          }
         </div>
         <div className="my-3 p-3 bg-body rounded shadow-sm">
-            <h6 className="border-bottom pb-2 mb-0">Noshers Attending</h6>
-            {
-              event.guests &&
-                event.guests.map((guest) => (
-                  <GuestList guests = {guest} /> 
+          <h6 className="border-bottom pb-2 mb-0">Noshers Attending</h6>
+          {
+            event.guests &&
+            event.guests.map((guest) => (
+              <GuestList guests={guest} />
 
-                ))
-            }
+            ))
+          }
 
         </div>
       </main>

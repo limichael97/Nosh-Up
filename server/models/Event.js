@@ -31,13 +31,6 @@ const eventSchema = new Schema({
     get: date => eventFormat(date)
   },
 
-  time: {
-    type: String
-  },
-
-  adjEventDt: {
-    type: String,
-  },
 
   guests: [String],
 

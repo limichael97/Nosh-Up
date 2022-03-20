@@ -6,10 +6,10 @@ dayjs.extend(localizedFormat)
 
 const eventFormat = date => {
     // let eventDate = dayjs(date).format('MMM D, YYYY at h:mm A ')
-    console.log(`
-    eventFormat 11
-    eventFormat eventDate: ${date}
-    `)
+    // console.log(`
+    // eventFormat 11
+    // eventFormat eventDate: ${date}
+    // `)
 
 
     let eventDate = dayjs(date).format('LLLL')
