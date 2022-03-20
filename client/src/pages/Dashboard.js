@@ -170,9 +170,9 @@ const Dashboard = () => {
                       </Link>
 
                     </ul>
-                    <div className="card-body">
-                      <button className="btn btn-color-one" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
-                      <button className="btn btn-color-two mx-5" type="button" data-toggle="modal1" data-target="#eventModal" onClick={() => handleRemoveJoin(event._id)}>Leave Event</button>
+                    <div className="card-body d-flex flex-column">
+                      <button className="btn btn-color-one p-2" type="button" data-toggle="modal1" data-target="#eventModal"><Link to={`/events/${event._id}`} className="text-reset text-decoration-none">See Details</Link></button>
+                      <button className="btn btn-color-two p-2" type="button" data-toggle="modal1" data-target="#eventModal" onClick={() => handleRemoveJoin(event._id)}>Leave Event</button>
 
                     </div>
 
