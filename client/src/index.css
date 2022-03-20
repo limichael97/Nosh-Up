@@ -159,7 +159,6 @@ span {
     url(./img/food-main-hero.jpg);
   background-position: 50% 65%;
   background-size: cover;
-  
 }
 
 .hero-2 {
@@ -173,21 +172,23 @@ span {
   background-size: cover;
 }
 
-.featured-img-1, .featured-img-2, .featured-img-3 {
+.featured-img-1,
+.featured-img-2,
+.featured-img-3 {
   background-size: cover;
   width: 100%;
   min-height: 15rem;
 }
 
-
-@media only screen and (min-width:1200px) {
-  .featured-img-1, .featured-img-2, .featured-img-3 {
+@media only screen and (min-width: 1200px) {
+  .featured-img-1,
+  .featured-img-2,
+  .featured-img-3 {
     background-size: cover;
     width: 30rem;
     min-height: 15rem;
   }
 }
-
 
 .featured-img-1 {
   background-image: linear-gradient(
@@ -196,7 +197,7 @@ span {
       rgba(0, 0, 0, 0.05)
     ),
     url(./img/food-chips.jpg);
-  background-position: 50% 50%; 
+  background-position: 50% 50%;
 }
 
 .featured-img-2 {
@@ -268,23 +269,21 @@ span {
 }
 
 select {
-  background-image:
-    linear-gradient(45deg, transparent 50%, rgb(145, 143, 143) 60%),
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      rgb(145, 143, 143) 60%
+    ),
     linear-gradient(135deg, rgb(145, 143, 143) 60% 40%, transparent 50%) !important;
-  background-position:
-    calc(100% - 26px) 14px,
-    calc(100% - 20px) 14px,
-    100% 0;
-  background-size:
-    6px 6px,
-    6px 6px;
+  background-position: calc(100% - 26px) 14px, calc(100% - 20px) 14px, 100% 0;
+  background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
 .avatar-img {
-  float:left;
+  float: left;
   margin: 0 1rem 0 0;
 }
 
