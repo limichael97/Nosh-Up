@@ -143,7 +143,7 @@ mutation removeJoined($eventId: ID!) {
             description
             createdAt
             eventDate
-            time
+        
             guests
             countNoshers
             maxNoshers
@@ -159,7 +159,7 @@ mutation removeJoined($eventId: ID!) {
             description
             createdAt
             eventDate
-            time
+      
             guests
             countNoshers
             maxNoshers
