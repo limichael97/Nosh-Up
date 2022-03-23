@@ -18,6 +18,13 @@ const UpdateProfile = () => {
           [name]: value,
         });
     };
+
+    const loadFile = async event => {
+      event.preventDefault();
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+      UpdateState.avatar = image.src;
+    }
  
     const handleUserSubmit = async event => {
         event.preventDefault();
@@ -46,22 +53,11 @@ const UpdateProfile = () => {
     return (
       <>
         <form className="container py-3" onSubmit={handleUserSubmit}>
-        <img className="mb-3" src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
-        <div className="form-group mb-3">
-              <label for="exampleFormControlSelect1">Select Avatar:</label>
-              <select class="form-control" name="avatar" onChange = {handleUserChange} value={UpdateState.avatar}>
-              <option value ="1">1</option>
-              <option value ="2">2</option>
-              <option value ="3">3</option>
-              <option value ="4">4</option>
-              <option value ="5">5</option>
-              <option value ="6">6</option>
-              <option value ="7">7</option>
-              <option value ="8">8</option>
-              <option value ="9">9</option>
-              <option value ="10">10</option>
-              </select>
-          </div>
+
+<p><input type="file"  accept="image/*" name="image" id="file"  onChange={loadFile} /></p>
+<p><label htmlFor="file" >Upload Image</label></p>
+<p><img id="output" width="200"/></p>
+
 
       <div className="form-group mb-3">
               <label className="d-block" for="exampleFormControlSelect1">Favorite Cuisine:</label>
@@ -101,6 +97,22 @@ const UpdateProfile = () => {
 
 export default UpdateProfile;
 /*
+        <img className="mb-3" src={require(`../img/avatar-${UpdateState.avatar}.jpg`)} />
+        <div className="form-group mb-3">
+              <label for="exampleFormControlSelect1">Select Avatar:</label>
+              <select class="form-control" name="avatar" onChange = {handleUserChange} value={UpdateState.avatar}>
+              <option value ="1">1</option>
+              <option value ="2">2</option>
+              <option value ="3">3</option>
+              <option value ="4">4</option>
+              <option value ="5">5</option>
+              <option value ="6">6</option>
+              <option value ="7">7</option>
+              <option value ="8">8</option>
+              <option value ="9">9</option>
+              <option value ="10">10</option>
+              </select>
+          </div>
 
     const handleUserChange = (event) => {
         const { name, value } = event.target;

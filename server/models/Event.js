@@ -30,7 +30,7 @@ const eventSchema = new Schema({
     max: '2400-01-01',
     get: date => eventFormat(date)
   },
-
+ 
 
   guests: [String],
 
